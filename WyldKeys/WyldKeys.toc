@@ -7,4 +7,6 @@
 ## SavedVariables: WyldKeys_Account
 ## SavedVariablesPerCharacter: WyldKeys_Char
 
-WyldKeys.lua
+Layout.lua
+Config.lua
+Core.lua

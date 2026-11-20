@@ -15,64 +15,77 @@
 -- along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 -- WyldKeys: applies Thomas's keybind layout on request.
+-- This file is the engine. The key scheme is in Layout.lua, the abilities
+-- per character in Config.lua.
 -- Nothing happens until a /kb command is typed. Commands:
 --   /kb setup    learn the § key
 --   /kb preview  show what /kb apply would change, change nothing
---   /kb apply    set the bindings (and abilities on Galdorin, Meagor, Thorim)
+--   /kb apply    set the bindings (and abilities on characters in Config.lua)
 --   /kb restore  put back what was there before the first /kb apply
 --   /kb forget   drop that saved copy, so the next /kb apply saves a fresh one
 
-local ADDON = ...
+local addonName, ns = ...
 local PREFIX = "|cff66ccffWyldKeys:|r "
 
 local function say(msg) DEFAULT_CHAT_FRAME:AddMessage(PREFIX .. msg) end
 
--- Abilities per character. Index = button 1-12 on that bar.
--- Main bar keys:  1=§ 2=1 3=2 4=3 5=4 6=5 7=Q 8=E (interrupt) 9=R 10=F 11=T 12=G
--- Shift bar keys: 1-5=Shift+1-5 6=Shift+Q 7=Shift+E 8=Shift+R 9=Shift+F 10=Shift+§ 11=Z 12=X
--- Ctrl bar keys:  1-3=Ctrl+1-3 (button 4 was Shift+G for potions; its key is now cleared)
-local MAIN_KEYS = { "§", "1", "2", "3", "4", "5", "Q", "E", "R", "F", "T", "G" }
-local SHIFT_KEYS = { "Shift+1", "Shift+2", "Shift+3", "Shift+4", "Shift+5", "Shift+Q (healing potion)", "Shift+E", "Shift+R", "Shift+F", "Shift+§", "Z", "X" }
-local CTRL_KEYS = { [1] = "Ctrl+1", [2] = "Ctrl+2", [3] = "Ctrl+3" }
+-- Message labels per button, from Layout.lua.
+local function labelsOf(bar)
+  local t = {}
+  for i, key in ipairs(bar.keys) do t[i] = (bar.labels and bar.labels[i]) or key end
+  return t
+end
+local MAIN_KEYS = labelsOf(ns.MAIN)
+local SHIFT_KEYS = labelsOf(ns.SHIFT)
+local CTRL_KEYS = labelsOf(ns.CTRL)
 
--- Engineering bombs: the best explosive in the bags at the time of /kb apply.
-local BOMB = { best = "bomb" }
--- Healing potions: the best one in the bags at the time of /kb apply.
-local POTION = { best = "potion" }
+-- Profiles ------------------------------------------------------------------------
 
-local GALDORIN_MAIN = {
-  [1] = "Charge", [2] = "Sunder Armor", [3] = "Revenge", [4] = "Heroic Strike", [5] = "Shield Block",
-  [6] = "Thunder Clap", [7] = "Demoralizing Shout", [8] = "Shield Bash", [9] = "Cleave", [10] = "Taunt",
-  [11] = "Throw", [12] = "Disarm",
-}
+-- Turns a Config.lua section into button numbers 1-12 per bar:
+-- { main, bonus = { [bar number] = ... }, shift, ctrl }.
+-- Returns nil and a message if the section has a mistake.
+local function buildProfile(c)
+  local p = { main = {}, bonus = {}, shift = {}, ctrl = {} }
+  for key, entry in pairs(c.keys or {}) do
+    local k = ns.KEYS[key]
+    if not k then return nil, "unknown key \"" .. tostring(key) .. "\"" end
+    p[k.section][k.button] = entry
+  end
+  for name, list in pairs(c) do
+    if name ~= "keys" then
+      local n = ns.BONUS_BARS[name]
+      if not n then return nil, "unknown section \"" .. tostring(name) .. "\"" end
+      if p.bonus[n] then return nil, "two sections for the same bar (" .. tostring(name) .. ")" end
+      if list == "keys" then
+        p.bonus[n] = p.main
+      elseif type(list) ~= "table" then
+        return nil, tostring(name) .. " must be \"keys\" or a list of main bar keys"
+      else
+        p.bonus[n] = {}
+        for key, entry in pairs(list) do
+          local k = ns.KEYS[key]
+          if not (k and k.section == "main") then return nil, tostring(name) .. ": not a main bar key: \"" .. tostring(key) .. "\"" end
+          p.bonus[n][k.button] = entry
+        end
+      end
+    end
+  end
+  return p
+end
 
-local LAYOUTS = {
-  Galdorin = {
-    main = GALDORIN_MAIN,
-    -- Battle Stance and Defensive Stance each have their own main bar.
-    bonus = { [1] = GALDORIN_MAIN, [2] = GALDORIN_MAIN },
-    shift = { [1] = "Battle Stance", [2] = "Defensive Stance", [6] = POTION, [7] = "Bloodrage", [11] = "Battle Shout" },
-  },
-  Meagor = {
-    main = {
-      [1] = "Stealth", [2] = "Sinister Strike", [3] = "Backstab", [4] = "Eviscerate", [5] = "Slice and Dice",
-      [6] = "Gouge", [7] = "Evasion", [8] = "Kick", [9] = BOMB, [11] = "Throw",
-    },
-    -- The stealth bar.
-    bonus = { [1] = { [1] = "Stealth", [2] = "Backstab", [5] = "Pick Pocket", [7] = "Evasion", [8] = "Kick", [9] = BOMB, [10] = "Sap", [11] = "Throw" } },
-    shift = { [6] = POTION, [10] = "Sprint", [11] = { item = 1178, name = "Explosive Rocket" } },
-    ctrl = { [3] = "Pick Lock" },
-  },
-  Thorim = {
-    main = {
-      [2] = "Lightning Bolt", [3] = "Flame Shock", [4] = "Healing Wave", [5] = "Searing Totem",
-      [6] = "Strength of Earth Totem", [7] = "Stoneclaw Totem", [8] = "Earth Shock", [9] = "Fire Nova",
-      [10] = "Purge", [11] = "Lightning Bolt",
-    },
-    shift = { [1] = "Stoneskin Totem", [2] = "Earthbind Totem", [6] = POTION, [7] = "Lightning Shield", [11] = "Rockbiter Weapon", [12] = "Flametongue Weapon" },
-    ctrl = { [3] = "Ancestral Spirit" },
-  },
-}
+-- The profile for the logged-in character: "Name-Realm" first, then "Name".
+-- Returns nil when there is none, or nil and a message if its section has a mistake.
+local function currentProfile()
+  local name = UnitName("player")
+  local realm = (GetNormalizedRealmName and GetNormalizedRealmName())
+    or (GetRealmName and (GetRealmName():gsub("[%s%-]", "")))
+  local config = ns.Config or {}
+  local who = (realm and config[name .. "-" .. realm] and (name .. "-" .. realm)) or name
+  if not config[who] then return nil end
+  local p, err = buildProfile(config[who])
+  if not p then return nil, "|cffff6666Config.lua, " .. who .. ":|r " .. err .. ". Nothing was changed." end
+  return p
+end
 
 -- Bars and their action slots ------------------------------------------------
 
@@ -84,26 +97,16 @@ local function slotCtrl(i) return ((BOTTOMRIGHT_ACTIONBAR_PAGE or 5) - 1) * 12 +
 
 -- Bindings ---------------------------------------------------------------------
 
--- Commands whose old keys are cleared before the layout is bound.
-local function managedCommands()
-  local t = {}
-  for i = 1, 12 do t[#t + 1] = "ACTIONBUTTON" .. i end
-  for i = 1, 12 do t[#t + 1] = "MULTIACTIONBAR1BUTTON" .. i end
-  for _, i in ipairs({ 1, 2, 3, 4, 12 }) do t[#t + 1] = "MULTIACTIONBAR2BUTTON" .. i end
-  return t
-end
-
 local function layoutBindings(k)
   local B = {}
-  local main = { k.sec, "1", "2", "3", "4", "5", "Q", "E", "R", "F", "T", "G" }
-  for i, key in ipairs(main) do B[#B + 1] = { key, "ACTIONBUTTON" .. i, MAIN_KEYS[i] .. " = main bar button " .. i } end
-  local shift = { "SHIFT-1", "SHIFT-2", "SHIFT-3", "SHIFT-4", "SHIFT-5", "SHIFT-Q", "SHIFT-E", "SHIFT-R", "SHIFT-F", "SHIFT-" .. k.sec, "Z", "X" }
-  for i, key in ipairs(shift) do B[#B + 1] = { key, "MULTIACTIONBAR1BUTTON" .. i, SHIFT_KEYS[i] .. " = Action Bar 2 button " .. i } end
-  for i = 1, 3 do B[#B + 1] = { "CTRL-" .. i, "MULTIACTIONBAR2BUTTON" .. i, "Ctrl+" .. i .. " = Action Bar 3 button " .. i } end
-  B[#B + 1] = { "CTRL-R", "REPLY", "Ctrl+R = Reply to whisper" }
-  B[#B + 1] = { "CTRL-Z", "TOGGLESHEATH", "Ctrl+Z = Sheathe weapon" }
-  B[#B + 1] = { "CTRL-X", "SITORSTAND", "Ctrl+X = Sit / swim down" }
-  B[#B + 1] = { "BUTTON3", "TOGGLEAUTORUN", "Middle button = Autorun" }
+  for _, bar in ipairs({ ns.MAIN, ns.SHIFT, ns.CTRL }) do
+    local labels = labelsOf(bar)
+    for i, bind in ipairs(bar.binds) do
+      local key = bind:gsub("§", function() return k.sec end)
+      B[#B + 1] = { key, bar.command .. i, labels[i] .. " = " .. bar.bindText .. " " .. i }
+    end
+  end
+  for _, b in ipairs(ns.SYSTEM) do B[#B + 1] = { b[1], b[2], b[3] } end
   return B
 end
 
@@ -260,12 +263,15 @@ local function placements(layout)
       if spell then P[#P + 1] = { slot = slotFn(i), spell = spell, where = barName .. ", " .. (labels[i] or ("button " .. i)) } end
     end
   end
-  add(layout.main, slotMain, MAIN_KEYS, "Main bar")
-  for n, list in pairs(layout.bonus or {}) do
-    add(list, function(i) return slotBonus(n, i) end, MAIN_KEYS, "Stance/stealth bar " .. n)
+  add(layout.main, slotMain, MAIN_KEYS, ns.MAIN.barText)
+  local bonusBars = {}
+  for n in pairs(layout.bonus or {}) do bonusBars[#bonusBars + 1] = n end
+  table.sort(bonusBars)
+  for _, n in ipairs(bonusBars) do
+    add(layout.bonus[n], function(i) return slotBonus(n, i) end, MAIN_KEYS, "Stance/stealth bar " .. n)
   end
-  add(layout.shift, slotShift, SHIFT_KEYS, "Action Bar 2")
-  add(layout.ctrl, slotCtrl, CTRL_KEYS, "Action Bar 3")
+  add(layout.shift, slotShift, SHIFT_KEYS, ns.SHIFT.barText)
+  add(layout.ctrl, slotCtrl, CTRL_KEYS, ns.CTRL.barText)
   return P
 end
 
@@ -295,6 +301,8 @@ end
 local function preview()
   if not ready() then return end
   local k = WyldKeys_Account.keys
+  local layout, err = currentProfile()
+  if err then say(err); return end
   say("Preview. Nothing is changed.")
   for _, b in ipairs(layoutBindings(k)) do
     local old = GetBindingAction(b[1])
@@ -302,7 +310,6 @@ local function preview()
     say("  " .. b[3] .. note)
   end
   say("Old keys on the main bar, Action Bar 2 and Ctrl+1-3 are cleared first, so 6-0 stop working.")
-  local layout = LAYOUTS[UnitName("player")]
   if layout then
     for _, p in ipairs(placements(layout)) do
       local cur = actionName(actionRecord(p.slot))
@@ -319,7 +326,8 @@ end
 local function apply()
   if not ready() then return end
   local k = WyldKeys_Account.keys
-  local layout = LAYOUTS[UnitName("player")]
+  local layout, err = currentProfile()
+  if err then say(err); return end
   local plan = layout and placements(layout) or {}
 
   -- Keep a copy of what is there now, the first time only.
@@ -333,7 +341,7 @@ local function apply()
   -- Bindings. Mouse side buttons are not part of the layout; forget any
   -- that an earlier version stored.
   k.back, k.interrupt = nil, nil
-  for _, cmd in ipairs(managedCommands()) do
+  for _, cmd in ipairs(ns.MANAGED) do
     for _, key in ipairs(keysOf(cmd)) do SetBinding(key, nil) end
   end
   local failed = {}
@@ -472,7 +480,7 @@ end
 local ev = CreateFrame("Frame")
 ev:RegisterEvent("ADDON_LOADED")
 ev:SetScript("OnEvent", function(_, _, name)
-  if name ~= ADDON then return end
+  if name ~= addonName then return end
   WyldKeys_Account = WyldKeys_Account or {}
   WyldKeys_Char = WyldKeys_Char or {}
 end)

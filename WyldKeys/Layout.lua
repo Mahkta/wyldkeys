@@ -1,0 +1,77 @@
+-- WyldKeys - keybind layout for WoW Forever
+-- Copyright (C) 2026 Thomas Larsson
+--
+-- This program is free software: you can redistribute it and/or modify
+-- it under the terms of the GNU General Public License as published by
+-- the Free Software Foundation, either version 3 of the License, or
+-- (at your option) any later version.
+--
+-- This program is distributed in the hope that it will be useful,
+-- but WITHOUT ANY WARRANTY; without even the implied warranty of
+-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+-- GNU General Public License for more details.
+--
+-- You should have received a copy of the GNU General Public License
+-- along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+-- The key scheme shared by every character, as data. Core.lua reads it.
+
+local addonName, ns = ...
+
+-- The three bars the layout binds. Per bar, index = button 1-12:
+--   keys    what Config.lua writes, and how messages show the key
+--   binds   the game's key name; "§" is replaced by the key learned with /kb setup
+--   labels  optional message text that differs from keys
+--   command the binding command; the button number is appended
+--   bindText / barText  bar name in the binding list and in the ability list
+ns.MAIN = {
+  command = "ACTIONBUTTON", bindText = "main bar button", barText = "Main bar",
+  keys  = { "§", "1", "2", "3", "4", "5", "Q", "E", "R", "F", "T", "G" },
+  binds = { "§", "1", "2", "3", "4", "5", "Q", "E", "R", "F", "T", "G" },
+}
+
+ns.SHIFT = {
+  command = "MULTIACTIONBAR1BUTTON", bindText = "Action Bar 2 button", barText = "Action Bar 2",
+  keys  = { "Shift+1", "Shift+2", "Shift+3", "Shift+4", "Shift+5", "Shift+Q", "Shift+E", "Shift+R", "Shift+F", "Shift+§", "Z", "X" },
+  binds = { "SHIFT-1", "SHIFT-2", "SHIFT-3", "SHIFT-4", "SHIFT-5", "SHIFT-Q", "SHIFT-E", "SHIFT-R", "SHIFT-F", "SHIFT-§", "Z", "X" },
+  labels = { [6] = "Shift+Q (healing potion)" },
+}
+
+-- Button 4 was Shift+G for potions; its key is now cleared (see MANAGED below).
+ns.CTRL = {
+  command = "MULTIACTIONBAR2BUTTON", bindText = "Action Bar 3 button", barText = "Action Bar 3",
+  keys  = { "Ctrl+1", "Ctrl+2", "Ctrl+3" },
+  binds = { "CTRL-1", "CTRL-2", "CTRL-3" },
+}
+
+-- Other bindings, after the bars: { game key, command, message text }.
+ns.SYSTEM = {
+  { "CTRL-R", "REPLY", "Ctrl+R = Reply to whisper" },
+  { "CTRL-Z", "TOGGLESHEATH", "Ctrl+Z = Sheathe weapon" },
+  { "CTRL-X", "SITORSTAND", "Ctrl+X = Sit / swim down" },
+  { "BUTTON3", "TOGGLEAUTORUN", "Middle button = Autorun" },
+}
+
+-- Commands whose old keys are cleared before the layout is bound.
+ns.MANAGED = {}
+for i = 1, 12 do ns.MANAGED[#ns.MANAGED + 1] = "ACTIONBUTTON" .. i end
+for i = 1, 12 do ns.MANAGED[#ns.MANAGED + 1] = "MULTIACTIONBAR1BUTTON" .. i end
+for _, i in ipairs({ 1, 2, 3, 4, 12 }) do ns.MANAGED[#ns.MANAGED + 1] = "MULTIACTIONBAR2BUTTON" .. i end
+
+-- Key label -> bar and button, for Config.lua. Built from the bars above.
+ns.KEYS = {}
+for section, bar in pairs({ main = ns.MAIN, shift = ns.SHIFT, ctrl = ns.CTRL }) do
+  for i, key in ipairs(bar.keys) do ns.KEYS[key] = { section = section, button = i } end
+end
+
+-- Bars that replace the main bar in a stance or in stealth (bonus bar number).
+-- They use the main bar keys.
+ns.BONUS_BARS = { stealth = 1, battle = 1, defensive = 2 }
+
+-- Entries Config.lua can use besides spell names.
+-- Engineering bombs: the best explosive in the bags at the time of /kb apply.
+ns.BEST_BOMB = { best = "bomb" }
+-- Healing potions: the best one in the bags at the time of /kb apply.
+ns.BEST_POTION = { best = "potion" }
+-- A fixed item by ID; the name is used in messages.
+function ns.Item(id, name) return { item = id, name = name } end

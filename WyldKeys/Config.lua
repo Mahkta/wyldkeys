@@ -1,0 +1,124 @@
+-- WyldKeys - keybind layout for WoW Forever
+-- Copyright (C) 2026 Thomas Larsson
+--
+-- This program is free software: you can redistribute it and/or modify
+-- it under the terms of the GNU General Public License as published by
+-- the Free Software Foundation, either version 3 of the License, or
+-- (at your option) any later version.
+--
+-- This program is distributed in the hope that it will be useful,
+-- but WITHOUT ANY WARRANTY; without even the implied warranty of
+-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+-- GNU General Public License for more details.
+--
+-- You should have received a copy of the GNU General Public License
+-- along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+
+-- Abilities per character. /kb apply puts them on the bars; keys left out
+-- keep what is on them. A character without a section gets the keys only.
+--
+-- Format, one section per character:
+--   ["Name"] = { ... }            or ["Name-Realm"] = { ... }; "Name-Realm" wins
+--                                  (realm written without spaces, e.g. "Name-SomeRealm").
+--   keys = { [key] = ability }     the ability on the button that key presses.
+--   stealth / battle / defensive = { [key] = ability }
+--                                  the bar that replaces the main bar in stealth
+--                                  or in that stance; main bar keys only.
+--                                  = "keys" means the same main bar abilities as keys.
+--
+-- Keys (see Layout.lua):
+--   Main bar:      §  1  2  3  4  5  Q  E  R  F  T  G      (E is the interrupt)
+--   Action Bar 2:  Shift+1 … Shift+5  Shift+Q (healing potion)  Shift+E  Shift+R
+--                  Shift+F  Shift+§  Z  X
+--   Action Bar 3:  Ctrl+1 (food, by hand)  Ctrl+2 (bandage, by hand)  Ctrl+3
+--
+-- Abilities:
+--   "Spell Name"                   a spell, by its name in the spellbook
+--   BEST_BOMB                      the best bomb in the bags at /kb apply
+--   BEST_POTION                    the best healing potion in the bags at /kb apply
+--   Item(id, "Name")               one item, by item ID
+--
+-- After a change: /reload, then /kb preview.
+
+local addonName, ns = ...
+local BEST_BOMB, BEST_POTION, Item = ns.BEST_BOMB, ns.BEST_POTION, ns.Item
+
+ns.Config = {
+
+  ["Galdorin"] = {
+    keys = {
+      ["§"] = "Charge",
+      ["1"] = "Sunder Armor",
+      ["2"] = "Revenge",
+      ["3"] = "Heroic Strike",
+      ["4"] = "Shield Block",
+      ["5"] = "Thunder Clap",
+      ["Q"] = "Demoralizing Shout",
+      ["E"] = "Shield Bash",
+      ["R"] = "Cleave",
+      ["F"] = "Taunt",
+      ["T"] = "Throw",
+      ["G"] = "Disarm",
+      ["Shift+1"] = "Battle Stance",
+      ["Shift+2"] = "Defensive Stance",
+      ["Shift+Q"] = BEST_POTION,
+      ["Shift+E"] = "Bloodrage",
+      ["Z"] = "Battle Shout",
+    },
+    battle = "keys",
+    defensive = "keys",
+  },
+
+  ["Meagor"] = {
+    keys = {
+      ["§"] = "Stealth",
+      ["1"] = "Sinister Strike",
+      ["2"] = "Backstab",
+      ["3"] = "Eviscerate",
+      ["4"] = "Slice and Dice",
+      ["5"] = "Gouge",
+      ["Q"] = "Evasion",
+      ["E"] = "Kick",
+      ["R"] = BEST_BOMB,
+      ["T"] = "Throw",
+      ["Shift+Q"] = BEST_POTION,
+      ["Shift+§"] = "Sprint",
+      ["Z"] = Item(1178, "Explosive Rocket"),
+      ["Ctrl+3"] = "Pick Lock",
+    },
+    stealth = {
+      ["§"] = "Stealth",
+      ["1"] = "Backstab",
+      ["4"] = "Pick Pocket",
+      ["Q"] = "Evasion",
+      ["E"] = "Kick",
+      ["R"] = BEST_BOMB,
+      ["F"] = "Sap",
+      ["T"] = "Throw",
+    },
+  },
+
+  ["Thorim"] = {
+    keys = {
+      ["1"] = "Lightning Bolt",
+      ["2"] = "Flame Shock",
+      ["3"] = "Healing Wave",
+      ["4"] = "Searing Totem",
+      ["5"] = "Strength of Earth Totem",
+      ["Q"] = "Stoneclaw Totem",
+      ["E"] = "Earth Shock",
+      ["R"] = "Fire Nova",
+      ["F"] = "Purge",
+      ["T"] = "Lightning Bolt",
+      ["Shift+1"] = "Stoneskin Totem",
+      ["Shift+2"] = "Earthbind Totem",
+      ["Shift+Q"] = BEST_POTION,
+      ["Shift+E"] = "Lightning Shield",
+      ["Z"] = "Rockbiter Weapon",
+      ["X"] = "Flametongue Weapon",
+      ["Ctrl+3"] = "Ancestral Spirit",
+    },
+  },
+
+}
