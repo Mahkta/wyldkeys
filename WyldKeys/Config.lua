@@ -37,6 +37,7 @@
 --   "Spell Name"                   a spell, by its name in the spellbook
 --   BEST_BOMB                      the best bomb in the bags at /kb apply
 --   BEST_POTION                    the best healing potion in the bags at /kb apply
+--   BEST_DRINK, BEST_FOOD          the best drink or food in the bags at /kb apply
 --   Item(id, "Name")               one item, by item ID
 --   Macro("Name", "label")         a macro by name; the label is for the overview only
 --
@@ -49,6 +50,7 @@
 
 local addonName, ns = ...
 local BEST_BOMB, BEST_POTION, Item, Macro = ns.BEST_BOMB, ns.BEST_POTION, ns.Item, ns.Macro
+local BEST_DRINK, BEST_FOOD = ns.BEST_DRINK, ns.BEST_FOOD
 
 ns.Config = {
 
@@ -179,7 +181,9 @@ ns.Config = {
       ["Shift+Z"] = "Arcane Intellect",
       ["Shift+X"] = "Frost Armor",
       ["Ctrl+3"] = Macro("WK Conjure", "Conjure water, then food"),
+      ["Ctrl+1"] = BEST_DRINK,
       ["Ctrl+4"] = "Read Leyline",
+      ["Ctrl+5"] = BEST_FOOD,
     },
     macros = {
       -- Press once for water, again for food; starts over after a minute.

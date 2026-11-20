@@ -48,7 +48,7 @@ local CATEGORY = {
            Q = "cd", E = "intr", R = "aoe", F = "util", T = "rng", G = "def", Z = "rare", X = "rare" },
   shift = { sec = "open", ["1"] = "alt", ["2"] = "alt", ["3"] = "alt", ["4"] = "alt", ["5"] = "alt",
             Q = "def", E = "big", R = "big", F = "big" },
-  ctrl = { ["1"] = "ooc", ["2"] = "ooc", ["3"] = "ooc", ["4"] = "ooc" },
+  ctrl = { ["1"] = "ooc", ["2"] = "ooc", ["3"] = "ooc", ["4"] = "ooc", ["5"] = "ooc" },
 }
 local function category(layer, key) return (CATEGORY[layer] and CATEGORY[layer][key]) or "rare" end
 
@@ -57,6 +57,8 @@ local function abilityName(entry)
   if type(entry) == "string" then return entry end
   if type(entry) == "table" and entry.best == "bomb" then return "Engineering bomb (best in bags)" end
   if type(entry) == "table" and entry.best == "potion" then return "Healing potion (best in bags)" end
+  if type(entry) == "table" and entry.best == "drink" then return "Drink (best in bags)" end
+  if type(entry) == "table" and entry.best == "food" then return "Food (best in bags)" end
   if type(entry) == "table" and entry.item then return entry.name or ("Item " .. entry.item) end
   if type(entry) == "table" and entry.macro then return entry.label or ("Macro " .. entry.macro) end
   error("unknown ability entry: " .. tostring(entry))

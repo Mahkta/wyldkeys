@@ -174,11 +174,21 @@ local function itemName(id)
   return (GetItemInfo(id))
 end
 
+-- What an item does when used, from its use spell: "Drink", "Food" or
+-- "Refreshment" (both). nil for anything else.
+function ns.ItemUse(id)
+  local get = (C_Item and C_Item.GetItemSpell) or GetItemSpell
+  if not get then return nil end
+  return (get(id))
+end
+
 local MATCH = {
   bomb = function(id, name, sub, classID, subID) return sub == "Explosives" or (classID == 7 and subID == 2) end,
   potion = function(id, name) return name and name:find("Healing Potion", 1, true) ~= nil end,
+  drink = function(id) local u = ns.ItemUse(id); return u == "Drink" or u == "Refreshment" end,
+  food = function(id) local u = ns.ItemUse(id); return u == "Food" or u == "Refreshment" end,
 }
-local LABEL = { bomb = "bomb", potion = "healing potion" }
+local LABEL = { bomb = "bomb", potion = "healing potion", drink = "drink", food = "food" }
 
 -- The matching item with the highest item level in the bags, or nil.
 local function bestItem(kind)
@@ -434,7 +444,10 @@ local function apply()
         if cur then say("Left as it was: main bar " .. MAIN_KEYS[i] .. " has " .. cur .. ".") end
       end
     end
-    say("Food goes on Ctrl+1 and bandages on Ctrl+2 (Action Bar 3, buttons 1 and 2): drag them there yourself.")
+    local byHand = {}
+    if not layout.ctrl[1] then byHand[#byHand + 1] = "food on Ctrl+1" end
+    if not layout.ctrl[2] then byHand[#byHand + 1] = "bandages on Ctrl+2" end
+    if #byHand > 0 then say("Drag " .. table.concat(byHand, " and ") .. " yourself (Action Bar 3).") end
   else
     say("No abilities placed on this character, only keys.")
   end

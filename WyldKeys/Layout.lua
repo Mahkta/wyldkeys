@@ -39,8 +39,8 @@ ns.SHIFT = {
 
 ns.CTRL = {
   command = "MULTIACTIONBAR2BUTTON", bindText = "Action Bar 3 button", barText = "Action Bar 3",
-  keys  = { "Ctrl+1", "Ctrl+2", "Ctrl+3", "Ctrl+4", "Shift+Z", "Shift+X" },
-  binds = { "CTRL-1", "CTRL-2", "CTRL-3", "CTRL-4", "SHIFT-Z", "SHIFT-X" },
+  keys  = { "Ctrl+1", "Ctrl+2", "Ctrl+3", "Ctrl+4", "Shift+Z", "Shift+X", "Ctrl+5" },
+  binds = { "CTRL-1", "CTRL-2", "CTRL-3", "CTRL-4", "SHIFT-Z", "SHIFT-X", "CTRL-5" },
 }
 
 -- Other bindings, after the bars: { game key, command, message text }.
@@ -55,7 +55,7 @@ ns.SYSTEM = {
 ns.MANAGED = {}
 for i = 1, 12 do ns.MANAGED[#ns.MANAGED + 1] = "ACTIONBUTTON" .. i end
 for i = 1, 12 do ns.MANAGED[#ns.MANAGED + 1] = "MULTIACTIONBAR1BUTTON" .. i end
-for _, i in ipairs({ 1, 2, 3, 4, 5, 6, 12 }) do ns.MANAGED[#ns.MANAGED + 1] = "MULTIACTIONBAR2BUTTON" .. i end
+for _, i in ipairs({ 1, 2, 3, 4, 5, 6, 7, 12 }) do ns.MANAGED[#ns.MANAGED + 1] = "MULTIACTIONBAR2BUTTON" .. i end
 
 -- Key label -> bar and button, for Config.lua. Built from the bars above.
 ns.KEYS = {}
@@ -72,6 +72,9 @@ ns.BONUS_BARS = { stealth = 1, battle = 1, defensive = 2 }
 ns.BEST_BOMB = { best = "bomb" }
 -- Healing potions: the best one in the bags at the time of /kb apply.
 ns.BEST_POTION = { best = "potion" }
+-- Drink and food (conjured or bought): the best in the bags at /kb apply.
+ns.BEST_DRINK = { best = "drink" }
+ns.BEST_FOOD = { best = "food" }
 -- A fixed item by ID; the name is used in messages.
 function ns.Item(id, name) return { item = id, name = name } end
 -- A macro by name, made from the character's macros section (or one you made in the game).
