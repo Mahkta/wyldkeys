@@ -175,9 +175,9 @@ ns.Config = {
       ["Shift+§"] = "Walk on Air",
       ["Shift+2"] = "Fireball",
       ["Shift+Q"] = BEST_POTION,
-      ["Z"] = "Arcane Intellect",
-      ["X"] = "Frost Armor",
-      ["Shift+X"] = "Dampen Magic",    -- level 12; group buff
+      ["X"] = "Dampen Magic",          -- level 12; group buff, Amplify Magic (18) goes on Z
+      ["Shift+Z"] = "Arcane Intellect",
+      ["Shift+X"] = "Frost Armor",
       ["Ctrl+3"] = Macro("WK Conjure", "Conjure water, then food"),
       ["Ctrl+4"] = "Read Leyline",
     },
