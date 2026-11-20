@@ -44,3 +44,12 @@ Keyboard view and full layout: the "WoW Forever keybinds" artifact and the "Keyb
 ## License
 
 Copyright (C) 2026 Thomas Larsson. WyldKeys is free software under the GNU General Public License, version 3 or (at your option) any later version. See [LICENSE](LICENSE).
+
+## Tests
+
+The addon can be run outside the game against a fake WoW API (needs Lua 5.1):
+
+    sh tests/run.sh            # all test characters, compared with tests/expected/
+    lua5.1 tests/mock.lua Meagor   # one character, full output
+
+When a change is meant to alter the output, check the diff and then run `sh tests/run.sh --update`. The test characters and what they cover are described at the top of `tests/mock.lua`.

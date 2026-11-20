@@ -1,0 +1,71 @@
+|cff66ccffWyldKeys:|r First run /kb setup so I know what the game calls your § key.
+[overlay] Press the key left of 1 (the § key). Esc cancels.
+|cff66ccffWyldKeys:|r Learned: § key = §. Next: /kb preview, then /kb apply.
+|cff66ccffWyldKeys:|r § key = §
+|cff66ccffWyldKeys:|r Preview. Nothing is changed.
+|cff66ccffWyldKeys:|r   § = main bar button 1
+|cff66ccffWyldKeys:|r   1 = main bar button 2  (was ACTIONBUTTON1)
+|cff66ccffWyldKeys:|r   2 = main bar button 3  (was ACTIONBUTTON2)
+|cff66ccffWyldKeys:|r   3 = main bar button 4
+|cff66ccffWyldKeys:|r   4 = main bar button 5
+|cff66ccffWyldKeys:|r   5 = main bar button 6
+|cff66ccffWyldKeys:|r   Q = main bar button 7  (was TURNLEFT)
+|cff66ccffWyldKeys:|r   E = main bar button 8
+|cff66ccffWyldKeys:|r   R = main bar button 9  (was REPLY)
+|cff66ccffWyldKeys:|r   F = main bar button 10
+|cff66ccffWyldKeys:|r   T = main bar button 11
+|cff66ccffWyldKeys:|r   G = main bar button 12
+|cff66ccffWyldKeys:|r   Shift+1 = Action Bar 2 button 1
+|cff66ccffWyldKeys:|r   Shift+2 = Action Bar 2 button 2
+|cff66ccffWyldKeys:|r   Shift+3 = Action Bar 2 button 3
+|cff66ccffWyldKeys:|r   Shift+4 = Action Bar 2 button 4
+|cff66ccffWyldKeys:|r   Shift+5 = Action Bar 2 button 5
+|cff66ccffWyldKeys:|r   Shift+Q (healing potion) = Action Bar 2 button 6
+|cff66ccffWyldKeys:|r   Shift+E = Action Bar 2 button 7
+|cff66ccffWyldKeys:|r   Shift+R = Action Bar 2 button 8
+|cff66ccffWyldKeys:|r   Shift+F = Action Bar 2 button 9
+|cff66ccffWyldKeys:|r   Shift+§ = Action Bar 2 button 10
+|cff66ccffWyldKeys:|r   Z = Action Bar 2 button 11  (was TOGGLESHEATH)
+|cff66ccffWyldKeys:|r   X = Action Bar 2 button 12  (was SITORSTAND)
+|cff66ccffWyldKeys:|r   Ctrl+1 = Action Bar 3 button 1
+|cff66ccffWyldKeys:|r   Ctrl+2 = Action Bar 3 button 2
+|cff66ccffWyldKeys:|r   Ctrl+3 = Action Bar 3 button 3
+|cff66ccffWyldKeys:|r   Ctrl+R = Reply to whisper
+|cff66ccffWyldKeys:|r   Ctrl+Z = Sheathe weapon
+|cff66ccffWyldKeys:|r   Ctrl+X = Sit / swim down
+|cff66ccffWyldKeys:|r   Middle button = Autorun
+|cff66ccffWyldKeys:|r Old keys on the main bar, Action Bar 2 and Ctrl+1-3 are cleared first, so 6-0 stop working.
+|cff66ccffWyldKeys:|r   Main bar, §: Stealth
+|cff66ccffWyldKeys:|r   Main bar, 1: Sinister Strike
+|cff66ccffWyldKeys:|r   Main bar, 2: Backstab
+|cff66ccffWyldKeys:|r   Main bar, 3: Eviscerate
+|cff66ccffWyldKeys:|r   Main bar, 4: Slice and Dice  (replaces Sinister Strike)
+|cff66ccffWyldKeys:|r   Main bar, 5: Gouge
+|cff66ccffWyldKeys:|r   Main bar, Q: Evasion
+|cff66ccffWyldKeys:|r   Main bar, E: Kick
+|cff66ccffWyldKeys:|r   Main bar, R: best bomb in your bags (Large Copper Bomb)
+|cff66ccffWyldKeys:|r   Main bar, T: Throw
+|cff66ccffWyldKeys:|r   Stance/stealth bar 1, §: Stealth
+|cff66ccffWyldKeys:|r   Stance/stealth bar 1, 1: Backstab
+|cff66ccffWyldKeys:|r   Stance/stealth bar 1, 4: Pick Pocket
+|cff66ccffWyldKeys:|r   Stance/stealth bar 1, Q: Evasion
+|cff66ccffWyldKeys:|r   Stance/stealth bar 1, E: Kick
+|cff66ccffWyldKeys:|r   Stance/stealth bar 1, R: best bomb in your bags (Large Copper Bomb)
+|cff66ccffWyldKeys:|r   Stance/stealth bar 1, F: Sap
+|cff66ccffWyldKeys:|r   Stance/stealth bar 1, T: Throw
+|cff66ccffWyldKeys:|r   Action Bar 2, Shift+Q (healing potion): best healing potion in your bags (Lesser Healing Potion)
+|cff66ccffWyldKeys:|r   Action Bar 2, Shift+§: Sprint  (replaces Item117)
+|cff66ccffWyldKeys:|r   Action Bar 2, Z: Explosive Rocket
+|cff66ccffWyldKeys:|r   Action Bar 3, Ctrl+3: Pick Lock
+|cff66ccffWyldKeys:|r Bindings will be saved for every character that uses account-wide bindings.
+---- apply
+|cff66ccffWyldKeys:|r Saved a copy of your current keys and bars. /kb restore puts them back.
+|cff66ccffWyldKeys:|r Keys set and saved for every character that uses account-wide bindings.
+|cff66ccffWyldKeys:|r Abilities placed: 22 of 22.
+|cff66ccffWyldKeys:|r Food goes on Ctrl+1 and bandages on Ctrl+2 (Action Bar 3, buttons 1 and 2): drag them there yourself.
+1=ACTIONBUTTON2 2=ACTIONBUTTON3 3=ACTIONBUTTON4 4=ACTIONBUTTON5 5=ACTIONBUTTON6 BUTTON3=TOGGLEAUTORUN BUTTON4=TOGGLEAUTORUN CTRL-1=MULTIACTIONBAR2BUTTON1 CTRL-2=MULTIACTIONBAR2BUTTON2 CTRL-3=MULTIACTIONBAR2BUTTON3 CTRL-R=REPLY CTRL-X=SITORSTAND CTRL-Z=TOGGLESHEATH E=ACTIONBUTTON8 F8=MOVEBACKWARD F=ACTIONBUTTON10 G=ACTIONBUTTON12 Q=ACTIONBUTTON7 R=ACTIONBUTTON9 S=MOVEBACKWARD SHIFT-1=MULTIACTIONBAR1BUTTON1 SHIFT-2=MULTIACTIONBAR1BUTTON2 SHIFT-3=MULTIACTIONBAR1BUTTON3 SHIFT-4=MULTIACTIONBAR1BUTTON4 SHIFT-5=MULTIACTIONBAR1BUTTON5 SHIFT-E=MULTIACTIONBAR1BUTTON7 SHIFT-F=MULTIACTIONBAR1BUTTON9 SHIFT-Q=MULTIACTIONBAR1BUTTON6 SHIFT-R=MULTIACTIONBAR1BUTTON8 SHIFT-§=MULTIACTIONBAR1BUTTON10 T=ACTIONBUTTON11 X=MULTIACTIONBAR1BUTTON12 Z=MULTIACTIONBAR1BUTTON11 §=ACTIONBUTTON1
+11:spell2764 1:spell1784 2:spell1752 3:spell53 4:spell2098 51:spell1804 5:spell5171 66:item858 6:spell1776 70:spell2983 71:item1178 73:spell1784 74:spell53 77:spell921 79:spell5277 7:spell5277 80:spell1766 81:item4370 82:spell6770 83:spell2764 8:spell1766 9:item4370
+---- restore
+|cff66ccffWyldKeys:|r Keys and bars put back as they were before /kb apply.
+0=ACTIONBUTTON10 1=ACTIONBUTTON1 2=ACTIONBUTTON2 6=ACTIONBUTTON6 BUTTON4=TOGGLEAUTORUN F8=MOVEBACKWARD F9=MULTIACTIONBAR2BUTTON12 Q=TURNLEFT R=REPLY S=MOVEBACKWARD X=SITORSTAND Z=TOGGLESHEATH
+5:spell1752 70:item117
