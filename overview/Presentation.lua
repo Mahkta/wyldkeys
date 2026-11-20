@@ -91,7 +91,7 @@ return {
     ["galdorin-battle"] = "Arms in Battle Stance with the two-hander. Only the main bar keys § 1–5 Q E R F T G change with the stance; Shift, Z, X and Ctrl keys stay as on the tank layout.",
     meagor = "Stealth switches to the stealth bar automatically; see the stealth view.",
     ["meagor-stealth"] = "In stealth, the stealth bar replaces the main bar keys § 1–5 Q E R F T G. Shift and Ctrl keys stay as on the normal bar.",
-    thorim = "At level 20, Call of the Elements drops several totems with one key and frees the single-totem keys.",
+    thorim = "Damage first while levelling, up to level 20. The layout is reworked at 20, when Call of the Elements and the other totem spells arrive. Cure Poison (16) and Tremor Totem (18) are placed by /kb apply once learned.",
   },
 
   -- View titles for stance and stealth bars.

@@ -137,6 +137,8 @@ ns.Config = {
   },
 
   ["Thorim"] = {
+    -- Damage first while levelling, up to level 20. Reworked at 20, when the
+    -- totem spells (Call of the Elements and others) arrive.
     keys = {
       ["1"] = "Lightning Bolt",
       ["2"] = "Flame Shock",
@@ -152,6 +154,8 @@ ns.Config = {
       ["Shift+2"] = "Earthbind Totem",
       ["Shift+Q"] = BEST_POTION,
       ["Shift+E"] = "Lightning Shield",
+      ["Shift+F"] = "Cure Poison",     -- level 16; run /kb apply again when learned
+      ["Shift+§"] = "Tremor Totem",    -- level 18; run /kb apply again when learned
       ["Z"] = "Rockbiter Weapon",
       ["X"] = "Flametongue Weapon",
       ["Ctrl+3"] = "Ancestral Spirit",
