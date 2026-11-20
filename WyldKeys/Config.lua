@@ -162,4 +162,29 @@ ns.Config = {
     },
   },
 
+  ["Leorn"] = {
+    -- Arcane mage, planned to level 40 (proposal, 20 Nov 2026). Free keys are
+    -- kept for what comes later; see the keybinds overview.
+    keys = {
+      ["1"] = "Arcane Missiles",
+      ["3"] = "Frostbolt",
+      ["4"] = "Fireball",
+      ["Q"] = "Fire Blast",
+      ["F"] = "Polymorph",
+      ["T"] = "Shoot",
+      ["G"] = "Frost Nova",
+      ["Shift+Q"] = BEST_POTION,
+      ["Z"] = "Arcane Intellect",
+      ["X"] = "Frost Armor",
+      ["Ctrl+3"] = Macro("WK Conjure", "Conjure water, then food"),
+    },
+    macros = {
+      -- Press once for water, again for food; starts over after a minute.
+      ["WK Conjure"] = [[
+#showtooltip
+/castsequence reset=60 Conjure Water, Conjure Food
+]],
+    },
+  },
+
 }

@@ -54,6 +54,10 @@ return {
     ["Victory Rush"] = "Victory Rush",
     ["Retaliation"] = "Retal\194\173iation",
     ["Reply to whisper"] = "Reply",
+    ["Arcane Missiles"] = "Arc. Missiles",
+    ["Arcane Intellect"] = "Arc. Intellect",
+    ["Polymorph"] = "Poly\194\173morph",
+    ["Conjure water, then food"] = "Conjure",
     ["Sheathe weapon"] = "Sheathe",
     ["Sit / swim down"] = "Sit / swim",
   },
@@ -73,6 +77,22 @@ return {
       ["3"] = "Cheap Shot (level 26)",
       ["G"] = "Distract (level 22)",
     },
+    leorn = {
+      ["§"] = "Blink (level 20)",
+      ["2"] = { "Arcane Blast (Arcane talent, level 20)", "Arc. Blast" },
+      ["5"] = { "Arcane Wrath (Arcane talent, level 25); check what it does first", "Arc. Wrath?" },
+      ["E"] = { "Counterspell (level 24)", "Counter\194\173spell" },
+      ["R"] = { "Arcane Explosion (level 14)", "Arc. Explosion" },
+      ["Shift+§"] = { "Mana Shield (level 20)", "Mana Shield" },
+      ["Shift+1"] = "Blizzard (level 20)",
+      ["Shift+2"] = { "Flamestrike (level 16)", "Flame\194\173strike" },
+      ["Shift+3"] = { "Cone of Cold (level 26)", "Cone of Cold" },
+      ["Shift+4"] = { "Remove Lesser Curse (level 18)", "Decurse" },
+      ["Shift+5"] = { "Amplify Magic (18) or Dampen Magic (12)", "Ampl./Damp." },
+      ["Shift+E"] = { "Presence of Mind (Arcane talent, level 30)", "PoM" },
+      ["Shift+R"] = { "Arcane Power (Arcane talent, level 40)", "Arc. Power" },
+      ["Shift+F"] = { "Evocation (level 20)", "Evo\194\173cation" },
+    },
     thorim = {
       ["§"] = "Ghost Wolf (level 20)",
       ["G"] = { "a defensive", "Defen\194\173sive" },
@@ -83,6 +103,11 @@ return {
   hints = {
     meagor = { ["Z"] = "Poisons take Z at level 20." },
     ["meagor-stealth"] = { ["1"] = "Opener for now; Ambush takes this key at level 18." },
+    leorn = {
+      ["4"] = "Frostfire Bolt (level 40) can take this key if it beats Fireball.",
+      ["X"] = "Ice Armor (30) or Mage Armor (34) replaces it.",
+      ["Ctrl+3"] = "Press once for water, again for food.",
+    },
   },
 
   -- A note under each view.
@@ -91,6 +116,7 @@ return {
     ["galdorin-battle"] = "Arms in Battle Stance with the two-hander. Only the main bar keys § 1–5 Q E R F T G change with the stance; Shift, Z, X and Ctrl keys stay as on the tank layout.",
     meagor = "Stealth switches to the stealth bar automatically; see the stealth view.",
     ["meagor-stealth"] = "In stealth, the stealth bar replaces the main bar keys § 1–5 Q E R F T G. Shift and Ctrl keys stay as on the normal bar.",
+    leorn = "PROPOSAL, not applied yet: arcane mage planned to level 40. Dashed keys are kept free for what comes later. Teleports and portals stay in the spellbook.",
     thorim = "Damage first while levelling, up to level 20. The layout is reworked at 20, when Call of the Elements and the other totem spells arrive. Cure Poison (16) and Tremor Totem (18) are placed by /kb apply once learned.",
   },
 
