@@ -14,4 +14,5 @@ for c in Galdorin Meagor Thorim Nobody; do
     echo "FAIL $c"; printf '%s\n' "$out" | diff "tests/expected/$c.txt" - | head -20; fail=1
   fi
 done
+if [ "$1" = "--update" ]; then lua5.1 overview/build.lua; else lua5.1 overview/build.lua --check || fail=1; fi
 exit $fail

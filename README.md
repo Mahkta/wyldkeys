@@ -45,6 +45,16 @@ Keyboard view and full layout: the "WoW Forever keybinds" artifact and the "Keyb
 
 Copyright (C) 2026 Thomas Larsson. WyldKeys is free software under the GNU General Public License, version 3 or (at your option) any later version. See [LICENSE](LICENSE).
 
+## Keybinds overview
+
+`overview/keybinds.html` is a keyboard view of the layout, one view per character. It is generated from `WyldKeys/Layout.lua` and `WyldKeys/Config.lua`, so it shows what `/kb apply` sets. Short labels, notes and "free, later …" hints come from `overview/Presentation.lua`; the page itself is `overview/template.html`.
+
+After changing the config, rebuild it (Lua 5.1):
+
+    lua5.1 overview/build.lua
+
+`sh tests/run.sh` fails if the overview is out of date.
+
 ## Tests
 
 The addon can be run outside the game against a fake WoW API (needs Lua 5.1):

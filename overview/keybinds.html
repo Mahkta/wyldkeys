@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WoW Forever keybinds</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE everyday hobby reference, calm and exact
+   IDEA a keycap set where every cap is printed with its ability and coloured by role, like a legend card
+   PICTURE the whole keyboard as a charcoal board with coloured caps, full width under the title
+   COLOUR white or near-black page, charcoal board, one colour per role, red for interrupt
+   TYPE Cinzel for the title, Inter for caps and text
+   LAYOUT title and controls, keyboard full width, then key detail, mouse and legend in three columns; phone: keyboard scrolls sideways, list below */
+:root{color-scheme:light dark;--bg:light-dark(#ffffff,#111317);--ink:light-dark(#16181d,#e9ebef);--mute:light-dark(#5b616b,#9aa1ab);--line:light-dark(#dfe2e6,#2b2f36);--panel:light-dark(#f4f5f7,#1a1d22);--case:#23262c;--cap:#3a3f48;--capink:#e9ebef;--capmute:#a3aab4}
+:root[data-theme=light]{color-scheme:light}
+:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:16px/1.55 Inter,system-ui,sans-serif;overflow-x:clip}
+.band{padding:clamp(20px,3vw,40px) max(4vw,16px)}
+.wrap{max-width:1240px;margin:0 auto}
+h1{font-family:Cinzel,Georgia,serif;font-size:clamp(30px,4vw,44px);line-height:1.05;letter-spacing:-.01em;margin:0 0 6px;text-wrap:balance}
+.sub{color:var(--mute);margin:0 0 18px;font-size:15px}
+.controls{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;margin-bottom:16px}
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg button{font:600 15px Inter,sans-serif;min-height:44px;padding:0 16px;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer}
+.seg button[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.seg button:focus-visible,.key:focus-visible{outline:3px solid #3b7dd8;outline-offset:2px}
+.lbl{font-size:14px;color:var(--mute);margin-right:4px}
+.scroll{overflow-x:auto;padding-bottom:6px}
+.board{background:var(--case);border-radius:18px;padding:14px;display:grid;gap:7px;min-width:1040px;box-shadow:0 2px 0 #15171b}
+.row{display:grid;gap:7px}
+.key{position:relative;border:0;border-radius:8px;background:var(--cap);color:var(--capink);height:68px;padding:6px 7px 6px;text-align:left;display:flex;flex-direction:column;justify-content:space-between;font:inherit;cursor:pointer;box-shadow:inset 0 -4px 0 rgba(0,0,0,.32),inset 0 1px 0 rgba(255,255,255,.10);transition:transform .08s}
+.key:active{transform:translateY(2px)}
+.key .k{font-size:13px;font-weight:700;opacity:.8;line-height:1}
+.key .a{font-size:13px;line-height:1.12;font-weight:600;hyphens:manual;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.key.def .a{color:var(--capmute);font-weight:500}
+.key.free{background:#2c3037;outline:2px dashed var(--c);outline-offset:-4px}
+.key.free .a{color:var(--capink);font-weight:500}
+.key.prop{outline:2px dashed #12161b;outline-offset:-5px}
+.key.inh{opacity:.5}
+.key.mod{background:#e9ebef;color:#16181d}
+.key.sel{box-shadow:0 0 0 3px var(--case),0 0 0 6px #fff}
+.blank{visibility:hidden}
+.grid3{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) minmax(0,1fr);gap:20px;margin-top:20px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+.card h2{font-size:18px;margin:0 0 10px;line-height:1.2}
+.card h3{font-size:15px;margin:0;color:var(--mute);font-weight:600}
+.big{font-size:24px;font-weight:700;line-height:1.15;margin:4px 0 8px}
+.card p{margin:0 0 8px}
+.def{color:var(--mute);font-size:15px}
+.chip{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:999px}
+.mouse{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.mouse li{display:grid;grid-template-columns:7.5em minmax(0,1fr);gap:10px;font-size:15px}
+.mouse b{font-weight:600}
+.mouse small{display:block;color:var(--mute);font-size:13px}
+.legend{display:flex;flex-wrap:wrap;gap:6px}
+.notes{margin-top:12px;color:var(--mute);font-size:15px}
+.dec ol{margin:0;padding-left:1.3em}
+.dec li{margin-bottom:8px}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:14px;color:var(--mute);font-weight:600}
+td:first-child{white-space:nowrap;font-weight:600}
+.dot{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:baseline}
+.src{color:var(--mute);font-size:13px;margin-top:14px}
+@media(max-width:900px){.grid3{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.grid3 .card:first-child{grid-column:1/-1}}
+@media(max-width:600px){.grid3{grid-template-columns:minmax(0,1fr)}table{font-size:13px}.stack thead{display:none}.stack tr{display:grid;padding-block:10px;border-bottom:1px solid var(--line)}.stack td{display:flex;justify-content:space-between;gap:12px;border:0;padding:3px 0}.stack td::before{content:attr(data-l);color:var(--mute);font-weight:500}}
+@media(prefers-reduced-motion:reduce){.key{transition:none}.key:active{transform:none}}
+</style>
+</head>
+<body>
+<div class="band"><div class="wrap">
+<h1>WoW Forever keybinds</h1>
+<p class="sub">Draft layout from the Craft note, 20 November 2026. Click a key to see what it does and which game default it replaces.</p>
+<div class="controls">
+<div class="seg" id="profs" role="group" aria-label="Character"></div>
+<div class="seg" id="layers" role="group" aria-label="Modifier layer"><span class="lbl">Layer</span></div>
+</div>
+<div class="scroll"><div class="board" id="board"></div></div>
+<div class="grid3">
+<div class="card" id="detail" aria-live="polite"></div>
+<div class="card"><h2>Mouse</h2><ul class="mouse" id="mouse"></ul></div>
+<div class="card"><h2>Colour by role</h2><div class="legend" id="legend"></div><p class="notes">Dashed outline in a role colour: slot kept free for a later ability.</p></div>
+</div>
+<div class="grid3">
+<div class="card dec"><h2>Decided 20 November</h2><ol>
+<li>Reply to whisper on Ctrl + R (replaces the framerate toggle).</li>
+<li>Sheathe weapon on Ctrl + Z, sit / swim down on Ctrl + X.</li>
+<li>The main action bar sits on § 1–5 Q E R F T G on every character, so those keys swap with Meagor's stealth bar and Galdorin's stances. Keys 6–0 are unbound.</li>
+</ol><h2>Setting it in game</h2><p class="notes">The WyldKeys addon applies this layout: <b>/kb setup</b> once (learns what the game calls §), then <b>/kb preview</b> and <b>/kb apply</b> on each character. <b>/kb restore</b> undoes it. Shift keys, Z and X use Action Bar 2; Ctrl + 1–3 use Action Bar 3. Healing potion is on Shift + Q for every character. Interrupt is on E for every character; the mouse side buttons are not used for now, because Logi Options+ only sends them on release.</p><p class="notes">The character views are generated from the addon’s Config.lua (overview/build.lua in the WyldKeys repository), so they match what /kb apply sets.</p></div>
+<div class="card" style="grid-column:span 2" id="listcard"><h2 id="listh">All bindings on this layer</h2><div class="scroll"><table class="stack"><thead><tr><th>Key</th><th>Ability</th><th>Role</th><th>Game default here</th></tr></thead><tbody id="list"></tbody></table></div></div>
+</div>
+<p class="src">Game defaults from a third-party list (Magic Game World's WoW Forever PC controls guide); check them in game under Options → Keybindings. C and V keep their defaults.</p>
+</div></div>
+<script>
+{
+const CAT={
+core:{n:'Core rotation',bg:'#3b7dd8',fg:'#fff'},
+cd:{n:'Short cooldowns',bg:'#8a5cd1',fg:'#fff'},
+aoe:{n:'Multi-target',bg:'#e5732e',fg:'#1b1206'},
+util:{n:'Utility / taunt',bg:'#17867a',fg:'#fff'},
+rng:{n:'Ranged pull',bg:'#c93d63',fg:'#fff'},
+def:{n:'Defensive',bg:'#d4a32a',fg:'#1d1503'},
+open:{n:'Opener / mobility',bg:'#c2569e',fg:'#fff'},
+alt:{n:'Alternates / stances',bg:'#5566c4',fg:'#fff'},
+big:{n:'Bigger cooldowns',bg:'#6f45a8',fg:'#fff'},
+rare:{n:'Rare: buffs, imbues',bg:'#8a96a3',fg:'#12161b'},
+ooc:{n:'Out of combat',bg:'#8b7355',fg:'#fff'},
+intr:{n:'Interrupt',bg:'#d63b30',fg:'#fff'},
+sys:{n:'Game function, moved',bg:'#c9d0d8',fg:'#12161b'}
+};
+const ROWS=[
+[['sec','§',1],['1','1',1],['2','2',1],['3','3',1],['4','4',1],['5','5',1],['6','6',1],['7','7',1],['8','8',1],['9','9',1],['0','0',1],['plus','+',1],['acute','´',1],['bs','⌫',2]],
+[['tab','Tab',1.5],['Q','Q',1],['W','W',1],['E','E',1],['R','R',1],['T','T',1],['Y','Y',1],['U','U',1],['I','I',1],['O','O',1],['P','P',1],['Å','Å',1],['uml','¨',1],['ent1','',1.5]],
+[['caps','Caps',1.75],['A','A',1],['S','S',1],['D','D',1],['F','F',1],['G','G',1],['H','H',1],['J','J',1],['K','K',1],['L','L',1],['Ö','Ö',1],['Ä','Ä',1],['apos',"'",1],['ent2','↵',1.25]],
+[['lsh','Shift',1.25],['lt','<',1],['Z','Z',1],['X','X',1],['C','C',1],['V','V',1],['B','B',1],['N','N',1],['M','M',1],['comma',',',1],['dot','.',1],['dash','-',1],['rsh','Shift',2.75]],
+[['ctrl','Ctrl',1.5],['opt','⌥',1.25],['cmd','⌘',1.5],['space','Space',6.25],['cmd2','⌘',1.5],['opt2','⌥',1.25],['gap','',1.75]]
+];
+const NAME={sec:'§',bs:'Backspace',tab:'Tab',caps:'Caps Lock',ent1:'Enter',ent2:'Enter',lsh:'Shift',rsh:'Shift',ctrl:'Ctrl',opt:'Option',cmd:'Cmd',cmd2:'Cmd',opt2:'Option',space:'Space',plus:'+',acute:'´',uml:'¨',apos:"'",lt:'<',comma:',',dot:'.',dash:'-'};
+const nm=id=>NAME[id]||id;
+const DEF={
+base:{sec:{t:'Voice push-to-talk, if this is the backtick key',s:'PTT?'},plus:{t:'Action button 11',s:'Bar 11',ab:1},acute:{t:'Action button 12',s:'Bar 12',ab:1},tab:{t:'Target nearest enemy',s:'Target'},Q:{t:'Turn left'},W:{t:'Move forward',s:'Forward'},E:{t:'Turn right'},R:{t:'Reply to whisper'},T:{t:'Attack target'},Y:{t:'Legacy panel',s:'Legacy'},U:{t:'Reputation',s:'Rep'},O:{t:'Social'},P:{t:'Spellbook',s:'Spells'},A:{t:'Strafe left',s:'Strafe'},S:{t:'Move backward',s:'Back'},D:{t:'Strafe right',s:'Strafe'},F:{t:'Assist target'},G:{t:'Target last hostile'},J:{t:'Guild and Communities',s:'Guild'},K:{t:'Profession book',s:'Profs'},L:{t:'Quest log',s:'Quests'},Z:{t:'Sheathe weapon',mv:'Ctrl + Z'},X:{t:'Sit / swim down',mv:'Ctrl + X'},C:{t:'Character panel',s:'Char'},V:{t:'Enemy nameplates',s:'Plates'},B:{t:'Backpack',s:'Bags'},N:{t:'Talents'},M:{t:'World map',s:'Map'},space:{t:'Jump'},ent2:{t:'Open chat',s:'Chat'}},
+shift:{tab:{t:'Previous enemy',s:'Prev'},R:{t:'Re-whisper',s:'Re­whisper'},T:{t:'Pet attack',s:'Pet atk'},I:{t:'Pet spellbook',s:'Pet book'},P:{t:'Collections',s:'Collect'},B:{t:'Open all bags',s:'All bags'},C:{t:'Cycle item comparison',s:'Compare'},V:{t:'Friendly nameplates',s:'Friendly'},M:{t:'Zone map',s:'Zone map'},space:{t:'Score screen',s:'Score'}},
+ctrl:{tab:{t:'Nearest friend',s:'Friend'},R:{t:'Framerate display',s:'FPS'},S:{t:'Toggle sound',s:'Sound'},M:{t:'Toggle music',s:'Music'},V:{t:'All nameplates',s:'All plates'}}
+};
+for(let i=1;i<=9;i++){DEF.base[i]={t:'Action button '+i,s:'Bar '+i,ab:1};DEF.ctrl[i]={t:'Pet action '+i,s:'Pet '+i}}
+DEF.base['0']={t:'Action button 10',s:'Bar 10',ab:1};DEF.ctrl['0']={t:'Pet action 10',s:'Pet 10'};
+for(let i=1;i<=6;i++)DEF.shift[i]={t:'Action bar page '+i,s:'Page '+i};
+const GEN={"global":{"base":{},"ctrl":{"R":{"a":"Reply to whisper","c":"sys","s":"Reply"},"X":{"a":"Sit / swim down","c":"sys","s":"Sit / swim"},"Z":{"a":"Sheathe weapon","c":"sys","s":"Sheathe"}},"shift":{}},"profiles":{"galdorin":{"base":{"1":{"a":"Sunder Armor","c":"core","s":"Sunder"},"2":{"a":"Revenge","c":"core"},"3":{"a":"Heroic Strike","c":"core"},"4":{"a":"Shield Block","c":"core"},"5":{"a":"Thunder Clap","c":"core"},"E":{"a":"Shield Bash","c":"intr"},"F":{"a":"Taunt","c":"util"},"G":{"a":"Disarm","c":"def"},"Q":{"a":"Demoralizing Shout","c":"cd","s":"Demo Shout"},"R":{"a":"Cleave","c":"aoe"},"T":{"a":"Throw","c":"rng"},"Z":{"a":"Battle Shout","c":"rare"},"sec":{"a":"Charge","c":"open"}},"ctrl":{"1":{"a":"Food","c":"ooc"},"2":{"a":"Bandage","c":"ooc"}},"n":"Galdorin","note":"Battle Stance and Defensive Stance get the same abilities on these keys. Not placed yet at level 21: Rend, Hamstring, Overpower, Mocking Blow, Retaliation, Victory Rush, Slam.","shift":{"1":{"a":"Battle Stance","c":"alt"},"2":{"a":"Defensive Stance","c":"alt","s":"Def. Stance"},"E":{"a":"Bloodrage","c":"big","s":"Blood­rage"},"Q":{"a":"Healing potion (best in bags)","c":"def","s":"Potion"}}},"meagor":{"base":{"1":{"a":"Sinister Strike","c":"core","s":"Sin. Strike"},"2":{"a":"Backstab","c":"core","s":"Back­stab"},"3":{"a":"Eviscerate","c":"core","s":"Evis­cerate"},"4":{"a":"Slice and Dice","c":"core","s":"Slice & Dice"},"5":{"a":"Gouge","c":"core"},"E":{"a":"Kick","c":"intr"},"F":{"c":"util","free":1},"G":{"c":"def","free":1,"later":"Vanish (level 22)","ls":"Vanish"},"Q":{"a":"Evasion","c":"cd"},"R":{"a":"Engineering bomb (best in bags)","c":"aoe","s":"Bomb"},"T":{"a":"Throw","c":"rng"},"Z":{"a":"Explosive Rocket","c":"rare","n":"Poisons take Z at level 20.","s":"Rocket"},"sec":{"a":"Stealth","c":"open"}},"ctrl":{"1":{"a":"Food","c":"ooc"},"2":{"a":"Bandage","c":"ooc"},"3":{"a":"Pick Lock","c":"ooc"}},"n":"Meagor","note":"Stealth switches to the stealth bar automatically; see the stealth view.","shift":{"E":{"c":"big","free":1,"later":"Shank (level 24)","ls":"Shank"},"Q":{"a":"Healing potion (best in bags)","c":"def","s":"Potion"},"sec":{"a":"Sprint","c":"open"}}},"meagor-stealth":{"base":{"1":{"a":"Backstab","c":"core","n":"Opener for now; Ambush takes this key at level 18.","s":"Back­stab"},"2":{"c":"core","free":1,"later":"Garrote (level 14)","ls":"Garrote"},"3":{"c":"core","free":1,"later":"Cheap Shot (level 26)","ls":"Cheap Shot"},"4":{"a":"Pick Pocket","c":"core"},"5":{"c":"core","free":1},"E":{"a":"Kick","c":"intr"},"F":{"a":"Sap","c":"util"},"G":{"c":"def","free":1,"later":"Distract (level 22)","ls":"Distract"},"Q":{"a":"Evasion","c":"cd"},"R":{"a":"Engineering bomb (best in bags)","c":"aoe","s":"Bomb"},"T":{"a":"Throw","c":"rng"},"sec":{"a":"Stealth","c":"open"}},"ctrl":{},"n":"Meagor in stealth","note":"In stealth, the stealth bar replaces the main bar keys § 1–5 Q E R F T G. Shift and Ctrl keys stay as on the normal bar.","parent":"meagor","shift":{}},"thorim":{"base":{"1":{"a":"Lightning Bolt","c":"core","s":"L. Bolt"},"2":{"a":"Flame Shock","c":"core"},"3":{"a":"Healing Wave","c":"core","s":"Heal Wave"},"4":{"a":"Searing Totem","c":"core"},"5":{"a":"Strength of Earth Totem","c":"core","s":"SoE Totem"},"E":{"a":"Earth Shock","c":"intr"},"F":{"a":"Purge","c":"util"},"G":{"c":"def","free":1,"later":"a defensive","ls":"Defen­sive"},"Q":{"a":"Stoneclaw Totem","c":"cd","s":"Stone­claw"},"R":{"a":"Fire Nova","c":"aoe"},"T":{"a":"Lightning Bolt","c":"rng","s":"L. Bolt"},"X":{"a":"Flametongue Weapon","c":"rare","s":"Flame­tongue"},"Z":{"a":"Rockbiter Weapon","c":"rare","s":"Rock­biter"},"sec":{"c":"open","free":1,"later":"Ghost Wolf (level 20)","ls":"Ghost Wolf"}},"ctrl":{"1":{"a":"Food","c":"ooc"},"2":{"a":"Bandage","c":"ooc"},"3":{"a":"Ancestral Spirit","c":"ooc","s":"Ances­tral"}},"n":"Thorim","note":"At level 20, Call of the Elements drops several totems with one key and frees the single-totem keys.","shift":{"1":{"a":"Stoneskin Totem","c":"alt","s":"Stone­skin"},"2":{"a":"Earthbind Totem","c":"alt","s":"Earth­bind"},"E":{"a":"Lightning Shield","c":"big","s":"L. Shield"},"Q":{"a":"Healing potion (best in bags)","c":"def","s":"Potion"}}}}};
+const GLOBAL=GEN.global;
+const FOOD={'1':{a:'Food',c:'ooc'},'2':{a:'Bandage',c:'ooc'}};
+const PROF=Object.assign({general:{n:'All characters',side:'Interrupt',base:{sec:{a:'Opener / mobility',s:'Opener',c:'open'},'1':{a:'Rotation, most used',s:'Rot. 1',c:'core'},'2':{a:'Rotation',s:'Rot. 2',c:'core'},'3':{a:'Rotation',s:'Rot. 3',c:'core'},'4':{a:'Rotation',s:'Rot. 4',c:'core'},'5':{a:'Rotation',s:'Rot. 5',c:'core'},Q:{a:'Short cooldown',s:'Short CD',c:'cd'},E:{a:'Interrupt',c:'intr'},R:{a:'Multi-target abilities',s:'Multi-target',c:'aoe'},F:{a:'Situational / utility (taunt on tanks)',s:'Utility',c:'util'},T:{a:'Ranged pull or ranged attack',s:'Ranged pull',c:'rng'},G:{a:'Defensive cooldown',s:'Defen­sive',c:'def'},Z:{a:'Rarely used: buffs, mounts, consumables',s:'Rare',c:'rare'},X:{a:'Rarely used: buffs, mounts, consumables',s:'Rare',c:'rare'}},
+ shift:{'1':{a:'Secondary rotation, ranks, alternates',s:'Alt 1',c:'alt'},'2':{a:'Secondary rotation, ranks, alternates',s:'Alt 2',c:'alt'},'3':{a:'Secondary rotation, ranks, alternates',s:'Alt 3',c:'alt'},'4':{a:'Secondary rotation, ranks, alternates',s:'Alt 4',c:'alt'},'5':{a:'Secondary rotation, ranks, alternates',s:'Alt 5',c:'alt'},Q:{a:'Healing potion (best in bags)',s:'Potion',c:'def'},E:{a:'Bigger cooldown',s:'Big CD',c:'big'},R:{a:'Bigger cooldown',s:'Big CD',c:'big'},F:{a:'Bigger cooldown',s:'Big CD',c:'big'}},
+ ctrl:Object.assign({'3':{a:'Profession tools and other out-of-combat things',s:'Tools',c:'ooc'}},FOOD)}},GEN.profiles);
+const BAR1=['sec','1','2','3','4','5','Q','E','R','F','T','G'];
+const LAYERS=[['base','Base'],['shift','Shift'],['ctrl','Ctrl']];
+let prof='general',layer='base',sel='1';
+const $=id=>document.getElementById(id);
+function bind(id){
+ const p=PROF[prof];const own=(p[layer]||{})[id];if(own)return own;
+ if(p.parent){const pb=(PROF[p.parent][layer]||{})[id];if(pb)return (layer==='base'&&BAR1.includes(id))?Object.assign({},pb,{inh:1}):pb}
+ return GLOBAL[layer][id]||null}
+const pre=()=>layer==='shift'?'Shift + ':layer==='ctrl'?'Ctrl + ':'';
+function cap(k){
+ const [id,lab]=k;if(id==='gap')return '<span class="blank"></span>';
+ const b=bind(id),d=DEF[layer][id];
+ const mod=(layer==='shift'&&(id==='lsh'||id==='rsh'))||(layer==='ctrl'&&id==='ctrl');
+ let cls='key',st='',txt='';
+ if(b){const c=CAT[b.c];
+  if(b.free){cls+=' free';st='--c:'+c.bg;txt=b.later?'→ '+(b.ls||b.later):'Free'}
+  else{st='background:'+c.bg+';color:'+c.fg;txt=b.s||b.a}
+  if(b.p)cls+=' prop';if(b.inh)cls+=' inh'}
+ else if(d){cls+=' def';txt=d.mv?'free':(d.s||d.t)}
+ if(mod)cls+=' mod';if(id===sel)cls+=' sel';
+ return '<button class="'+cls+'" data-id="'+id+'" style="'+st+'" aria-label="'+pre()+nm(id)+'"><span class="k">'+lab+'</span><span class="a">'+txt+'</span></button>'}
+function verdict(b,d){
+ if(!d)return 'No game default listed for this key.';
+ let v;if(d.ab)v='Still an action bar key.';else if(b&&b.free)v='Kept free in this layout.';else if(b)v='Replaced by this layout.';else if(d.mv)v='Moved to '+d.mv+'.';else v='Kept as the game default.';
+ return 'Game default: '+d.t+'. '+v}
+function detail(){
+ const b=bind(sel),d=DEF[layer][sel],p=PROF[prof];
+ let h='<h3>'+pre()+nm(sel)+' · '+p.n+'</h3>';
+ if(b){const c=CAT[b.c];
+  h+='<p class="big">'+(b.free?'Free':b.a)+'</p><p><span class="chip" style="background:'+c.bg+';color:'+c.fg+'">'+c.n+'</span></p>';
+  if(b.free&&b.later)h+='<p>Later: '+b.later+'.</p>';
+  if(b.p)h+='<p>Proposal, not decided yet.</p>';
+  if(b.inh)h+='<p>Same as the normal bar. If this key is on the main action bar, it swaps in stealth too, so place the ability on the stealth bar as well.</p>';
+  if(b.n)h+='<p>'+b.n+'</p>'}
+ else h+='<p class="big">'+(d&&!d.mv?d.t:'Nothing here')+'</p>';
+ h+='<p class="def">'+verdict(b,d)+'</p>';
+ if(p.note)h+='<p class="def">'+p.note+'</p>';
+ $('detail').innerHTML=h}
+function render(){
+ $('board').innerHTML=ROWS.map(r=>'<div class="row" style="grid-template-columns:'+r.map(k=>k[2]+'fr').join(' ')+'">'+r.map(cap).join('')+'</div>').join('');
+ $('profs').innerHTML=Object.keys(PROF).map(k=>'<button data-p="'+k+'" aria-pressed="'+(k===prof)+'">'+PROF[k].n+'</button>').join('');
+ $('layers').innerHTML='<span class="lbl">Layer</span>'+LAYERS.map(l=>'<button data-l="'+l[0]+'" aria-pressed="'+(l[0]===layer)+'">'+l[1]+'</button>').join('');
+ const p=PROF[prof];
+ $('mouse').innerHTML=[['Left + right','Move',''],['Middle','Autorun','Game default: move and steer'],['Side buttons','Not used for now','Logi Options+ only sends them on release; interrupt is on E']].map(m=>'<li><b>'+m[0]+'</b><span>'+m[1]+(m[2]?'<small>'+m[2]+'</small>':'')+'</span></li>').join('');
+ $('legend').innerHTML=Object.values(CAT).map(c=>'<span class="chip" style="background:'+c.bg+';color:'+c.fg+'">'+c.n+'</span>').join('');
+ const rows=[];
+ ROWS.flat().forEach(k=>{const id=k[0];if(id==='gap')return;const b=bind(id);if(!b)return;const d=DEF[layer][id];
+  const ab=b.free?'Free'+(b.later?', later '+b.later:''):b.a;
+  rows.push('<tr><td data-l="Key">'+pre()+nm(id)+'</td><td data-l="Ability">'+ab+(b.p?' (proposal)':'')+(b.inh?' (normal bar)':'')+'</td><td data-l="Role"><span><span class="dot" style="background:'+CAT[b.c].bg+'"></span>'+CAT[b.c].n+'</span></td><td data-l="Game default">'+(d?d.t:'–')+'</td></tr>')});
+ 
+ $('list').innerHTML=rows.join('');
+ $('listh').textContent='All bindings: '+p.n+', '+LAYERS.find(l=>l[0]===layer)[1].toLowerCase()+' layer';
+ detail()}
+document.addEventListener('click',e=>{
+ const k=e.target.closest('.key');if(k){sel=k.dataset.id;render();return}
+ const pb=e.target.closest('[data-p]');if(pb){location.hash=pb.dataset.p;return}
+ const lb=e.target.closest('[data-l]');if(lb&&lb.tagName==='BUTTON'){layer=lb.dataset.l;try{localStorage.setItem('kb-layer',layer)}catch(_){}render()}});
+function fromHash(){const h=location.hash.slice(1);prof=PROF[h]?h:'general';render()}
+try{const l=localStorage.getItem('kb-layer');if(l&&DEF[l])layer=l}catch(_){}
+window.addEventListener('hashchange',fromHash);
+fromHash();
+}
+</script>
+</body>
+</html>
