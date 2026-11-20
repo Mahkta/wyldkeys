@@ -38,11 +38,17 @@
 --   BEST_BOMB                      the best bomb in the bags at /kb apply
 --   BEST_POTION                    the best healing potion in the bags at /kb apply
 --   Item(id, "Name")               one item, by item ID
+--   Macro("Name", "label")         a macro by name; the label is for the overview only
+--
+-- Macros, optional:
+--   macros = { ["Name"] = [[ macro text ]] }
+--                                  made or updated for this character on /kb apply.
+--                                  Name at most 16 letters, text at most 255 characters.
 --
 -- After a change: /reload, then /kb preview.
 
 local addonName, ns = ...
-local BEST_BOMB, BEST_POTION, Item = ns.BEST_BOMB, ns.BEST_POTION, ns.Item
+local BEST_BOMB, BEST_POTION, Item, Macro = ns.BEST_BOMB, ns.BEST_POTION, ns.Item, ns.Macro
 
 ns.Config = {
 
@@ -60,14 +66,45 @@ ns.Config = {
       ["F"] = "Taunt",
       ["T"] = "Throw",
       ["G"] = "Disarm",
-      ["Shift+1"] = "Battle Stance",
-      ["Shift+2"] = "Defensive Stance",
+      ["Shift+1"] = Macro("WK Arms", "Arms: Battle Stance and Arms set"),
+      ["Shift+2"] = Macro("WK Tank", "Tank: Defensive Stance and Tanking set"),
       ["Shift+Q"] = BEST_POTION,
       ["Shift+E"] = "Bloodrage",
       ["Z"] = "Battle Shout",
     },
-    battle = "keys",
+    -- Arms in Battle Stance: two-hander, no shield, so no interrupt on E.
+    battle = {
+      ["§"] = "Charge",
+      ["1"] = "Overpower",
+      ["2"] = "Rend",
+      ["3"] = "Heroic Strike",
+      ["4"] = "Slam",
+      ["5"] = "Victory Rush",
+      ["Q"] = "Demoralizing Shout",
+      ["R"] = "Cleave",
+      ["F"] = "Hamstring",
+      ["T"] = "Throw",
+      ["G"] = "Retaliation",
+    },
     defensive = "keys",
+    -- Stance and gear switch. Out of combat the whole equipment set (made in the
+    -- game's Equipment Manager); in combat only the weapons, since armour can't
+    -- be changed in combat.
+    macros = {
+      ["WK Arms"] = [[
+#showtooltip Battle Stance
+/cast Battle Stance
+/equipset [nocombat] Arms
+/equip [combat] Ironforge Greathammer
+]],
+      ["WK Tank"] = [[
+#showtooltip Defensive Stance
+/cast Defensive Stance
+/equipset [nocombat] Tanking
+/equip [combat] Bronze Axe
+/equip [combat] Furen's Favor
+]],
+    },
   },
 
   ["Meagor"] = {

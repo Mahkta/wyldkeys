@@ -41,6 +41,42 @@
 |cff66ccffWyldKeys:|r Saved a copy of your current keys. /kb restore puts them back.
 |cff66ccffWyldKeys:|r Keys set and saved for every character that uses account-wide bindings.
 |cff66ccffWyldKeys:|r No abilities placed on this character, only keys.
+---- preview again
+|cff66ccffWyldKeys:|r Preview. Nothing is changed.
+|cff66ccffWyldKeys:|r   § = main bar button 1
+|cff66ccffWyldKeys:|r   1 = main bar button 2
+|cff66ccffWyldKeys:|r   2 = main bar button 3
+|cff66ccffWyldKeys:|r   3 = main bar button 4
+|cff66ccffWyldKeys:|r   4 = main bar button 5
+|cff66ccffWyldKeys:|r   5 = main bar button 6
+|cff66ccffWyldKeys:|r   Q = main bar button 7
+|cff66ccffWyldKeys:|r   E = main bar button 8
+|cff66ccffWyldKeys:|r   R = main bar button 9
+|cff66ccffWyldKeys:|r   F = main bar button 10
+|cff66ccffWyldKeys:|r   T = main bar button 11
+|cff66ccffWyldKeys:|r   G = main bar button 12
+|cff66ccffWyldKeys:|r   Shift+1 = Action Bar 2 button 1
+|cff66ccffWyldKeys:|r   Shift+2 = Action Bar 2 button 2
+|cff66ccffWyldKeys:|r   Shift+3 = Action Bar 2 button 3
+|cff66ccffWyldKeys:|r   Shift+4 = Action Bar 2 button 4
+|cff66ccffWyldKeys:|r   Shift+5 = Action Bar 2 button 5
+|cff66ccffWyldKeys:|r   Shift+Q (healing potion) = Action Bar 2 button 6
+|cff66ccffWyldKeys:|r   Shift+E = Action Bar 2 button 7
+|cff66ccffWyldKeys:|r   Shift+R = Action Bar 2 button 8
+|cff66ccffWyldKeys:|r   Shift+F = Action Bar 2 button 9
+|cff66ccffWyldKeys:|r   Shift+§ = Action Bar 2 button 10
+|cff66ccffWyldKeys:|r   Z = Action Bar 2 button 11
+|cff66ccffWyldKeys:|r   X = Action Bar 2 button 12
+|cff66ccffWyldKeys:|r   Ctrl+1 = Action Bar 3 button 1
+|cff66ccffWyldKeys:|r   Ctrl+2 = Action Bar 3 button 2
+|cff66ccffWyldKeys:|r   Ctrl+3 = Action Bar 3 button 3
+|cff66ccffWyldKeys:|r   Ctrl+R = Reply to whisper
+|cff66ccffWyldKeys:|r   Ctrl+Z = Sheathe weapon
+|cff66ccffWyldKeys:|r   Ctrl+X = Sit / swim down
+|cff66ccffWyldKeys:|r   Middle button = Autorun
+|cff66ccffWyldKeys:|r Old keys on the main bar, Action Bar 2 and Ctrl+1-3 are cleared first, so 6-0 stop working.
+|cff66ccffWyldKeys:|r No abilities are placed for this character, only keys.
+|cff66ccffWyldKeys:|r Bindings will be saved for every character that uses account-wide bindings.
 1=ACTIONBUTTON2 2=ACTIONBUTTON3 3=ACTIONBUTTON4 4=ACTIONBUTTON5 5=ACTIONBUTTON6 BUTTON3=TOGGLEAUTORUN BUTTON4=TOGGLEAUTORUN CTRL-1=MULTIACTIONBAR2BUTTON1 CTRL-2=MULTIACTIONBAR2BUTTON2 CTRL-3=MULTIACTIONBAR2BUTTON3 CTRL-R=REPLY CTRL-X=SITORSTAND CTRL-Z=TOGGLESHEATH E=ACTIONBUTTON8 F8=MOVEBACKWARD F=ACTIONBUTTON10 G=ACTIONBUTTON12 Q=ACTIONBUTTON7 R=ACTIONBUTTON9 S=MOVEBACKWARD SHIFT-1=MULTIACTIONBAR1BUTTON1 SHIFT-2=MULTIACTIONBAR1BUTTON2 SHIFT-3=MULTIACTIONBAR1BUTTON3 SHIFT-4=MULTIACTIONBAR1BUTTON4 SHIFT-5=MULTIACTIONBAR1BUTTON5 SHIFT-E=MULTIACTIONBAR1BUTTON7 SHIFT-F=MULTIACTIONBAR1BUTTON9 SHIFT-Q=MULTIACTIONBAR1BUTTON6 SHIFT-R=MULTIACTIONBAR1BUTTON8 SHIFT-§=MULTIACTIONBAR1BUTTON10 T=ACTIONBUTTON11 X=MULTIACTIONBAR1BUTTON12 Z=MULTIACTIONBAR1BUTTON11 §=ACTIONBUTTON1
 5:spell1752 70:item117
 ---- restore

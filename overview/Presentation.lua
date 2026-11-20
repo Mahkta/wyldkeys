@@ -49,6 +49,10 @@ return {
     ["Engineering bomb (best in bags)"] = "Bomb",
     ["Healing potion (best in bags)"] = "Potion",
     ["Explosive Rocket"] = "Rocket",
+    ["Arms: Battle Stance and Arms set"] = "Arms",
+    ["Tank: Defensive Stance and Tanking set"] = "Tank",
+    ["Victory Rush"] = "Victory Rush",
+    ["Retaliation"] = "Retal\194\173iation",
     ["Reply to whisper"] = "Reply",
     ["Sheathe weapon"] = "Sheathe",
     ["Sit / swim down"] = "Sit / swim",
@@ -57,6 +61,9 @@ return {
   -- What a free key is meant for later, per view. "Name (level N)" shows "Name"
   -- on the key; write { "long text", "Key text" } to choose the key text.
   later = {
+    ["galdorin-battle"] = {
+      ["E"] = { "Pummel (level 38, Berserker Stance); Shield Bash needs a shield", "Pummel" },
+    },
     meagor = {
       ["G"] = "Vanish (level 22)",
       ["Shift+E"] = "Shank (level 24)",
@@ -80,7 +87,8 @@ return {
 
   -- A note under each view.
   notes = {
-    galdorin = "Battle Stance and Defensive Stance get the same abilities on these keys. Not placed yet at level 21: Rend, Hamstring, Overpower, Mocking Blow, Retaliation, Victory Rush, Slam.",
+    galdorin = "Tank layout, used in Defensive Stance. Shift + 1 (Arms) and Shift + 2 (Tank) switch stance and gear; see the Battle Stance view for the arms bar. Not placed yet at level 21: Mocking Blow.",
+    ["galdorin-battle"] = "Arms in Battle Stance with the two-hander. Only the main bar keys § 1–5 Q E R F T G change with the stance; Shift, Z, X and Ctrl keys stay as on the tank layout.",
     meagor = "Stealth switches to the stealth bar automatically; see the stealth view.",
     ["meagor-stealth"] = "In stealth, the stealth bar replaces the main bar keys § 1–5 Q E R F T G. Shift and Ctrl keys stay as on the normal bar.",
     thorim = "At level 20, Call of the Elements drops several totems with one key and frees the single-totem keys.",

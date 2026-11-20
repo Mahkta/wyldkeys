@@ -58,6 +58,7 @@ local function abilityName(entry)
   if type(entry) == "table" and entry.best == "bomb" then return "Engineering bomb (best in bags)" end
   if type(entry) == "table" and entry.best == "potion" then return "Healing potion (best in bags)" end
   if type(entry) == "table" and entry.item then return entry.name or ("Item " .. entry.item) end
+  if type(entry) == "table" and entry.macro then return entry.label or ("Macro " .. entry.macro) end
   error("unknown ability entry: " .. tostring(entry))
 end
 

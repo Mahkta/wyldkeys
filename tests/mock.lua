@@ -26,7 +26,8 @@
 -- /kb keys, /kb preview, /kb apply, /kb restore, and prints the bindings and
 -- action slots after apply and after restore.
 --
--- Test cases built in: Galdorin has every spell but no healing potion; Thorim
+-- Test cases built in: Galdorin has every spell but no healing potion, and his
+-- two stance macros are created on apply (and unchanged on a second preview); Thorim
 -- has not learned Fire Nova or Ancestral Spirit and has something on § and a
 -- macro on G; a character with no Config.lua section gets keys only. Stored
 -- side-button keys (F8/F9) from an earlier version are set before apply, to
@@ -48,7 +49,7 @@ local CHAR = arg[1] or "Meagor"
 local KNOWN = {
  Meagor={Stealth=1784,["Sinister Strike"]=1752,Backstab=53,Eviscerate=2098,["Slice and Dice"]=5171,Gouge=1776,Evasion=5277,Throw=2764,["Pick Pocket"]=921,Sap=6770,Sprint=2983,["Pick Lock"]=1804,Kick=1766},
  -- every Galdorin spell is known
- Galdorin={Charge=100,["Sunder Armor"]=7386,Revenge=6572,["Heroic Strike"]=78,["Shield Block"]=2565,["Thunder Clap"]=6343,["Demoralizing Shout"]=1160,["Shield Bash"]=72,Cleave=845,Taunt=355,Throw=2764,Disarm=676,["Battle Stance"]=2457,["Defensive Stance"]=71,Bloodrage=2687,["Battle Shout"]=6673},
+ Galdorin={Charge=100,["Sunder Armor"]=7386,Revenge=6572,["Heroic Strike"]=78,["Shield Block"]=2565,["Thunder Clap"]=6343,["Demoralizing Shout"]=1160,["Shield Bash"]=72,Cleave=845,Taunt=355,Throw=2764,Disarm=676,["Battle Stance"]=2457,["Defensive Stance"]=71,Bloodrage=2687,["Battle Shout"]=6673,Overpower=7384,Rend=772,Slam=1464,["Victory Rush"]=34428,Hamstring=1715,Retaliation=20230},
  -- Fire Nova and Ancestral Spirit not learned yet
  Thorim={["Lightning Bolt"]=403,["Flame Shock"]=8050,["Healing Wave"]=331,["Searing Totem"]=3599,["Strength of Earth Totem"]=8075,["Stoneclaw Totem"]=5730,["Earth Shock"]=8042,Purge=370,["Stoneskin Totem"]=8071,["Earthbind Totem"]=2484,["Lightning Shield"]=324,["Rockbiter Weapon"]=8017,["Flametongue Weapon"]=8024},
 }
@@ -62,6 +63,14 @@ C_Item={PickupItem=function(id) cursor={"item",id} end, GetItemNameByID=function
 local bag={[0]={1178,4360,118,2455},[1]={4370,858}}
 if CHAR=="Galdorin" then bag={[0]={2455,4360}} end -- no healing potion
 C_Container={GetContainerNumSlots=function(b) return bag[b] and #bag[b] or 0 end, GetContainerItemID=function(b,s) return bag[b] and bag[b][s] end}
+-- Macros: index -> { name, body }. Index 3 is a macro the player made (on Thorim's G).
+local macros = { [3] = { "My macro", "/say hi" } }
+function GetMacroIndexByName(n) for i, m in pairs(macros) do if m[1] == n then return i end end return 0 end
+function GetMacroBody(i) return macros[i] and macros[i][2] end
+function GetMacroInfo(i) return macros[i] and macros[i][1] end
+function CreateMacro(n, icon, body, per) local i = 121; while macros[i] do i = i + 1 end; macros[i] = { n, body }; print("[mock] CreateMacro " .. n .. " per=" .. tostring(per)); return i end
+function EditMacro(i, n, icon, body) macros[i] = { n, body }; return i end
+function PickupMacro(i) if macros[i] then cursor = { "macro", i } end end
 function GetCursorInfo() return cursor and cursor[1] end
 function ClearCursor() cursor=nil end
 function PlaceAction(s) local old=bars[s]; bars[s]=cursor; cursor=old end
@@ -100,6 +109,8 @@ WyldKeys_Account.keys.back="F8"; WyldKeys_Account.keys.interrupt="F9"
 kb("preview")
 print("---- apply")
 kb("apply")
+print("---- preview again")
+kb("preview")
 local function dump() local t={} for k,v in pairs(binds) do t[#t+1]=k.."="..v end table.sort(t) print(table.concat(t," ")) local b={} for s,a in pairs(bars) do b[#b+1]=s..":"..a[1]..a[2] end table.sort(b) print(table.concat(b," ")) end
 dump()
 print("---- restore")

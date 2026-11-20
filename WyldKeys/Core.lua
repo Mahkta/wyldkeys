@@ -51,8 +51,19 @@ local function buildProfile(c)
     if not k then return nil, "unknown key \"" .. tostring(key) .. "\"" end
     p[k.section][k.button] = entry
   end
+  p.macros = {}
+  if c.macros ~= nil then
+    if type(c.macros) ~= "table" then return nil, "macros must be a list of name = text" end
+    for mname, body in pairs(c.macros) do
+      if type(mname) ~= "string" or type(body) ~= "string" then return nil, "macros must be a list of name = text" end
+      if #mname > 16 then return nil, "macro name longer than 16 letters: \"" .. mname .. "\"" end
+      body = body:gsub("^%s+", ""):gsub("%s+$", "")
+      if #body > 255 then return nil, "macro \"" .. mname .. "\" is longer than 255 characters" end
+      p.macros[mname] = body
+    end
+  end
   for name, list in pairs(c) do
-    if name ~= "keys" then
+    if name ~= "keys" and name ~= "macros" then
       local n = ns.BONUS_BARS[name]
       if not n then return nil, "unknown section \"" .. tostring(name) .. "\"" end
       if p.bonus[n] then return nil, "two sections for the same bar (" .. tostring(name) .. ")" end
@@ -191,6 +202,7 @@ end
 
 -- Name of a layout entry for messages.
 local function entryName(entry)
+  if type(entry) == "table" and entry.macro then return "macro " .. entry.macro end
   if type(entry) == "table" and entry.item then return entry.name or itemName(entry.item) or ("item " .. entry.item) end
   if type(entry) == "table" and entry.best then
     local id = bestItem(entry.best)
@@ -201,6 +213,12 @@ end
 
 -- Puts a layout entry on the cursor: a spell by name, or the best bomb.
 local function pickupEntry(entry)
+  if type(entry) == "table" and entry.macro then
+    ClearCursor()
+    local idx = GetMacroIndexByName(entry.macro)
+    if idx and idx > 0 then PickupMacro(idx) end
+    return GetCursorInfo() ~= nil
+  end
   if type(entry) == "table" and entry.item then
     ClearCursor()
     if C_Item and C_Item.PickupItem then C_Item.PickupItem(entry.item) else PickupItem(entry.item) end
@@ -296,6 +314,44 @@ local function barWarnings()
   end
 end
 
+-- Macros ------------------------------------------------------------------------------
+
+local function sortedNames(t)
+  local names = {}
+  for n in pairs(t or {}) do names[#names + 1] = n end
+  table.sort(names)
+  return names
+end
+
+-- What /kb apply would do with a macro: "create", "update" or "unchanged".
+local function macroState(name, body)
+  local idx = GetMacroIndexByName(name)
+  if not idx or idx == 0 then return "create" end
+  if GetMacroBody and GetMacroBody(idx) == body then return "unchanged" end
+  return "update"
+end
+
+-- Creates or updates the character's macros from Config.lua (per character).
+local function ensureMacros(macros)
+  for _, name in ipairs(sortedNames(macros)) do
+    local body = macros[name]
+    local state = macroState(name, body)
+    if state ~= "unchanged" then
+      local ok
+      if state == "create" then
+        ok = pcall(CreateMacro, name, "INV_MISC_QUESTIONMARK", body, true)
+      else
+        ok = pcall(EditMacro, GetMacroIndexByName(name), name, "INV_MISC_QUESTIONMARK", body)
+      end
+      if ok and (GetMacroIndexByName(name) or 0) > 0 then
+        say("Macro " .. name .. (state == "create" and " created." or " updated."))
+      else
+        say("|cffff6666Could not " .. state .. " macro|r " .. name .. ". The character's macro list may be full.")
+      end
+    end
+  end
+end
+
 -- Preview / apply / restore ---------------------------------------------------------
 
 local function preview()
@@ -311,6 +367,10 @@ local function preview()
   end
   say("Old keys on the main bar, Action Bar 2 and Ctrl+1-3 are cleared first, so 6-0 stop working.")
   if layout then
+    for _, name in ipairs(sortedNames(layout.macros)) do
+      local state = macroState(name, layout.macros[name])
+      say("  Macro " .. name .. ": " .. (state == "create" and "will be created" or state == "update" and "will be updated" or "unchanged"))
+    end
     for _, p in ipairs(placements(layout)) do
       local cur = actionName(actionRecord(p.slot))
       local name = entryName(p.spell)
@@ -355,6 +415,7 @@ local function apply()
 
   -- Abilities
   if layout then
+    ensureMacros(layout.macros)
     local missing = {}
     for _, p in ipairs(plan) do
       if pickupEntry(p.spell) then

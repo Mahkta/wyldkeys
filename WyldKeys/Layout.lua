@@ -75,3 +75,6 @@ ns.BEST_BOMB = { best = "bomb" }
 ns.BEST_POTION = { best = "potion" }
 -- A fixed item by ID; the name is used in messages.
 function ns.Item(id, name) return { item = id, name = name } end
+-- A macro by name, made from the character's macros section (or one you made in the game).
+-- The label is only used by the keybinds overview.
+function ns.Macro(name, label) return { macro = name, label = label } end
