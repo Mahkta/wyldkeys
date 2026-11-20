@@ -111,6 +111,7 @@ return {
       ["Shift+§"] = "Skyborne racial: free, steerable slow fall.",
       ["Ctrl+4"] = "Skyborne racial: +50% health and mana regeneration for 15 sec, between fights.",
       ["Shift+X"] = "Ice Armor (30) or Mage Armor (34) replaces it.",
+      ["Ctrl+3"] = "Press once for water, again for food.",
     },
   },
 

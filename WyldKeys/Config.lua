@@ -178,7 +178,15 @@ ns.Config = {
       ["X"] = "Dampen Magic",          -- level 12; group buff, Amplify Magic (18) goes on Z
       ["Shift+Z"] = "Arcane Intellect",
       ["Shift+X"] = "Frost Armor",
+      ["Ctrl+3"] = Macro("WK Conjure", "Conjure water, then food"),
       ["Ctrl+4"] = "Read Leyline",
+    },
+    macros = {
+      -- Press once for water, again for food; starts over after a minute.
+      ["WK Conjure"] = [[
+#showtooltip
+/castsequence reset=60 Conjure Water, Conjure Food
+]],
     },
   },
 
