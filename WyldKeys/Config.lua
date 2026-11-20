@@ -177,6 +177,7 @@ ns.Config = {
       ["Shift+Q"] = BEST_POTION,
       ["Z"] = "Arcane Intellect",
       ["X"] = "Frost Armor",
+      ["Shift+X"] = "Dampen Magic",    -- level 12; group buff
       ["Ctrl+3"] = Macro("WK Conjure", "Conjure water, then food"),
       ["Ctrl+4"] = "Read Leyline",
     },

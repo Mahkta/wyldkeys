@@ -39,8 +39,8 @@ ns.SHIFT = {
 
 ns.CTRL = {
   command = "MULTIACTIONBAR2BUTTON", bindText = "Action Bar 3 button", barText = "Action Bar 3",
-  keys  = { "Ctrl+1", "Ctrl+2", "Ctrl+3", "Ctrl+4" },
-  binds = { "CTRL-1", "CTRL-2", "CTRL-3", "CTRL-4" },
+  keys  = { "Ctrl+1", "Ctrl+2", "Ctrl+3", "Ctrl+4", "Shift+Z", "Shift+X" },
+  binds = { "CTRL-1", "CTRL-2", "CTRL-3", "CTRL-4", "SHIFT-Z", "SHIFT-X" },
 }
 
 -- Other bindings, after the bars: { game key, command, message text }.
@@ -55,7 +55,7 @@ ns.SYSTEM = {
 ns.MANAGED = {}
 for i = 1, 12 do ns.MANAGED[#ns.MANAGED + 1] = "ACTIONBUTTON" .. i end
 for i = 1, 12 do ns.MANAGED[#ns.MANAGED + 1] = "MULTIACTIONBAR1BUTTON" .. i end
-for _, i in ipairs({ 1, 2, 3, 4, 12 }) do ns.MANAGED[#ns.MANAGED + 1] = "MULTIACTIONBAR2BUTTON" .. i end
+for _, i in ipairs({ 1, 2, 3, 4, 5, 6, 12 }) do ns.MANAGED[#ns.MANAGED + 1] = "MULTIACTIONBAR2BUTTON" .. i end
 
 -- Key label -> bar and button, for Config.lua. Built from the bars above.
 ns.KEYS = {}
