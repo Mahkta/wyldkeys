@@ -38,10 +38,10 @@
 |cff66ccffWyldKeys:|r   Macro WK Arms: will be created
 |cff66ccffWyldKeys:|r   Macro WK Tank: will be created
 |cff66ccffWyldKeys:|r   Main bar, §: Charge
-|cff66ccffWyldKeys:|r   Main bar, 1: Sunder Armor
+|cff66ccffWyldKeys:|r   Main bar, 1: Shield Block
 |cff66ccffWyldKeys:|r   Main bar, 2: Revenge
 |cff66ccffWyldKeys:|r   Main bar, 3: Heroic Strike
-|cff66ccffWyldKeys:|r   Main bar, 4: Shield Block  (replaces spell1752)
+|cff66ccffWyldKeys:|r   Main bar, 4: Sunder Armor  (replaces spell1752)
 |cff66ccffWyldKeys:|r   Main bar, 5: Thunder Clap
 |cff66ccffWyldKeys:|r   Main bar, Q: Demoralizing Shout
 |cff66ccffWyldKeys:|r   Main bar, E: Shield Bash
@@ -61,10 +61,10 @@
 |cff66ccffWyldKeys:|r   Stance/stealth bar 1, T: Throw
 |cff66ccffWyldKeys:|r   Stance/stealth bar 1, G: Retaliation
 |cff66ccffWyldKeys:|r   Stance/stealth bar 2, §: Charge
-|cff66ccffWyldKeys:|r   Stance/stealth bar 2, 1: Sunder Armor
+|cff66ccffWyldKeys:|r   Stance/stealth bar 2, 1: Shield Block
 |cff66ccffWyldKeys:|r   Stance/stealth bar 2, 2: Revenge
 |cff66ccffWyldKeys:|r   Stance/stealth bar 2, 3: Heroic Strike
-|cff66ccffWyldKeys:|r   Stance/stealth bar 2, 4: Shield Block
+|cff66ccffWyldKeys:|r   Stance/stealth bar 2, 4: Sunder Armor
 |cff66ccffWyldKeys:|r   Stance/stealth bar 2, 5: Thunder Clap
 |cff66ccffWyldKeys:|r   Stance/stealth bar 2, Q: Demoralizing Shout
 |cff66ccffWyldKeys:|r   Stance/stealth bar 2, E: Shield Bash
@@ -125,10 +125,10 @@
 |cff66ccffWyldKeys:|r   Macro WK Arms: unchanged
 |cff66ccffWyldKeys:|r   Macro WK Tank: unchanged
 |cff66ccffWyldKeys:|r   Main bar, §: Charge
-|cff66ccffWyldKeys:|r   Main bar, 1: Sunder Armor
+|cff66ccffWyldKeys:|r   Main bar, 1: Shield Block
 |cff66ccffWyldKeys:|r   Main bar, 2: Revenge
 |cff66ccffWyldKeys:|r   Main bar, 3: Heroic Strike
-|cff66ccffWyldKeys:|r   Main bar, 4: Shield Block
+|cff66ccffWyldKeys:|r   Main bar, 4: Sunder Armor
 |cff66ccffWyldKeys:|r   Main bar, 5: Thunder Clap
 |cff66ccffWyldKeys:|r   Main bar, Q: Demoralizing Shout
 |cff66ccffWyldKeys:|r   Main bar, E: Shield Bash
@@ -148,10 +148,10 @@
 |cff66ccffWyldKeys:|r   Stance/stealth bar 1, T: Throw
 |cff66ccffWyldKeys:|r   Stance/stealth bar 1, G: Retaliation
 |cff66ccffWyldKeys:|r   Stance/stealth bar 2, §: Charge
-|cff66ccffWyldKeys:|r   Stance/stealth bar 2, 1: Sunder Armor
+|cff66ccffWyldKeys:|r   Stance/stealth bar 2, 1: Shield Block
 |cff66ccffWyldKeys:|r   Stance/stealth bar 2, 2: Revenge
 |cff66ccffWyldKeys:|r   Stance/stealth bar 2, 3: Heroic Strike
-|cff66ccffWyldKeys:|r   Stance/stealth bar 2, 4: Shield Block
+|cff66ccffWyldKeys:|r   Stance/stealth bar 2, 4: Sunder Armor
 |cff66ccffWyldKeys:|r   Stance/stealth bar 2, 5: Thunder Clap
 |cff66ccffWyldKeys:|r   Stance/stealth bar 2, Q: Demoralizing Shout
 |cff66ccffWyldKeys:|r   Stance/stealth bar 2, E: Shield Bash
@@ -166,9 +166,9 @@
 |cff66ccffWyldKeys:|r   Action Bar 2, Z: Battle Shout
 |cff66ccffWyldKeys:|r Bindings will be saved for every character that uses account-wide bindings.
 1=ACTIONBUTTON2 2=ACTIONBUTTON3 3=ACTIONBUTTON4 4=ACTIONBUTTON5 5=ACTIONBUTTON6 BUTTON3=TOGGLEAUTORUN BUTTON4=TOGGLEAUTORUN CTRL-1=MULTIACTIONBAR2BUTTON1 CTRL-2=MULTIACTIONBAR2BUTTON2 CTRL-3=MULTIACTIONBAR2BUTTON3 CTRL-R=REPLY CTRL-X=SITORSTAND CTRL-Z=TOGGLESHEATH E=ACTIONBUTTON8 F8=MOVEBACKWARD F=ACTIONBUTTON10 G=ACTIONBUTTON12 Q=ACTIONBUTTON7 R=ACTIONBUTTON9 S=MOVEBACKWARD SHIFT-1=MULTIACTIONBAR1BUTTON1 SHIFT-2=MULTIACTIONBAR1BUTTON2 SHIFT-3=MULTIACTIONBAR1BUTTON3 SHIFT-4=MULTIACTIONBAR1BUTTON4 SHIFT-5=MULTIACTIONBAR1BUTTON5 SHIFT-E=MULTIACTIONBAR1BUTTON7 SHIFT-F=MULTIACTIONBAR1BUTTON9 SHIFT-Q=MULTIACTIONBAR1BUTTON6 SHIFT-R=MULTIACTIONBAR1BUTTON8 SHIFT-§=MULTIACTIONBAR1BUTTON10 T=ACTIONBUTTON11 X=MULTIACTIONBAR1BUTTON12 Z=MULTIACTIONBAR1BUTTON11 §=ACTIONBUTTON1
-10:spell355 11:spell2764 12:spell676 1:spell100 2:spell7386 3:spell6572 4:spell78 5:spell2565 61:macro121 62:macro122 67:spell2687 6:spell6343 70:item117 71:spell6673 73:spell100 74:spell7384 75:spell772 76:spell78 77:spell1464 78:spell34428 79:spell1160 7:spell1160 81:spell845 82:spell1715 83:spell2764 84:spell20230 85:spell100 86:spell7386 87:spell6572 88:spell78 89:spell2565 8:spell72 90:spell6343 91:spell1160 92:spell72 93:spell845 94:spell355 95:spell2764 96:spell676 9:spell845
+10:spell355 11:spell2764 12:spell676 1:spell100 2:spell2565 3:spell6572 4:spell78 5:spell7386 61:macro121 62:macro122 67:spell2687 6:spell6343 70:item117 71:spell6673 73:spell100 74:spell7384 75:spell772 76:spell78 77:spell1464 78:spell34428 79:spell1160 7:spell1160 81:spell845 82:spell1715 83:spell2764 84:spell20230 85:spell100 86:spell2565 87:spell6572 88:spell78 89:spell7386 8:spell72 90:spell6343 91:spell1160 92:spell72 93:spell845 94:spell355 95:spell2764 96:spell676 9:spell845
 ---- restore
 |cff66ccffWyldKeys:|r Keys and bars put back as they were before /kb apply.
 |cff66ccffWyldKeys:|r |cffffcc00Could not put back action slots:|r 5 (mounts, pets or similar). Drag those back by hand.
 0=ACTIONBUTTON10 1=ACTIONBUTTON1 2=ACTIONBUTTON2 6=ACTIONBUTTON6 BUTTON4=TOGGLEAUTORUN F8=MOVEBACKWARD F9=MULTIACTIONBAR2BUTTON12 Q=TURNLEFT R=REPLY S=MOVEBACKWARD X=SITORSTAND Z=TOGGLESHEATH
-5:spell2565 70:item117
+5:spell7386 70:item117
