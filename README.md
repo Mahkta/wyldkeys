@@ -25,3 +25,7 @@ Copy the `WyldKeys` folder into `World of Warcraft/_forever_/Interface/AddOns/` 
 - Ctrl + R reply, Ctrl + Z sheathe, Ctrl + X sit / swim down, middle mouse button autorun.
 
 Keyboard view and full layout: the "WoW Forever keybinds" artifact and the "Keybind layout – draft (Claude)" doc in Craft.
+
+## License
+
+Copyright (C) 2026 Thomas Larsson. WyldKeys is free software under the GNU General Public License, version 3 or (at your option) any later version. See [LICENSE](LICENSE).

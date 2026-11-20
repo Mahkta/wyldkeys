@@ -3,6 +3,7 @@
 ## Notes: Applies Thomas's keybind layout and places abilities on the action bars when asked with /kb. Nothing changes until you type a command.
 ## Author: Claude for Thomas
 ## Version: 1.0.0
+## X-License: GPL-3.0-or-later
 ## SavedVariables: WyldKeys_Account
 ## SavedVariablesPerCharacter: WyldKeys_Char
 
