@@ -46,6 +46,9 @@ return {
     ["Rockbiter Weapon"] = "Rock\194\173biter",
     ["Flametongue Weapon"] = "Flame\194\173tongue",
     ["Ancestral Spirit"] = "Ances\194\173tral",
+    ["Flame Shock"] = "Flame Shock",
+    ["Earth Shock"] = "Earth Shock",
+    ["Searing Totem"] = "Searing",
     ["Engineering bomb (best in bags)"] = "Bomb",
     ["Healing potion (best in bags)"] = "Potion",
     ["Explosive Rocket"] = "Rocket",
@@ -75,7 +78,16 @@ return {
     },
     thorim = {
       ["§"] = "Ghost Wolf (level 20)",
-      ["G"] = { "a defensive", "Defen\194\173sive" },
+      ["2"] = { "Lesser Healing Wave (level 20)", "Lesser Heal" },
+      ["3"] = "Riptide (Restoration talent)",
+      ["Q"] = "Frost Shock (level 20)",
+      ["R"] = "Chain Heal (level 40)",
+      ["Shift+4"] = { "Call of the Spirits (level 40)", "Call Spirits" },
+      ["Shift+E"] = { "Nature’s Swiftness (Restoration talent)", "Nat. Swift" },
+      ["Shift+F"] = { "Mana Tide Totem (Restoration talent)", "Mana Tide" },
+      ["Shift+§"] = "Tremor Totem (level 18)",
+      ["Shift+T"] = { "Cure Poison (level 16); needs a new key in the layout", "Cure Poison" },
+      ["Ctrl+T"] = { "Cure Disease (level 22); needs a new key in the layout", "Cure Disease" },
     },
   },
 
@@ -83,6 +95,13 @@ return {
   hints = {
     meagor = { ["Z"] = "Poisons take Z at level 20." },
     ["meagor-stealth"] = { ["1"] = "Opener for now; Ambush takes this key at level 18." },
+    thorim = {
+      ["Shift+1"] = "Until level 20; then Call of the Elements.",
+      ["Shift+2"] = "Until level 20; then Totemic Recall.",
+      ["Shift+3"] = "Until level 30; then Call of the Ancestors.",
+      ["T"] = "Chain Lightning takes T at level 32.",
+      ["Z"] = "Water Shield (Restoration talent) replaces it.",
+    },
   },
 
   -- A note under each view.
@@ -91,7 +110,7 @@ return {
     ["galdorin-battle"] = "Arms in Battle Stance with the two-hander. Only the main bar keys § 1–5 Q E R F T G change with the stance; Shift, Z, X and Ctrl keys stay as on the tank layout.",
     meagor = "Stealth switches to the stealth bar automatically; see the stealth view.",
     ["meagor-stealth"] = "In stealth, the stealth bar replaces the main bar keys § 1–5 Q E R F T G. Shift and Ctrl keys stay as on the normal bar.",
-    thorim = "At level 20, Call of the Elements drops several totems with one key and frees the single-totem keys.",
+    thorim = "PROPOSAL, not applied yet: healer-first layout planned up to level 60, assuming Restoration talents. Dashed keys are kept free for what comes later. In WoW Forever totems last 5 minutes and the Call spells place whole totem sets, so single totems sit on Shift keys.",
   },
 
   -- View titles for stance and stealth bars.

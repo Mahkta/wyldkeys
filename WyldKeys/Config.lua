@@ -137,25 +137,28 @@ ns.Config = {
   },
 
   ["Thorim"] = {
+    -- Healer-first layout planned up to level 60 (proposal, 20 Nov 2026).
+    -- Free keys are kept for what comes later; see the keybinds overview.
     keys = {
-      ["1"] = "Lightning Bolt",
-      ["2"] = "Flame Shock",
-      ["3"] = "Healing Wave",
-      ["4"] = "Searing Totem",
-      ["5"] = "Strength of Earth Totem",
-      ["Q"] = "Stoneclaw Totem",
+      ["1"] = "Healing Wave",
+      ["4"] = "Lightning Bolt",
+      ["5"] = "Flame Shock",
       ["E"] = "Earth Shock",
-      ["R"] = "Fire Nova",
       ["F"] = "Purge",
       ["T"] = "Lightning Bolt",
+      ["G"] = "Stoneclaw Totem",
+      -- Until level 20; then the totem spells take Shift+1-3.
       ["Shift+1"] = "Stoneskin Totem",
-      ["Shift+2"] = "Earthbind Totem",
+      ["Shift+2"] = "Strength of Earth Totem",
+      ["Shift+3"] = "Searing Totem",
+      ["Shift+5"] = "Earthbind Totem",
       ["Shift+Q"] = BEST_POTION,
-      ["Shift+E"] = "Lightning Shield",
-      ["Z"] = "Rockbiter Weapon",
+      ["Shift+R"] = "Fire Nova",
+      ["Z"] = "Lightning Shield",
       ["X"] = "Flametongue Weapon",
       ["Ctrl+3"] = "Ancestral Spirit",
     },
   },
+
 
 }
