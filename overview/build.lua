@@ -48,7 +48,7 @@ local CATEGORY = {
            Q = "cd", E = "intr", R = "aoe", F = "util", T = "rng", G = "def", Z = "rare", X = "rare" },
   shift = { sec = "open", ["1"] = "alt", ["2"] = "alt", ["3"] = "alt", ["4"] = "alt", ["5"] = "alt",
             Q = "def", E = "big", R = "big", F = "big" },
-  ctrl = { ["1"] = "ooc", ["2"] = "ooc", ["3"] = "ooc" },
+  ctrl = { ["1"] = "ooc", ["2"] = "ooc", ["3"] = "ooc", ["4"] = "ooc" },
 }
 local function category(layer, key) return (CATEGORY[layer] and CATEGORY[layer][key]) or "rare" end
 

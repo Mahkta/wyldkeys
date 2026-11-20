@@ -37,11 +37,10 @@ ns.SHIFT = {
   labels = { [6] = "Shift+Q (healing potion)" },
 }
 
--- Button 4 was Shift+G for potions; its key is now cleared (see MANAGED below).
 ns.CTRL = {
   command = "MULTIACTIONBAR2BUTTON", bindText = "Action Bar 3 button", barText = "Action Bar 3",
-  keys  = { "Ctrl+1", "Ctrl+2", "Ctrl+3" },
-  binds = { "CTRL-1", "CTRL-2", "CTRL-3" },
+  keys  = { "Ctrl+1", "Ctrl+2", "Ctrl+3", "Ctrl+4" },
+  binds = { "CTRL-1", "CTRL-2", "CTRL-3", "CTRL-4" },
 }
 
 -- Other bindings, after the bars: { game key, command, message text }.
