@@ -163,7 +163,7 @@ ns.Config = {
   },
 
   ["Leorn"] = {
-    -- Arcane mage, planned to level 40. 1-4 are kept for arcane spells; free
+    -- Arcane mage, planned to level 40 (20 Nov 2026). 1-4 are kept for arcane spells; free
     -- keys are kept for what comes later (see the keybinds overview).
     keys = {
       ["1"] = "Arcane Missiles",
