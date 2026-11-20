@@ -59,14 +59,14 @@ local known=KNOWN[CHAR] or {}
 local cursor, bars = nil, {[5]={"spell",1752},[70]={"item",117}}
 if CHAR=="Thorim" then bars[1]={"spell",403}; bars[12]={"macro",3} end -- § and G are not in Thorim's profile
 C_Spell={GetSpellInfo=function(n) return known[n] and {spellID=known[n]} end, PickupSpell=function(id) for n,v in pairs(known) do if v==id then cursor={"spell",id} end end end, GetSpellName=function(id) for n,v in pairs(known) do if v==id then return n end end return "spell"..id end}
-C_Item={PickupItem=function(id) cursor={"item",id} end, GetItemNameByID=function(id) local n={[4360]="Rough Copper Bomb",[4370]="Large Copper Bomb",[1178]="Explosive Rocket",[118]="Minor Healing Potion",[858]="Lesser Healing Potion",[2455]="Minor Mana Potion",[5350]="Conjured Water",[2288]="Conjured Fresh Water",[5349]="Conjured Muffin",[1113]="Conjured Bread",[2593]="Flask of Stormwind Tawny"} return n[id] or ("Item"..id) end,
- GetItemInfoInstant=function(id) if id==4360 or id==4370 then return id,"Trade Goods","Explosives","",0,7,2 end return id,"Consumable","Other","",0,0,8 end,
- GetItemInfo=function(id) local l={[4360]=14,[4370]=20,[1178]=8,[118]=5,[858]=13,[2455]=5,[5350]=5,[2288]=15,[5349]=5,[1113]=15,[2593]=10} return "x","l",1,l[id] or 1 end}
+C_Item={PickupItem=function(id) cursor={"item",id} end, GetItemNameByID=function(id) local n={[4360]="Rough Copper Bomb",[4370]="Large Copper Bomb",[1178]="Explosive Rocket",[118]="Minor Healing Potion",[858]="Lesser Healing Potion",[2455]="Minor Mana Potion",[5350]="Conjured Water",[2288]="Conjured Fresh Water",[5349]="Conjured Muffin",[1113]="Conjured Bread",[2593]="Flask of Stormwind Tawny",[1251]="Linen Bandage",[2581]="Heavy Linen Bandage"} return n[id] or ("Item"..id) end,
+ GetItemInfoInstant=function(id) if id==4360 or id==4370 then return id,"Trade Goods","Explosives","",0,7,2 end if id==1251 or id==2581 then return id,"Consumable","Bandages","",0,0,7 end return id,"Consumable","Other","",0,0,8 end,
+ GetItemInfo=function(id) local l={[4360]=14,[4370]=20,[1178]=8,[118]=5,[858]=13,[2455]=5,[5350]=5,[2288]=15,[5349]=5,[1113]=15,[2593]=10,[1251]=5,[2581]=15} return "x","l",1,l[id] or 1 end}
 C_Item.GetItemSpell=function(id) return C_Item_GetItemSpell and C_Item_GetItemSpell(id) end
 local bag={[0]={1178,4360,118,2455},[1]={4370,858}}
 if CHAR=="Galdorin" then bag={[0]={2455,4360}} end -- no healing potion
 -- Leorn: two waters and two foods; the higher item level should win, ale is neither.
-if CHAR=="Leorn" then bag={[0]={5350,2288,118},[1]={5349,1113,2593}} end
+if CHAR=="Leorn" then bag={[0]={5350,2288,118},[1]={5349,1113,2593,1251,2581}} end
 local USE={[5350]="Drink",[2288]="Drink",[5349]="Food",[1113]="Food",[2593]=nil}
 C_Item_GetItemSpell=function(id) return USE[id] end
 C_Container={GetContainerNumSlots=function(b) return bag[b] and #bag[b] or 0 end, GetContainerItemID=function(b,s) return bag[b] and bag[b][s] end}

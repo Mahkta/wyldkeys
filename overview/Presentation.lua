@@ -63,6 +63,7 @@ return {
     ["Dampen Magic"] = "Dampen",
     ["Drink (best in bags)"] = "Drink",
     ["Food (best in bags)"] = "Food",
+    ["Bandage (best in bags)"] = "Bandage",
     ["Sheathe weapon"] = "Sheathe",
     ["Sit / swim down"] = "Sit / swim",
   },
@@ -123,7 +124,7 @@ return {
     ["galdorin-battle"] = "Arms in Battle Stance with the two-hander. Only the main bar keys § 1–5 Q E R F T G change with the stance; Shift, Z, X and Ctrl keys stay as on the tank layout.",
     meagor = "Stealth switches to the stealth bar automatically; see the stealth view.",
     ["meagor-stealth"] = "In stealth, the stealth bar replaces the main bar keys § 1–5 Q E R F T G. Shift and Ctrl keys stay as on the normal bar.",
-    leorn = "Arcane mage, planned to level 40, with 1–4 kept for arcane spells. Dashed keys are kept free for what comes later. Drink on Ctrl + 1 and food on Ctrl + 5 are the best in the bags at /kb apply; run it again after conjuring a better rank. Amplify and Dampen Magic (group buffs, used situationally) sit on Z and X; Arcane Intellect and the armor on Shift + Z and Shift + X. Flamestrike, teleports and portals stay in the spellbook.",
+    leorn = "Arcane mage, planned to level 40, with 1–4 kept for arcane spells. Dashed keys are kept free for what comes later. Drink, food and bandage on Ctrl + 1–3 are the best in the bags at /kb apply; run it again after conjuring a better rank. Amplify and Dampen Magic (group buffs, used situationally) sit on Z and X; Arcane Intellect and the armor on Shift + Z and Shift + X. Flamestrike, teleports and portals stay in the spellbook.",
     thorim = "Damage first while levelling, up to level 20. The layout is reworked at 20, when Call of the Elements and the other totem spells arrive. Cure Poison (16) and Tremor Totem (18) are placed by /kb apply once learned.",
   },
 
@@ -131,5 +132,6 @@ return {
   barTitles = { stealth = "in stealth", battle = "in Battle Stance", defensive = "in Defensive Stance" },
 
   -- Placed by hand on every character with a section (shown, not set by the addon).
-  manual = { ["Ctrl+1"] = "Food", ["Ctrl+2"] = "Bandage" },
+  -- Empty now: food, drink and bandages are set by the addon from Config.lua.
+  manual = {},
 }

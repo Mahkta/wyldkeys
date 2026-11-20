@@ -187,8 +187,9 @@ local MATCH = {
   potion = function(id, name) return name and name:find("Healing Potion", 1, true) ~= nil end,
   drink = function(id) local u = ns.ItemUse(id); return u == "Drink" or u == "Refreshment" end,
   food = function(id) local u = ns.ItemUse(id); return u == "Food" or u == "Refreshment" end,
+  bandage = function(id, name, sub) return sub == "Bandages" or sub == "Bandage" end,
 }
-local LABEL = { bomb = "bomb", potion = "healing potion", drink = "drink", food = "food" }
+local LABEL = { bomb = "bomb", potion = "healing potion", drink = "drink", food = "food", bandage = "bandage" }
 
 -- The matching item with the highest item level in the bags, or nil.
 local function bestItem(kind)

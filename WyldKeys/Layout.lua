@@ -75,6 +75,8 @@ ns.BEST_POTION = { best = "potion" }
 -- Drink and food (conjured or bought): the best in the bags at /kb apply.
 ns.BEST_DRINK = { best = "drink" }
 ns.BEST_FOOD = { best = "food" }
+-- Bandages: the best in the bags at /kb apply.
+ns.BEST_BANDAGE = { best = "bandage" }
 -- A fixed item by ID; the name is used in messages.
 function ns.Item(id, name) return { item = id, name = name } end
 -- A macro by name, made from the character's macros section (or one you made in the game).

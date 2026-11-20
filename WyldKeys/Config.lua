@@ -38,6 +38,11 @@
 --   BEST_BOMB                      the best bomb in the bags at /kb apply
 --   BEST_POTION                    the best healing potion in the bags at /kb apply
 --   BEST_DRINK, BEST_FOOD          the best drink or food in the bags at /kb apply
+--   BEST_BANDAGE                   the best bandage in the bags at /kb apply
+--
+-- Ctrl keys, out of combat: characters without mana have food on Ctrl+1 and
+-- bandages on Ctrl+2; casters with mana have drink on Ctrl+1, food on Ctrl+2
+-- and bandages on Ctrl+3, and their other Ctrl keys move one step down.
 --   Item(id, "Name")               one item, by item ID
 --   Macro("Name", "label")         a macro by name; the label is for the overview only
 --
@@ -50,7 +55,7 @@
 
 local addonName, ns = ...
 local BEST_BOMB, BEST_POTION, Item, Macro = ns.BEST_BOMB, ns.BEST_POTION, ns.Item, ns.Macro
-local BEST_DRINK, BEST_FOOD = ns.BEST_DRINK, ns.BEST_FOOD
+local BEST_DRINK, BEST_FOOD, BEST_BANDAGE = ns.BEST_DRINK, ns.BEST_FOOD, ns.BEST_BANDAGE
 
 ns.Config = {
 
@@ -73,6 +78,8 @@ ns.Config = {
       ["Shift+Q"] = BEST_POTION,
       ["Shift+E"] = "Bloodrage",
       ["Z"] = "Battle Shout",
+      ["Ctrl+1"] = BEST_FOOD,
+      ["Ctrl+2"] = BEST_BANDAGE,
     },
     -- Arms in Battle Stance: two-hander, no shield, so no interrupt on E.
     battle = {
@@ -124,6 +131,8 @@ ns.Config = {
       ["Shift+Q"] = BEST_POTION,
       ["Shift+§"] = "Sprint",
       ["Z"] = Item(1178, "Explosive Rocket"),
+      ["Ctrl+1"] = BEST_FOOD,
+      ["Ctrl+2"] = BEST_BANDAGE,
       ["Ctrl+3"] = "Pick Lock",
     },
     stealth = {
@@ -160,7 +169,10 @@ ns.Config = {
       ["Shift+§"] = "Tremor Totem",    -- level 18; run /kb apply again when learned
       ["Z"] = "Rockbiter Weapon",
       ["X"] = "Flametongue Weapon",
-      ["Ctrl+3"] = "Ancestral Spirit",
+      ["Ctrl+1"] = BEST_DRINK,
+      ["Ctrl+2"] = BEST_FOOD,
+      ["Ctrl+3"] = BEST_BANDAGE,
+      ["Ctrl+4"] = "Ancestral Spirit",
     },
   },
 
@@ -180,10 +192,11 @@ ns.Config = {
       ["X"] = "Dampen Magic",          -- level 12; group buff, Amplify Magic (18) goes on Z
       ["Shift+Z"] = "Arcane Intellect",
       ["Shift+X"] = "Frost Armor",
-      ["Ctrl+3"] = Macro("WK Conjure", "Conjure water, then food"),
+      ["Ctrl+4"] = Macro("WK Conjure", "Conjure water, then food"),
       ["Ctrl+1"] = BEST_DRINK,
-      ["Ctrl+4"] = "Read Leyline",
-      ["Ctrl+5"] = BEST_FOOD,
+      ["Ctrl+2"] = BEST_FOOD,
+      ["Ctrl+3"] = BEST_BANDAGE,
+      ["Ctrl+5"] = "Read Leyline",
     },
     macros = {
       -- Press once for water, again for food; starts over after a minute.
