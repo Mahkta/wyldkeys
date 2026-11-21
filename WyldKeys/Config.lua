@@ -71,7 +71,7 @@ ns.Config = {
       ["E"] = "Shield Bash",
       ["R"] = "Cleave",
       ["F"] = "Taunt",
-      ["T"] = "Throw",
+      ["T"] = Macro("WK Pull", "Ranged pull: Throw or Shoot, by weapon"),
       ["G"] = "Disarm",
       ["Shift+1"] = Macro("WK Arms", "Arms: Battle Stance and Arms set"),
       ["Shift+2"] = Macro("WK Tank", "Tank: Defensive Stance and Tanking set"),
@@ -93,7 +93,7 @@ ns.Config = {
       ["Q"] = "Demoralizing Shout",
       ["R"] = "Cleave",
       ["F"] = "Hamstring",
-      ["T"] = "Throw",
+      ["T"] = Macro("WK Pull", "Ranged pull: Throw or Shoot, by weapon"),
       ["G"] = "Retaliation",
     },
     defensive = "keys",
@@ -107,12 +107,17 @@ ns.Config = {
 /equipset [nocombat] Arms
 /equip [combat] Ironforge Greathammer
 ]],
+      -- Ranged pull with whatever ranged weapon is worn.
+      ["WK Pull"] = [[
+#showtooltip
+/cast [equipped:Thrown] Throw; [equipped:Guns] Shoot Gun; [equipped:Crossbows] Shoot Crossbow; Shoot Bow
+]],
       ["WK Tank"] = [[
 #showtooltip Defensive Stance
 /cast Defensive Stance
 /equipset [nocombat] Tanking
 /equip [combat] Bronze Axe
-/equip [combat] Furen's Favor
+/equip [combat] Guardian Buckler
 ]],
     },
   },

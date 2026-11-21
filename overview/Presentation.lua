@@ -50,6 +50,7 @@ return {
     ["Healing potion (best in bags)"] = "Potion",
     ["Explosive Rocket"] = "Rocket",
     ["Arms: Battle Stance and Arms set"] = "Arms",
+    ["Ranged pull: Throw or Shoot, by weapon"] = "Pull",
     ["Tank: Defensive Stance and Tanking set"] = "Tank",
     ["Victory Rush"] = "Victory Rush",
     ["Retaliation"] = "Retal\194\173iation",
