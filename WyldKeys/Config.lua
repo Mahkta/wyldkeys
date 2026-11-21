@@ -98,15 +98,15 @@ ns.Config = {
       ["G"] = "Retaliation",
     },
     defensive = "keys",
-    -- Stance and gear switch. Out of combat the whole equipment set (made in the
-    -- game's Equipment Manager); in combat only the weapons, since armour can't
-    -- be changed in combat.
+    -- Stance and gear switch with the equipment sets made in the game's
+    -- Equipment Manager. In combat the set still swaps the weapons (tested
+    -- 21 Nov 2026). Armour can't change in combat, so if the sets differ in
+    -- armour, press the key again after the fight.
     macros = {
       ["WK Arms"] = [[
 #showtooltip Battle Stance
 /cast Battle Stance
-/equipset [nocombat] Arms
-/equip [combat] Ironforge Greathammer
+/equipset Arms
 ]],
       -- Ranged pull with whatever ranged weapon is worn.
       ["WK Pull"] = [[
@@ -116,9 +116,7 @@ ns.Config = {
       ["WK Tank"] = [[
 #showtooltip Defensive Stance
 /cast Defensive Stance
-/equipset [nocombat] Tanking
-/equip [combat] Bronze Axe
-/equip [combat] Guardian Buckler
+/equipset Tanking
 ]],
     },
   },
