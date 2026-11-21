@@ -138,7 +138,7 @@ return {
     meagor = "Stealth switches to the stealth bar automatically; see the stealth view.",
     ["meagor-stealth"] = "In stealth, the stealth bar replaces the main bar keys § 1–5 Q E R F T G. Shift and Ctrl keys stay as on the normal bar.",
     leorn = "Arcane mage, planned to level 40, with 1–4 kept for arcane spells. Dashed keys are kept free for what comes later. Drink and food on Shift + Z and Shift + X and bandages on Ctrl + Q are the best in the bags at /kb apply; run it again after conjuring a better rank. Amplify and Dampen Magic (group buffs, used situationally) sit on Z and X; Arcane Intellect and the armor on Ctrl + 1 and Ctrl + 2. Flamestrike, teleports and portals stay in the spellbook.",
-    thorim = "Damage first while levelling, up to level 20. The layout is reworked at 20, when Call of the Elements and the other totem spells arrive. Cure Poison (16) and Tremor Totem (18) are placed by /kb apply once learned.",
+    thorim = "Damage first while levelling, up to level 20. The layout is reworked at 20, when Call of the Elements and the other totem spells arrive. Stoneform (dwarf racial) gets a key then too. Cure Poison (16) and Tremor Totem (18) are placed by /kb apply once learned.",
   },
 
   -- View titles for stance and stealth bars.
