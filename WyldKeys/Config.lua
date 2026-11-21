@@ -43,6 +43,8 @@
 -- Ctrl keys, out of combat: characters without mana have food on Ctrl+1 and
 -- bandages on Ctrl+2; casters with mana have drink on Ctrl+1, food on Ctrl+2
 -- and bandages on Ctrl+3, and their other Ctrl keys move one step down.
+-- Warriors have their stances on Ctrl+1-3 instead, and food and bandages on
+-- Ctrl+4 and Ctrl+5.
 --   Item(id, "Name")               one item, by item ID
 --   Macro("Name", "label")         a macro by name; the label is for the overview only
 --
@@ -73,16 +75,18 @@ ns.Config = {
       ["F"] = "Taunt",
       ["T"] = Macro("WK Pull", "Ranged pull: Throw or Shoot, by weapon"),
       ["G"] = "Disarm",
-      ["Shift+1"] = Macro("WK Arms", "Arms: Battle Stance and Arms set"),
-      ["Shift+2"] = Macro("WK Tank", "Tank: Defensive Stance and Tanking set"),
       ["Shift+3"] = "Rend",
       ["Shift+5"] = "Intimidating Shout",
       ["Shift+Q"] = BEST_POTION,
       ["Shift+E"] = "Bloodrage",
       ["Shift+R"] = "Thunder Clap",
       ["Z"] = "Battle Shout",
-      ["Ctrl+1"] = BEST_FOOD,
-      ["Ctrl+2"] = BEST_BANDAGE,
+      -- Stances on Ctrl+1-3 (Berserker Stance at 30 gets Ctrl+3); food and
+      -- bandages move down to Ctrl+4 and Ctrl+5.
+      ["Ctrl+1"] = Macro("WK Arms", "Arms: Battle Stance and Arms set"),
+      ["Ctrl+2"] = Macro("WK Tank", "Tank: Defensive Stance and Tanking set"),
+      ["Ctrl+4"] = BEST_FOOD,
+      ["Ctrl+5"] = BEST_BANDAGE,
     },
     -- Arms in Battle Stance: two-hander, no shield, so no interrupt on E.
     battle = {

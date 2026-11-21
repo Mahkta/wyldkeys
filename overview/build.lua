@@ -65,12 +65,18 @@ local function abilityName(entry)
   error("unknown ability entry: " .. tostring(entry))
 end
 
-local function entryFor(name, layer, key)
-  return { a = name, s = P.short[name], c = category(layer, key) }
+local currentView
+local function categoryFor(layer, key, label)
+  local o = P.categories and P.categories[currentView]
+  return (o and label and o[label]) or category(layer, key)
+end
+
+local function entryFor(name, layer, key, label)
+  return { a = name, s = P.short[name], c = categoryFor(layer, key, label) }
 end
 
 local function freeFor(view, label, layer, key)
-  local e = { free = 1, c = category(layer, key) }
+  local e = { free = 1, c = categoryFor(layer, key, label) }
   local later = P.later[view] and P.later[view][label]
   if type(later) == "table" then e.later, e.ls = later[1], later[2]
   elseif later then e.later, e.ls = later, later:gsub("%s*%b()$", "") end
@@ -80,11 +86,12 @@ end
 local MAIN_LABELS = ns.MAIN.keys
 
 local function buildView(view, title, keys, isBonus, parent)
+  currentView = view
   local out = { n = title, base = {}, shift = {}, ctrl = {}, note = P.notes[view], parent = parent }
   for label, entry in pairs(keys) do
     if not ns.KEYS[label] then error(view .. ": unknown key " .. label) end
     local layer, key = keyOf(label)
-    out[layer][key] = entryFor(abilityName(entry), layer, key)
+    out[layer][key] = entryFor(abilityName(entry), layer, key, label)
   end
   -- Main bar keys with nothing on them are shown as free.
   for _, label in ipairs(MAIN_LABELS) do

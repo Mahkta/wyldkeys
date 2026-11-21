@@ -74,6 +74,7 @@ return {
   -- on the key; write { "long text", "Key text" } to choose the key text.
   later = {
     galdorin = {
+      ["Ctrl+3"] = { "Berserker Stance (level 30)", "Berserker" },
       ["Shift+4"] = "Execute (level 24)",
       ["Shift+F"] = { "Challenging Shout (level 26)", "Chall. Shout" },
     },
@@ -111,6 +112,12 @@ return {
     },
   },
 
+  -- Colour category for a key, per view, where the usual one for that key
+  -- doesn't fit (for example stances on Ctrl keys).
+  categories = {
+    galdorin = { ["Ctrl+1"] = "alt", ["Ctrl+2"] = "alt", ["Ctrl+3"] = "alt" },
+  },
+
   -- An extra line in the key's details, per view.
   hints = {
     meagor = { ["Z"] = "Poisons take Z at level 20." },
@@ -126,7 +133,7 @@ return {
 
   -- A note under each view.
   notes = {
-    galdorin = "Tank layout, used in Defensive Stance. Shift + 1 (Arms) and Shift + 2 (Tank) switch stance and gear; see the Battle Stance view for the arms bar. Not placed yet at level 21: Mocking Blow.",
+    galdorin = "Tank layout, used in Defensive Stance. Ctrl + 1 (Arms) and Ctrl + 2 (Tank) switch stance and equipment set, and Ctrl + 3 is kept for Berserker Stance; see the Battle Stance view for the arms bar. Not placed yet at level 21: Mocking Blow.",
     ["galdorin-battle"] = "Arms in Battle Stance with the two-hander. Only the main bar keys § 1–5 Q E R F T G change with the stance; Shift, Z, X and Ctrl keys stay as on the tank layout.",
     meagor = "Stealth switches to the stealth bar automatically; see the stealth view.",
     ["meagor-stealth"] = "In stealth, the stealth bar replaces the main bar keys § 1–5 Q E R F T G. Shift and Ctrl keys stay as on the normal bar.",
