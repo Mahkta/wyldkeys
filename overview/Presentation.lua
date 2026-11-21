@@ -51,6 +51,7 @@ return {
     ["Explosive Rocket"] = "Rocket",
     ["Arms: Battle Stance and Arms set"] = "Arms",
     ["Ranged pull: Throw or Shoot, by weapon"] = "Pull",
+    ["Execute, or Shield Wall in Defensive Stance"] = "Execute / Wall",
     ["Tank: Defensive Stance and Tanking set"] = "Tank",
     ["Victory Rush"] = "Victory Rush",
     ["Retaliation"] = "Retal\194\173iation",
@@ -75,7 +76,6 @@ return {
   later = {
     galdorin = {
       ["Ctrl+3"] = { "Berserker Stance (level 30)", "Berserker" },
-      ["Shift+1"] = { "Shield Wall (level 28, Defensive Stance)", "Shield Wall" },
       ["Shift+F"] = { "Challenging Shout (level 26)", "Chall. Shout" },
     },
     ["galdorin-battle"] = {
@@ -120,6 +120,7 @@ return {
 
   -- An extra line in the key's details, per view.
   hints = {
+    galdorin = { ["Shift+4"] = "Execute in Battle and Berserker Stance; Shield Wall (level 28) in Defensive Stance." },
     meagor = { ["Z"] = "Poisons take Z at level 20." },
     ["meagor-stealth"] = { ["1"] = "Opener for now; Ambush takes this key at level 18." },
     leorn = {

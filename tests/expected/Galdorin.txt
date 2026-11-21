@@ -41,6 +41,7 @@
 |cff66ccffWyldKeys:|r   Middle button = Autorun
 |cff66ccffWyldKeys:|r Old keys on the main bar, Action Bar 2 and Ctrl+1-3 are cleared first, so 6-0 stop working.
 |cff66ccffWyldKeys:|r   Macro WK Arms: will be created
+|cff66ccffWyldKeys:|r   Macro WK Execute: will be created
 |cff66ccffWyldKeys:|r   Macro WK Pull: will be created
 |cff66ccffWyldKeys:|r   Macro WK Tank: will be created
 |cff66ccffWyldKeys:|r   Main bar, §: Charge
@@ -80,7 +81,7 @@
 |cff66ccffWyldKeys:|r   Stance/stealth bar 2, G: Disarm
 |cff66ccffWyldKeys:|r   Action Bar 2, Shift+2: Stoneform
 |cff66ccffWyldKeys:|r   Action Bar 2, Shift+3: Rend
-|cff66ccffWyldKeys:|r   Action Bar 2, Shift+4: Execute
+|cff66ccffWyldKeys:|r   Action Bar 2, Shift+4: macro WK Execute
 |cff66ccffWyldKeys:|r   Action Bar 2, Shift+5: Intimidating Shout
 |cff66ccffWyldKeys:|r   Action Bar 2, Shift+Q (healing potion): best healing potion in your bags (none found)
 |cff66ccffWyldKeys:|r   Action Bar 2, Shift+E: Bloodrage
@@ -96,13 +97,14 @@
 |cff66ccffWyldKeys:|r Keys set and saved for every character that uses account-wide bindings.
 [mock] CreateMacro WK Arms per=true
 |cff66ccffWyldKeys:|r Macro WK Arms created.
+[mock] CreateMacro WK Execute per=true
+|cff66ccffWyldKeys:|r Macro WK Execute created.
 [mock] CreateMacro WK Pull per=true
 |cff66ccffWyldKeys:|r Macro WK Pull created.
 [mock] CreateMacro WK Tank per=true
 |cff66ccffWyldKeys:|r Macro WK Tank created.
-|cff66ccffWyldKeys:|r Abilities placed: 42 of 47.
+|cff66ccffWyldKeys:|r Abilities placed: 43 of 47.
 |cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r Stoneform (Action Bar 2, Shift+2)
-|cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r Execute (Action Bar 2, Shift+4)
 |cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r best healing potion in your bags (none found) (Action Bar 2, Shift+Q (healing potion))
 |cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r best food in your bags (none found) (Action Bar 3, Shift+Z)
 |cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r best bandage in your bags (none found) (Action Bar 3, Ctrl+Q)
@@ -146,6 +148,7 @@
 |cff66ccffWyldKeys:|r   Middle button = Autorun
 |cff66ccffWyldKeys:|r Old keys on the main bar, Action Bar 2 and Ctrl+1-3 are cleared first, so 6-0 stop working.
 |cff66ccffWyldKeys:|r   Macro WK Arms: unchanged
+|cff66ccffWyldKeys:|r   Macro WK Execute: unchanged
 |cff66ccffWyldKeys:|r   Macro WK Pull: unchanged
 |cff66ccffWyldKeys:|r   Macro WK Tank: unchanged
 |cff66ccffWyldKeys:|r   Main bar, §: Charge
@@ -185,7 +188,7 @@
 |cff66ccffWyldKeys:|r   Stance/stealth bar 2, G: Disarm
 |cff66ccffWyldKeys:|r   Action Bar 2, Shift+2: Stoneform
 |cff66ccffWyldKeys:|r   Action Bar 2, Shift+3: Rend
-|cff66ccffWyldKeys:|r   Action Bar 2, Shift+4: Execute
+|cff66ccffWyldKeys:|r   Action Bar 2, Shift+4: macro WK Execute
 |cff66ccffWyldKeys:|r   Action Bar 2, Shift+5: Intimidating Shout
 |cff66ccffWyldKeys:|r   Action Bar 2, Shift+Q (healing potion): best healing potion in your bags (none found)
 |cff66ccffWyldKeys:|r   Action Bar 2, Shift+E: Bloodrage
@@ -197,7 +200,7 @@
 |cff66ccffWyldKeys:|r   Action Bar 3, Ctrl+Q: best bandage in your bags (none found)
 |cff66ccffWyldKeys:|r Bindings will be saved for every character that uses account-wide bindings.
 1=ACTIONBUTTON2 2=ACTIONBUTTON3 3=ACTIONBUTTON4 4=ACTIONBUTTON5 5=ACTIONBUTTON6 BUTTON3=TOGGLEAUTORUN BUTTON4=TOGGLEAUTORUN CTRL-1=MULTIACTIONBAR2BUTTON1 CTRL-2=MULTIACTIONBAR2BUTTON2 CTRL-3=MULTIACTIONBAR2BUTTON3 CTRL-4=MULTIACTIONBAR2BUTTON4 CTRL-5=MULTIACTIONBAR2BUTTON7 CTRL-Q=MULTIACTIONBAR2BUTTON8 CTRL-R=REPLY CTRL-X=SITORSTAND CTRL-Z=TOGGLESHEATH E=ACTIONBUTTON8 F8=MOVEBACKWARD F=ACTIONBUTTON10 G=ACTIONBUTTON12 Q=ACTIONBUTTON7 R=ACTIONBUTTON9 S=MOVEBACKWARD SHIFT-1=MULTIACTIONBAR1BUTTON1 SHIFT-2=MULTIACTIONBAR1BUTTON2 SHIFT-3=MULTIACTIONBAR1BUTTON3 SHIFT-4=MULTIACTIONBAR1BUTTON4 SHIFT-5=MULTIACTIONBAR1BUTTON5 SHIFT-E=MULTIACTIONBAR1BUTTON7 SHIFT-F=MULTIACTIONBAR1BUTTON9 SHIFT-Q=MULTIACTIONBAR1BUTTON6 SHIFT-R=MULTIACTIONBAR1BUTTON8 SHIFT-X=MULTIACTIONBAR2BUTTON6 SHIFT-Z=MULTIACTIONBAR2BUTTON5 SHIFT-§=MULTIACTIONBAR1BUTTON10 T=ACTIONBUTTON11 X=MULTIACTIONBAR1BUTTON12 Z=MULTIACTIONBAR1BUTTON11 §=ACTIONBUTTON1
-10:spell355 11:macro122 12:spell676 1:spell100 2:spell2565 3:spell6572 49:macro121 4:spell78 50:macro123 5:spell7386 63:spell772 65:spell5246 67:spell2687 68:spell6343 6:spell34428 70:item117 71:spell6673 73:spell100 74:spell7384 75:spell772 76:spell78 77:spell1464 78:spell34428 79:spell1160 7:spell1160 81:spell845 82:spell1715 83:macro122 84:spell20230 85:spell100 86:spell2565 87:spell6572 88:spell78 89:spell7386 8:spell72 90:spell34428 91:spell1160 92:spell72 93:spell845 94:spell355 95:macro122 96:spell676 9:spell845
+10:spell355 11:macro123 12:spell676 1:spell100 2:spell2565 3:spell6572 49:macro121 4:spell78 50:macro124 5:spell7386 63:spell772 64:macro122 65:spell5246 67:spell2687 68:spell6343 6:spell34428 70:item117 71:spell6673 73:spell100 74:spell7384 75:spell772 76:spell78 77:spell1464 78:spell34428 79:spell1160 7:spell1160 81:spell845 82:spell1715 83:macro123 84:spell20230 85:spell100 86:spell2565 87:spell6572 88:spell78 89:spell7386 8:spell72 90:spell34428 91:spell1160 92:spell72 93:spell845 94:spell355 95:macro123 96:spell676 9:spell845
 ---- restore
 |cff66ccffWyldKeys:|r Keys and bars put back as they were before /kb apply.
 |cff66ccffWyldKeys:|r |cffffcc00Could not put back action slots:|r 5 (mounts, pets or similar). Drag those back by hand.

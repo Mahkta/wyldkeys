@@ -78,7 +78,8 @@ ns.Config = {
       ["G"] = "Disarm",
       ["Shift+2"] = "Stoneform",   -- dwarf racial
       ["Shift+3"] = "Rend",
-      ["Shift+4"] = "Execute",   -- Battle Stance (Berserker from 30)
+      -- Execute in Battle and Berserker Stance, Shield Wall (28) in Defensive.
+      ["Shift+4"] = Macro("WK Execute", "Execute, or Shield Wall in Defensive Stance"),
       ["Shift+5"] = "Intimidating Shout",
       ["Shift+Q"] = BEST_POTION,
       ["Shift+E"] = "Bloodrage",
@@ -116,6 +117,11 @@ ns.Config = {
 /equipset Arms
 ]],
       -- Ranged pull with whatever ranged weapon is worn.
+      -- Stance 2 is Defensive Stance.
+      ["WK Execute"] = [[
+#showtooltip
+/cast [stance:2] Shield Wall; Execute
+]],
       ["WK Pull"] = [[
 #showtooltip
 /cast [equipped:Thrown] Throw; [equipped:Guns] Shoot Gun; [equipped:Crossbows] Shoot Crossbow; Shoot Bow
