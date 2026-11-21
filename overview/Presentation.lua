@@ -75,6 +75,7 @@ return {
   later = {
     galdorin = {
       ["Ctrl+3"] = { "Berserker Stance (level 30)", "Berserker" },
+      ["Shift+1"] = { "Shield Wall (level 28, Defensive Stance)", "Shield Wall" },
       ["Shift+4"] = "Execute (level 24)",
       ["Shift+F"] = { "Challenging Shout (level 26)", "Chall. Shout" },
     },
