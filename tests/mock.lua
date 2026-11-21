@@ -49,7 +49,7 @@ local CHAR = arg[1] or "Meagor"
 local KNOWN = {
  Meagor={["Eureka!"]=900003,Stealth=1784,["Sinister Strike"]=1752,Backstab=53,Eviscerate=2098,["Slice and Dice"]=5171,Gouge=1776,Evasion=5277,Throw=2764,["Pick Pocket"]=921,Sap=6770,Sprint=2983,["Pick Lock"]=1804,Kick=1766},
  -- every Galdorin spell is known
- Galdorin={Charge=100,["Sunder Armor"]=7386,Revenge=6572,["Heroic Strike"]=78,["Shield Block"]=2565,["Thunder Clap"]=6343,["Demoralizing Shout"]=1160,["Shield Bash"]=72,Cleave=845,Taunt=355,Throw=2764,Disarm=676,["Battle Stance"]=2457,["Defensive Stance"]=71,Bloodrage=2687,["Battle Shout"]=6673,Overpower=7384,Rend=772,Slam=1464,["Victory Rush"]=34428,Hamstring=1715,Retaliation=20230},
+ Galdorin={Charge=100,["Sunder Armor"]=7386,Revenge=6572,["Heroic Strike"]=78,["Shield Block"]=2565,["Thunder Clap"]=6343,["Demoralizing Shout"]=1160,["Shield Bash"]=72,Cleave=845,Taunt=355,Throw=2764,Disarm=676,["Battle Stance"]=2457,["Defensive Stance"]=71,Bloodrage=2687,["Battle Shout"]=6673,Overpower=7384,Rend=772,Slam=1464,["Victory Rush"]=34428,Hamstring=1715,Retaliation=20230,["Intimidating Shout"]=5246},
  -- Fire Nova and Ancestral Spirit not learned yet
  -- Dampen Magic not learned yet
  Leorn={["Arcane Missiles"]=5143,Frostbolt=116,["Fire Blast"]=2136,Polymorph=118,Shoot=5019,["Frost Nova"]=122,["Walk on Air"]=900001,Fireball=133,["Arcane Intellect"]=1459,["Frost Armor"]=168,["Read Leyline"]=900002,["Conjure Water"]=5504,["Conjure Food"]=587},

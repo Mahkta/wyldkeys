@@ -54,6 +54,7 @@ return {
     ["Tank: Defensive Stance and Tanking set"] = "Tank",
     ["Victory Rush"] = "Victory Rush",
     ["Retaliation"] = "Retal\194\173iation",
+    ["Intimidating Shout"] = "Intim. Shout",
     ["Reply to whisper"] = "Reply",
     ["Arcane Missiles"] = "Arc. Missiles",
     ["Arcane Intellect"] = "Arc. Intellect",
@@ -72,6 +73,10 @@ return {
   -- What a free key is meant for later, per view. "Name (level N)" shows "Name"
   -- on the key; write { "long text", "Key text" } to choose the key text.
   later = {
+    galdorin = {
+      ["Shift+4"] = "Execute (level 24)",
+      ["Shift+F"] = { "Challenging Shout (level 26)", "Chall. Shout" },
+    },
     ["galdorin-battle"] = {
       ["E"] = { "Pummel (level 38, Berserker Stance); Shield Bash needs a shield", "Pummel" },
     },
