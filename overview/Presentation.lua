@@ -126,7 +126,7 @@ return {
       ["Shift+2"] = "Frostfire Bolt (level 40) can take this key if it beats Fireball.",
       ["Shift+§"] = "Skyborne racial: free, steerable slow fall.",
       ["Ctrl+4"] = "Skyborne racial: +50% health and mana regeneration for 15 sec, between fights.",
-      ["Shift+X"] = "Ice Armor (30) or Mage Armor (34) replaces it.",
+      ["Ctrl+2"] = "Ice Armor (30) or Mage Armor (34) replaces it.",
       ["Ctrl+3"] = "Press once for water, again for food.",
     },
   },
@@ -137,7 +137,7 @@ return {
     ["galdorin-battle"] = "Arms in Battle Stance with the two-hander. Only the main bar keys § 1–5 Q E R F T G change with the stance; Shift, Z, X and Ctrl keys stay as on the tank layout.",
     meagor = "Stealth switches to the stealth bar automatically; see the stealth view.",
     ["meagor-stealth"] = "In stealth, the stealth bar replaces the main bar keys § 1–5 Q E R F T G. Shift and Ctrl keys stay as on the normal bar.",
-    leorn = "Arcane mage, planned to level 40, with 1–4 kept for arcane spells. Dashed keys are kept free for what comes later. Drink, food and bandage on Ctrl + 1–3 are the best in the bags at /kb apply; run it again after conjuring a better rank. Amplify and Dampen Magic (group buffs, used situationally) sit on Z and X; Arcane Intellect and the armor on Shift + Z and Shift + X. Flamestrike, teleports and portals stay in the spellbook.",
+    leorn = "Arcane mage, planned to level 40, with 1–4 kept for arcane spells. Dashed keys are kept free for what comes later. Drink and food on Shift + Z and Shift + X and bandages on Ctrl + Q are the best in the bags at /kb apply; run it again after conjuring a better rank. Amplify and Dampen Magic (group buffs, used situationally) sit on Z and X; Arcane Intellect and the armor on Ctrl + 1 and Ctrl + 2. Flamestrike, teleports and portals stay in the spellbook.",
     thorim = "Damage first while levelling, up to level 20. The layout is reworked at 20, when Call of the Elements and the other totem spells arrive. Cure Poison (16) and Tremor Totem (18) are placed by /kb apply once learned.",
   },
 

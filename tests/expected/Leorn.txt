@@ -34,6 +34,7 @@
 |cff66ccffWyldKeys:|r   Shift+Z = Action Bar 3 button 5
 |cff66ccffWyldKeys:|r   Shift+X = Action Bar 3 button 6
 |cff66ccffWyldKeys:|r   Ctrl+5 = Action Bar 3 button 7
+|cff66ccffWyldKeys:|r   Ctrl+Q = Action Bar 3 button 8
 |cff66ccffWyldKeys:|r   Ctrl+R = Reply to whisper
 |cff66ccffWyldKeys:|r   Ctrl+Z = Sheathe weapon
 |cff66ccffWyldKeys:|r   Ctrl+X = Sit / swim down
@@ -50,13 +51,13 @@
 |cff66ccffWyldKeys:|r   Action Bar 2, Shift+Q (healing potion): best healing potion in your bags (Minor Healing Potion)
 |cff66ccffWyldKeys:|r   Action Bar 2, Shift+§: Walk on Air  (replaces Item117)
 |cff66ccffWyldKeys:|r   Action Bar 2, X: Dampen Magic
-|cff66ccffWyldKeys:|r   Action Bar 3, Ctrl+1: best drink in your bags (Conjured Fresh Water)
-|cff66ccffWyldKeys:|r   Action Bar 3, Ctrl+2: best food in your bags (Conjured Bread)
-|cff66ccffWyldKeys:|r   Action Bar 3, Ctrl+3: best bandage in your bags (Heavy Linen Bandage)
-|cff66ccffWyldKeys:|r   Action Bar 3, Ctrl+4: macro WK Conjure
-|cff66ccffWyldKeys:|r   Action Bar 3, Shift+Z: Arcane Intellect
-|cff66ccffWyldKeys:|r   Action Bar 3, Shift+X: Frost Armor
-|cff66ccffWyldKeys:|r   Action Bar 3, Ctrl+5: Read Leyline
+|cff66ccffWyldKeys:|r   Action Bar 3, Ctrl+1: Arcane Intellect
+|cff66ccffWyldKeys:|r   Action Bar 3, Ctrl+2: Frost Armor
+|cff66ccffWyldKeys:|r   Action Bar 3, Ctrl+3: macro WK Conjure
+|cff66ccffWyldKeys:|r   Action Bar 3, Ctrl+4: Read Leyline
+|cff66ccffWyldKeys:|r   Action Bar 3, Shift+Z: best drink in your bags (Conjured Fresh Water)
+|cff66ccffWyldKeys:|r   Action Bar 3, Shift+X: best food in your bags (Conjured Bread)
+|cff66ccffWyldKeys:|r   Action Bar 3, Ctrl+Q: best bandage in your bags (Heavy Linen Bandage)
 |cff66ccffWyldKeys:|r Bindings will be saved for every character that uses account-wide bindings.
 ---- apply
 |cff66ccffWyldKeys:|r Saved a copy of your current keys and bars. /kb restore puts them back.
@@ -99,6 +100,7 @@
 |cff66ccffWyldKeys:|r   Shift+Z = Action Bar 3 button 5
 |cff66ccffWyldKeys:|r   Shift+X = Action Bar 3 button 6
 |cff66ccffWyldKeys:|r   Ctrl+5 = Action Bar 3 button 7
+|cff66ccffWyldKeys:|r   Ctrl+Q = Action Bar 3 button 8
 |cff66ccffWyldKeys:|r   Ctrl+R = Reply to whisper
 |cff66ccffWyldKeys:|r   Ctrl+Z = Sheathe weapon
 |cff66ccffWyldKeys:|r   Ctrl+X = Sit / swim down
@@ -115,16 +117,16 @@
 |cff66ccffWyldKeys:|r   Action Bar 2, Shift+Q (healing potion): best healing potion in your bags (Minor Healing Potion)
 |cff66ccffWyldKeys:|r   Action Bar 2, Shift+§: Walk on Air
 |cff66ccffWyldKeys:|r   Action Bar 2, X: Dampen Magic
-|cff66ccffWyldKeys:|r   Action Bar 3, Ctrl+1: best drink in your bags (Conjured Fresh Water)
-|cff66ccffWyldKeys:|r   Action Bar 3, Ctrl+2: best food in your bags (Conjured Bread)
-|cff66ccffWyldKeys:|r   Action Bar 3, Ctrl+3: best bandage in your bags (Heavy Linen Bandage)
-|cff66ccffWyldKeys:|r   Action Bar 3, Ctrl+4: macro WK Conjure
-|cff66ccffWyldKeys:|r   Action Bar 3, Shift+Z: Arcane Intellect
-|cff66ccffWyldKeys:|r   Action Bar 3, Shift+X: Frost Armor
-|cff66ccffWyldKeys:|r   Action Bar 3, Ctrl+5: Read Leyline
+|cff66ccffWyldKeys:|r   Action Bar 3, Ctrl+1: Arcane Intellect
+|cff66ccffWyldKeys:|r   Action Bar 3, Ctrl+2: Frost Armor
+|cff66ccffWyldKeys:|r   Action Bar 3, Ctrl+3: macro WK Conjure
+|cff66ccffWyldKeys:|r   Action Bar 3, Ctrl+4: Read Leyline
+|cff66ccffWyldKeys:|r   Action Bar 3, Shift+Z: best drink in your bags (Conjured Fresh Water)
+|cff66ccffWyldKeys:|r   Action Bar 3, Shift+X: best food in your bags (Conjured Bread)
+|cff66ccffWyldKeys:|r   Action Bar 3, Ctrl+Q: best bandage in your bags (Heavy Linen Bandage)
 |cff66ccffWyldKeys:|r Bindings will be saved for every character that uses account-wide bindings.
-1=ACTIONBUTTON2 2=ACTIONBUTTON3 3=ACTIONBUTTON4 4=ACTIONBUTTON5 5=ACTIONBUTTON6 BUTTON3=TOGGLEAUTORUN BUTTON4=TOGGLEAUTORUN CTRL-1=MULTIACTIONBAR2BUTTON1 CTRL-2=MULTIACTIONBAR2BUTTON2 CTRL-3=MULTIACTIONBAR2BUTTON3 CTRL-4=MULTIACTIONBAR2BUTTON4 CTRL-5=MULTIACTIONBAR2BUTTON7 CTRL-R=REPLY CTRL-X=SITORSTAND CTRL-Z=TOGGLESHEATH E=ACTIONBUTTON8 F8=MOVEBACKWARD F=ACTIONBUTTON10 G=ACTIONBUTTON12 Q=ACTIONBUTTON7 R=ACTIONBUTTON9 S=MOVEBACKWARD SHIFT-1=MULTIACTIONBAR1BUTTON1 SHIFT-2=MULTIACTIONBAR1BUTTON2 SHIFT-3=MULTIACTIONBAR1BUTTON3 SHIFT-4=MULTIACTIONBAR1BUTTON4 SHIFT-5=MULTIACTIONBAR1BUTTON5 SHIFT-E=MULTIACTIONBAR1BUTTON7 SHIFT-F=MULTIACTIONBAR1BUTTON9 SHIFT-Q=MULTIACTIONBAR1BUTTON6 SHIFT-R=MULTIACTIONBAR1BUTTON8 SHIFT-X=MULTIACTIONBAR2BUTTON6 SHIFT-Z=MULTIACTIONBAR2BUTTON5 SHIFT-§=MULTIACTIONBAR1BUTTON10 T=ACTIONBUTTON11 X=MULTIACTIONBAR1BUTTON12 Z=MULTIACTIONBAR1BUTTON11 §=ACTIONBUTTON1
-10:spell118 11:spell5019 12:spell122 2:spell5143 49:item2288 50:item1113 51:item2581 52:macro121 53:spell1459 54:spell168 55:spell900002 5:spell1752 62:spell133 66:item118 6:spell116 70:spell900001 7:spell2136
+1=ACTIONBUTTON2 2=ACTIONBUTTON3 3=ACTIONBUTTON4 4=ACTIONBUTTON5 5=ACTIONBUTTON6 BUTTON3=TOGGLEAUTORUN BUTTON4=TOGGLEAUTORUN CTRL-1=MULTIACTIONBAR2BUTTON1 CTRL-2=MULTIACTIONBAR2BUTTON2 CTRL-3=MULTIACTIONBAR2BUTTON3 CTRL-4=MULTIACTIONBAR2BUTTON4 CTRL-5=MULTIACTIONBAR2BUTTON7 CTRL-Q=MULTIACTIONBAR2BUTTON8 CTRL-R=REPLY CTRL-X=SITORSTAND CTRL-Z=TOGGLESHEATH E=ACTIONBUTTON8 F8=MOVEBACKWARD F=ACTIONBUTTON10 G=ACTIONBUTTON12 Q=ACTIONBUTTON7 R=ACTIONBUTTON9 S=MOVEBACKWARD SHIFT-1=MULTIACTIONBAR1BUTTON1 SHIFT-2=MULTIACTIONBAR1BUTTON2 SHIFT-3=MULTIACTIONBAR1BUTTON3 SHIFT-4=MULTIACTIONBAR1BUTTON4 SHIFT-5=MULTIACTIONBAR1BUTTON5 SHIFT-E=MULTIACTIONBAR1BUTTON7 SHIFT-F=MULTIACTIONBAR1BUTTON9 SHIFT-Q=MULTIACTIONBAR1BUTTON6 SHIFT-R=MULTIACTIONBAR1BUTTON8 SHIFT-X=MULTIACTIONBAR2BUTTON6 SHIFT-Z=MULTIACTIONBAR2BUTTON5 SHIFT-§=MULTIACTIONBAR1BUTTON10 T=ACTIONBUTTON11 X=MULTIACTIONBAR1BUTTON12 Z=MULTIACTIONBAR1BUTTON11 §=ACTIONBUTTON1
+10:spell118 11:spell5019 12:spell122 2:spell5143 49:spell1459 50:spell168 51:macro121 52:spell900002 53:item2288 54:item1113 56:item2581 5:spell1752 62:spell133 66:item118 6:spell116 70:spell900001 7:spell2136
 ---- restore
 |cff66ccffWyldKeys:|r Keys and bars put back as they were before /kb apply.
 0=ACTIONBUTTON10 1=ACTIONBUTTON1 2=ACTIONBUTTON2 6=ACTIONBUTTON6 BUTTON4=TOGGLEAUTORUN F8=MOVEBACKWARD F9=MULTIACTIONBAR2BUTTON12 Q=TURNLEFT R=REPLY S=MOVEBACKWARD X=SITORSTAND Z=TOGGLESHEATH

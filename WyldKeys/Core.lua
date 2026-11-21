@@ -445,10 +445,14 @@ local function apply()
         if cur then say("Left as it was: main bar " .. MAIN_KEYS[i] .. " has " .. cur .. ".") end
       end
     end
+    local has = {}
+    for _, p in ipairs(plan) do
+      if type(p.spell) == "table" and p.spell.best then has[p.spell.best] = true end
+    end
     local byHand = {}
-    if not layout.ctrl[1] then byHand[#byHand + 1] = "food on Ctrl+1" end
-    if not layout.ctrl[2] then byHand[#byHand + 1] = "bandages on Ctrl+2" end
-    if #byHand > 0 then say("Drag " .. table.concat(byHand, " and ") .. " yourself (Action Bar 3).") end
+    if not has.food then byHand[#byHand + 1] = "food" end
+    if not has.bandage then byHand[#byHand + 1] = "bandages" end
+    if #byHand > 0 then say("This layout has no key for " .. table.concat(byHand, " or ") .. "; place them yourself if you want one.") end
   else
     say("No abilities placed on this character, only keys.")
   end

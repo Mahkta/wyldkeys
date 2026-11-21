@@ -40,11 +40,12 @@
 --   BEST_DRINK, BEST_FOOD          the best drink or food in the bags at /kb apply
 --   BEST_BANDAGE                   the best bandage in the bags at /kb apply
 --
--- Ctrl keys, out of combat: characters without mana have food on Ctrl+1 and
--- bandages on Ctrl+2; casters with mana have drink on Ctrl+1, food on Ctrl+2
--- and bandages on Ctrl+3, and their other Ctrl keys move one step down.
--- Warriors have their stances on Ctrl+1-3 instead, and food and bandages on
--- Ctrl+4 and Ctrl+5.
+-- The same on every character:
+--   Ctrl+1-5   stances, forms or auras (warrior stances, druid forms, paladin
+--              auras); classes without them use these keys for long buffs and
+--              out-of-combat spells
+--   Shift+Z/X  casters with mana: drink / food; others: food on Shift+Z
+--   Ctrl+Q     bandages
 --   Item(id, "Name")               one item, by item ID
 --   Macro("Name", "label")         a macro by name; the label is for the overview only
 --
@@ -81,12 +82,11 @@ ns.Config = {
       ["Shift+E"] = "Bloodrage",
       ["Shift+R"] = "Thunder Clap",
       ["Z"] = "Battle Shout",
-      -- Stances on Ctrl+1-3 (Berserker Stance at 30 gets Ctrl+3); food and
-      -- bandages move down to Ctrl+4 and Ctrl+5.
+      -- Stances on Ctrl+1-3 (Berserker Stance at 30 gets Ctrl+3).
       ["Ctrl+1"] = Macro("WK Arms", "Arms: Battle Stance and Arms set"),
       ["Ctrl+2"] = Macro("WK Tank", "Tank: Defensive Stance and Tanking set"),
-      ["Ctrl+4"] = BEST_FOOD,
-      ["Ctrl+5"] = BEST_BANDAGE,
+      ["Shift+Z"] = BEST_FOOD,
+      ["Ctrl+Q"] = BEST_BANDAGE,
     },
     -- Arms in Battle Stance: two-hander, no shield, so no interrupt on E.
     battle = {
@@ -142,9 +142,9 @@ ns.Config = {
       ["Shift+R"] = "Eureka!",        -- gnome racial, 2 min burst cooldown
       ["Shift+§"] = "Sprint",
       ["Z"] = Item(1178, "Explosive Rocket"),
-      ["Ctrl+1"] = BEST_FOOD,
-      ["Ctrl+2"] = BEST_BANDAGE,
-      ["Ctrl+3"] = "Pick Lock",
+      ["Shift+Z"] = BEST_FOOD,
+      ["Ctrl+Q"] = BEST_BANDAGE,
+      ["Ctrl+1"] = "Pick Lock",
     },
     stealth = {
       ["§"] = "Stealth",
@@ -180,10 +180,10 @@ ns.Config = {
       ["Shift+§"] = "Tremor Totem",    -- level 18; run /kb apply again when learned
       ["Z"] = "Rockbiter Weapon",
       ["X"] = "Flametongue Weapon",
-      ["Ctrl+1"] = BEST_DRINK,
-      ["Ctrl+2"] = BEST_FOOD,
-      ["Ctrl+3"] = BEST_BANDAGE,
-      ["Ctrl+4"] = "Ancestral Spirit",
+      ["Shift+Z"] = BEST_DRINK,
+      ["Shift+X"] = BEST_FOOD,
+      ["Ctrl+Q"] = BEST_BANDAGE,
+      ["Ctrl+1"] = "Ancestral Spirit",
     },
   },
 
@@ -201,13 +201,13 @@ ns.Config = {
       ["Shift+2"] = "Fireball",
       ["Shift+Q"] = BEST_POTION,
       ["X"] = "Dampen Magic",          -- level 12; group buff, Amplify Magic (18) goes on Z
-      ["Shift+Z"] = "Arcane Intellect",
-      ["Shift+X"] = "Frost Armor",
-      ["Ctrl+4"] = Macro("WK Conjure", "Conjure water, then food"),
-      ["Ctrl+1"] = BEST_DRINK,
-      ["Ctrl+2"] = BEST_FOOD,
-      ["Ctrl+3"] = BEST_BANDAGE,
-      ["Ctrl+5"] = "Read Leyline",
+      ["Ctrl+1"] = "Arcane Intellect",
+      ["Ctrl+2"] = "Frost Armor",
+      ["Ctrl+3"] = Macro("WK Conjure", "Conjure water, then food"),
+      ["Shift+Z"] = BEST_DRINK,
+      ["Shift+X"] = BEST_FOOD,
+      ["Ctrl+Q"] = BEST_BANDAGE,
+      ["Ctrl+4"] = "Read Leyline",
     },
     macros = {
       -- Press once for water, again for food; starts over after a minute.

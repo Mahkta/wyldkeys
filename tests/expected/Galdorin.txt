@@ -34,6 +34,7 @@
 |cff66ccffWyldKeys:|r   Shift+Z = Action Bar 3 button 5
 |cff66ccffWyldKeys:|r   Shift+X = Action Bar 3 button 6
 |cff66ccffWyldKeys:|r   Ctrl+5 = Action Bar 3 button 7
+|cff66ccffWyldKeys:|r   Ctrl+Q = Action Bar 3 button 8
 |cff66ccffWyldKeys:|r   Ctrl+R = Reply to whisper
 |cff66ccffWyldKeys:|r   Ctrl+Z = Sheathe weapon
 |cff66ccffWyldKeys:|r   Ctrl+X = Sit / swim down
@@ -85,8 +86,8 @@
 |cff66ccffWyldKeys:|r   Action Bar 2, Z: Battle Shout
 |cff66ccffWyldKeys:|r   Action Bar 3, Ctrl+1: macro WK Arms
 |cff66ccffWyldKeys:|r   Action Bar 3, Ctrl+2: macro WK Tank
-|cff66ccffWyldKeys:|r   Action Bar 3, Ctrl+4: best food in your bags (none found)
-|cff66ccffWyldKeys:|r   Action Bar 3, Ctrl+5: best bandage in your bags (none found)
+|cff66ccffWyldKeys:|r   Action Bar 3, Shift+Z: best food in your bags (none found)
+|cff66ccffWyldKeys:|r   Action Bar 3, Ctrl+Q: best bandage in your bags (none found)
 |cff66ccffWyldKeys:|r Bindings will be saved for every character that uses account-wide bindings.
 ---- apply
 |cff66ccffWyldKeys:|r Saved a copy of your current keys and bars. /kb restore puts them back.
@@ -99,8 +100,8 @@
 |cff66ccffWyldKeys:|r Macro WK Tank created.
 |cff66ccffWyldKeys:|r Abilities placed: 42 of 45.
 |cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r best healing potion in your bags (none found) (Action Bar 2, Shift+Q (healing potion))
-|cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r best food in your bags (none found) (Action Bar 3, Ctrl+4)
-|cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r best bandage in your bags (none found) (Action Bar 3, Ctrl+5)
+|cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r best food in your bags (none found) (Action Bar 3, Shift+Z)
+|cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r best bandage in your bags (none found) (Action Bar 3, Ctrl+Q)
 ---- preview again
 |cff66ccffWyldKeys:|r Preview. Nothing is changed.
 |cff66ccffWyldKeys:|r   § = main bar button 1
@@ -134,6 +135,7 @@
 |cff66ccffWyldKeys:|r   Shift+Z = Action Bar 3 button 5
 |cff66ccffWyldKeys:|r   Shift+X = Action Bar 3 button 6
 |cff66ccffWyldKeys:|r   Ctrl+5 = Action Bar 3 button 7
+|cff66ccffWyldKeys:|r   Ctrl+Q = Action Bar 3 button 8
 |cff66ccffWyldKeys:|r   Ctrl+R = Reply to whisper
 |cff66ccffWyldKeys:|r   Ctrl+Z = Sheathe weapon
 |cff66ccffWyldKeys:|r   Ctrl+X = Sit / swim down
@@ -185,10 +187,10 @@
 |cff66ccffWyldKeys:|r   Action Bar 2, Z: Battle Shout
 |cff66ccffWyldKeys:|r   Action Bar 3, Ctrl+1: macro WK Arms
 |cff66ccffWyldKeys:|r   Action Bar 3, Ctrl+2: macro WK Tank
-|cff66ccffWyldKeys:|r   Action Bar 3, Ctrl+4: best food in your bags (none found)
-|cff66ccffWyldKeys:|r   Action Bar 3, Ctrl+5: best bandage in your bags (none found)
+|cff66ccffWyldKeys:|r   Action Bar 3, Shift+Z: best food in your bags (none found)
+|cff66ccffWyldKeys:|r   Action Bar 3, Ctrl+Q: best bandage in your bags (none found)
 |cff66ccffWyldKeys:|r Bindings will be saved for every character that uses account-wide bindings.
-1=ACTIONBUTTON2 2=ACTIONBUTTON3 3=ACTIONBUTTON4 4=ACTIONBUTTON5 5=ACTIONBUTTON6 BUTTON3=TOGGLEAUTORUN BUTTON4=TOGGLEAUTORUN CTRL-1=MULTIACTIONBAR2BUTTON1 CTRL-2=MULTIACTIONBAR2BUTTON2 CTRL-3=MULTIACTIONBAR2BUTTON3 CTRL-4=MULTIACTIONBAR2BUTTON4 CTRL-5=MULTIACTIONBAR2BUTTON7 CTRL-R=REPLY CTRL-X=SITORSTAND CTRL-Z=TOGGLESHEATH E=ACTIONBUTTON8 F8=MOVEBACKWARD F=ACTIONBUTTON10 G=ACTIONBUTTON12 Q=ACTIONBUTTON7 R=ACTIONBUTTON9 S=MOVEBACKWARD SHIFT-1=MULTIACTIONBAR1BUTTON1 SHIFT-2=MULTIACTIONBAR1BUTTON2 SHIFT-3=MULTIACTIONBAR1BUTTON3 SHIFT-4=MULTIACTIONBAR1BUTTON4 SHIFT-5=MULTIACTIONBAR1BUTTON5 SHIFT-E=MULTIACTIONBAR1BUTTON7 SHIFT-F=MULTIACTIONBAR1BUTTON9 SHIFT-Q=MULTIACTIONBAR1BUTTON6 SHIFT-R=MULTIACTIONBAR1BUTTON8 SHIFT-X=MULTIACTIONBAR2BUTTON6 SHIFT-Z=MULTIACTIONBAR2BUTTON5 SHIFT-§=MULTIACTIONBAR1BUTTON10 T=ACTIONBUTTON11 X=MULTIACTIONBAR1BUTTON12 Z=MULTIACTIONBAR1BUTTON11 §=ACTIONBUTTON1
+1=ACTIONBUTTON2 2=ACTIONBUTTON3 3=ACTIONBUTTON4 4=ACTIONBUTTON5 5=ACTIONBUTTON6 BUTTON3=TOGGLEAUTORUN BUTTON4=TOGGLEAUTORUN CTRL-1=MULTIACTIONBAR2BUTTON1 CTRL-2=MULTIACTIONBAR2BUTTON2 CTRL-3=MULTIACTIONBAR2BUTTON3 CTRL-4=MULTIACTIONBAR2BUTTON4 CTRL-5=MULTIACTIONBAR2BUTTON7 CTRL-Q=MULTIACTIONBAR2BUTTON8 CTRL-R=REPLY CTRL-X=SITORSTAND CTRL-Z=TOGGLESHEATH E=ACTIONBUTTON8 F8=MOVEBACKWARD F=ACTIONBUTTON10 G=ACTIONBUTTON12 Q=ACTIONBUTTON7 R=ACTIONBUTTON9 S=MOVEBACKWARD SHIFT-1=MULTIACTIONBAR1BUTTON1 SHIFT-2=MULTIACTIONBAR1BUTTON2 SHIFT-3=MULTIACTIONBAR1BUTTON3 SHIFT-4=MULTIACTIONBAR1BUTTON4 SHIFT-5=MULTIACTIONBAR1BUTTON5 SHIFT-E=MULTIACTIONBAR1BUTTON7 SHIFT-F=MULTIACTIONBAR1BUTTON9 SHIFT-Q=MULTIACTIONBAR1BUTTON6 SHIFT-R=MULTIACTIONBAR1BUTTON8 SHIFT-X=MULTIACTIONBAR2BUTTON6 SHIFT-Z=MULTIACTIONBAR2BUTTON5 SHIFT-§=MULTIACTIONBAR1BUTTON10 T=ACTIONBUTTON11 X=MULTIACTIONBAR1BUTTON12 Z=MULTIACTIONBAR1BUTTON11 §=ACTIONBUTTON1
 10:spell355 11:macro122 12:spell676 1:spell100 2:spell2565 3:spell6572 49:macro121 4:spell78 50:macro123 5:spell7386 63:spell772 65:spell5246 67:spell2687 68:spell6343 6:spell34428 70:item117 71:spell6673 73:spell100 74:spell7384 75:spell772 76:spell78 77:spell1464 78:spell34428 79:spell1160 7:spell1160 81:spell845 82:spell1715 83:macro122 84:spell20230 85:spell100 86:spell2565 87:spell6572 88:spell78 89:spell7386 8:spell72 90:spell34428 91:spell1160 92:spell72 93:spell845 94:spell355 95:macro122 96:spell676 9:spell845
 ---- restore
 |cff66ccffWyldKeys:|r Keys and bars put back as they were before /kb apply.
