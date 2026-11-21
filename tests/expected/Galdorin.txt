@@ -78,7 +78,9 @@
 |cff66ccffWyldKeys:|r   Stance/stealth bar 2, F: Taunt
 |cff66ccffWyldKeys:|r   Stance/stealth bar 2, T: macro WK Pull
 |cff66ccffWyldKeys:|r   Stance/stealth bar 2, G: Disarm
+|cff66ccffWyldKeys:|r   Action Bar 2, Shift+2: Stoneform
 |cff66ccffWyldKeys:|r   Action Bar 2, Shift+3: Rend
+|cff66ccffWyldKeys:|r   Action Bar 2, Shift+4: Execute
 |cff66ccffWyldKeys:|r   Action Bar 2, Shift+5: Intimidating Shout
 |cff66ccffWyldKeys:|r   Action Bar 2, Shift+Q (healing potion): best healing potion in your bags (none found)
 |cff66ccffWyldKeys:|r   Action Bar 2, Shift+E: Bloodrage
@@ -98,7 +100,9 @@
 |cff66ccffWyldKeys:|r Macro WK Pull created.
 [mock] CreateMacro WK Tank per=true
 |cff66ccffWyldKeys:|r Macro WK Tank created.
-|cff66ccffWyldKeys:|r Abilities placed: 42 of 45.
+|cff66ccffWyldKeys:|r Abilities placed: 42 of 47.
+|cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r Stoneform (Action Bar 2, Shift+2)
+|cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r Execute (Action Bar 2, Shift+4)
 |cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r best healing potion in your bags (none found) (Action Bar 2, Shift+Q (healing potion))
 |cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r best food in your bags (none found) (Action Bar 3, Shift+Z)
 |cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r best bandage in your bags (none found) (Action Bar 3, Ctrl+Q)
@@ -179,7 +183,9 @@
 |cff66ccffWyldKeys:|r   Stance/stealth bar 2, F: Taunt
 |cff66ccffWyldKeys:|r   Stance/stealth bar 2, T: macro WK Pull
 |cff66ccffWyldKeys:|r   Stance/stealth bar 2, G: Disarm
+|cff66ccffWyldKeys:|r   Action Bar 2, Shift+2: Stoneform
 |cff66ccffWyldKeys:|r   Action Bar 2, Shift+3: Rend
+|cff66ccffWyldKeys:|r   Action Bar 2, Shift+4: Execute
 |cff66ccffWyldKeys:|r   Action Bar 2, Shift+5: Intimidating Shout
 |cff66ccffWyldKeys:|r   Action Bar 2, Shift+Q (healing potion): best healing potion in your bags (none found)
 |cff66ccffWyldKeys:|r   Action Bar 2, Shift+E: Bloodrage
