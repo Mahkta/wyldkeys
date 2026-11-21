@@ -75,6 +75,7 @@ ns.Config = {
       ["G"] = "Disarm",
       ["Shift+1"] = Macro("WK Arms", "Arms: Battle Stance and Arms set"),
       ["Shift+2"] = Macro("WK Tank", "Tank: Defensive Stance and Tanking set"),
+      ["Shift+3"] = "Rend",
       ["Shift+Q"] = BEST_POTION,
       ["Shift+E"] = "Bloodrage",
       ["Shift+R"] = "Thunder Clap",
