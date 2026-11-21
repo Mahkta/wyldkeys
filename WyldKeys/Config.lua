@@ -135,6 +135,7 @@ ns.Config = {
       ["R"] = BEST_BOMB,
       ["T"] = "Throw",
       ["Shift+Q"] = BEST_POTION,
+      ["Shift+R"] = "Eureka!",        -- gnome racial, 2 min burst cooldown
       ["Shift+§"] = "Sprint",
       ["Z"] = Item(1178, "Explosive Rocket"),
       ["Ctrl+1"] = BEST_FOOD,
