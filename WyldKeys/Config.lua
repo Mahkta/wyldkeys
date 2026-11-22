@@ -217,6 +217,7 @@ ns.Config = {
       ["Shift+X"] = BEST_FOOD,
       ["Ctrl+Q"] = BEST_BANDAGE,
       ["Ctrl+4"] = "Read Leyline",
+      ["Ctrl+5"] = "Slow Fall",        -- level 12; mainly for the group, Walk on Air covers her
     },
     macros = {
       -- Press once for water, again for food; starts over after a minute.

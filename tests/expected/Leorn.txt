@@ -58,6 +58,7 @@
 |cff66ccffWyldKeys:|r   Action Bar 3, Ctrl+4: Read Leyline
 |cff66ccffWyldKeys:|r   Action Bar 3, Shift+Z: best drink in your bags (Conjured Fresh Water)
 |cff66ccffWyldKeys:|r   Action Bar 3, Shift+X: best food in your bags (Conjured Bread)
+|cff66ccffWyldKeys:|r   Action Bar 3, Ctrl+5: Slow Fall
 |cff66ccffWyldKeys:|r   Action Bar 3, Ctrl+Q: best bandage in your bags (Heavy Linen Bandage)
 |cff66ccffWyldKeys:|r Bindings will be saved for every character that uses account-wide bindings.
 ---- apply
@@ -65,9 +66,10 @@
 |cff66ccffWyldKeys:|r Keys set and saved for every character that uses account-wide bindings.
 [mock] CreateMacro WK Conjure per=true
 |cff66ccffWyldKeys:|r Macro WK Conjure created.
-|cff66ccffWyldKeys:|r Abilities placed: 16 of 18.
+|cff66ccffWyldKeys:|r Abilities placed: 16 of 19.
 |cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r Arcane Explosion (Main bar, R)
 |cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r Dampen Magic (Action Bar 2, X)
+|cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r Slow Fall (Action Bar 3, Ctrl+5)
 |cff66ccffWyldKeys:|r Left as it was: main bar 4 has spell1752.
 ---- preview again
 |cff66ccffWyldKeys:|r Preview. Nothing is changed.
@@ -126,6 +128,7 @@
 |cff66ccffWyldKeys:|r   Action Bar 3, Ctrl+4: Read Leyline
 |cff66ccffWyldKeys:|r   Action Bar 3, Shift+Z: best drink in your bags (Conjured Fresh Water)
 |cff66ccffWyldKeys:|r   Action Bar 3, Shift+X: best food in your bags (Conjured Bread)
+|cff66ccffWyldKeys:|r   Action Bar 3, Ctrl+5: Slow Fall
 |cff66ccffWyldKeys:|r   Action Bar 3, Ctrl+Q: best bandage in your bags (Heavy Linen Bandage)
 |cff66ccffWyldKeys:|r Bindings will be saved for every character that uses account-wide bindings.
 1=ACTIONBUTTON2 2=ACTIONBUTTON3 3=ACTIONBUTTON4 4=ACTIONBUTTON5 5=ACTIONBUTTON6 BUTTON3=TOGGLEAUTORUN BUTTON4=TOGGLEAUTORUN CTRL-1=MULTIACTIONBAR2BUTTON1 CTRL-2=MULTIACTIONBAR2BUTTON2 CTRL-3=MULTIACTIONBAR2BUTTON3 CTRL-4=MULTIACTIONBAR2BUTTON4 CTRL-5=MULTIACTIONBAR2BUTTON7 CTRL-Q=MULTIACTIONBAR2BUTTON8 CTRL-R=REPLY CTRL-X=SITORSTAND CTRL-Z=TOGGLESHEATH E=ACTIONBUTTON8 F8=MOVEBACKWARD F=ACTIONBUTTON10 G=ACTIONBUTTON12 Q=ACTIONBUTTON7 R=ACTIONBUTTON9 S=MOVEBACKWARD SHIFT-1=MULTIACTIONBAR1BUTTON1 SHIFT-2=MULTIACTIONBAR1BUTTON2 SHIFT-3=MULTIACTIONBAR1BUTTON3 SHIFT-4=MULTIACTIONBAR1BUTTON4 SHIFT-5=MULTIACTIONBAR1BUTTON5 SHIFT-E=MULTIACTIONBAR1BUTTON7 SHIFT-F=MULTIACTIONBAR1BUTTON9 SHIFT-Q=MULTIACTIONBAR1BUTTON6 SHIFT-R=MULTIACTIONBAR1BUTTON8 SHIFT-X=MULTIACTIONBAR2BUTTON6 SHIFT-Z=MULTIACTIONBAR2BUTTON5 SHIFT-§=MULTIACTIONBAR1BUTTON10 T=ACTIONBUTTON11 X=MULTIACTIONBAR1BUTTON12 Z=MULTIACTIONBAR1BUTTON11 §=ACTIONBUTTON1
