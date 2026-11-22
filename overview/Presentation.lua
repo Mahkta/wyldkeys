@@ -87,7 +87,6 @@ return {
       ["Shift+E"] = "Shank (level 24)",
     },
     ["meagor-stealth"] = {
-      ["2"] = "Garrote (level 14)",
       ["3"] = "Cheap Shot (level 26)",
       ["G"] = "Distract (level 22)",
     },
