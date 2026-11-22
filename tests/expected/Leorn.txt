@@ -44,6 +44,7 @@
 |cff66ccffWyldKeys:|r   Main bar, 1: Arcane Missiles
 |cff66ccffWyldKeys:|r   Main bar, 5: Frostbolt
 |cff66ccffWyldKeys:|r   Main bar, Q: Fire Blast
+|cff66ccffWyldKeys:|r   Main bar, R: Arcane Explosion
 |cff66ccffWyldKeys:|r   Main bar, F: Polymorph
 |cff66ccffWyldKeys:|r   Main bar, T: Shoot
 |cff66ccffWyldKeys:|r   Main bar, G: Frost Nova
@@ -64,7 +65,8 @@
 |cff66ccffWyldKeys:|r Keys set and saved for every character that uses account-wide bindings.
 [mock] CreateMacro WK Conjure per=true
 |cff66ccffWyldKeys:|r Macro WK Conjure created.
-|cff66ccffWyldKeys:|r Abilities placed: 16 of 17.
+|cff66ccffWyldKeys:|r Abilities placed: 16 of 18.
+|cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r Arcane Explosion (Main bar, R)
 |cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r Dampen Magic (Action Bar 2, X)
 |cff66ccffWyldKeys:|r Left as it was: main bar 4 has spell1752.
 ---- preview again
@@ -110,6 +112,7 @@
 |cff66ccffWyldKeys:|r   Main bar, 1: Arcane Missiles
 |cff66ccffWyldKeys:|r   Main bar, 5: Frostbolt
 |cff66ccffWyldKeys:|r   Main bar, Q: Fire Blast
+|cff66ccffWyldKeys:|r   Main bar, R: Arcane Explosion
 |cff66ccffWyldKeys:|r   Main bar, F: Polymorph
 |cff66ccffWyldKeys:|r   Main bar, T: Shoot
 |cff66ccffWyldKeys:|r   Main bar, G: Frost Nova

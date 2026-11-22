@@ -202,6 +202,7 @@ ns.Config = {
       ["1"] = "Arcane Missiles",
       ["5"] = "Frostbolt",
       ["Q"] = "Fire Blast",
+      ["R"] = "Arcane Explosion",      -- level 14
       ["F"] = "Polymorph",
       ["T"] = "Shoot",
       ["G"] = "Frost Nova",
