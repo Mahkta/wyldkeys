@@ -52,7 +52,7 @@
 |cff66ccffWyldKeys:|r   Main bar, R: best bomb in your bags (Large Copper Bomb)
 |cff66ccffWyldKeys:|r   Main bar, T: Throw
 |cff66ccffWyldKeys:|r   Stance/stealth bar 1, §: Stealth
-|cff66ccffWyldKeys:|r   Stance/stealth bar 1, 1: Backstab
+|cff66ccffWyldKeys:|r   Stance/stealth bar 1, 1: Ambush
 |cff66ccffWyldKeys:|r   Stance/stealth bar 1, 2: Garrote
 |cff66ccffWyldKeys:|r   Stance/stealth bar 1, 4: Pick Pocket
 |cff66ccffWyldKeys:|r   Stance/stealth bar 1, Q: Evasion
@@ -74,7 +74,8 @@
 ---- apply
 |cff66ccffWyldKeys:|r Saved a copy of your current keys and bars. /kb restore puts them back.
 |cff66ccffWyldKeys:|r Keys set and saved for every character that uses account-wide bindings.
-|cff66ccffWyldKeys:|r Abilities placed: 23 of 29.
+|cff66ccffWyldKeys:|r Abilities placed: 22 of 29.
+|cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r Ambush (Stance/stealth bar 1, 1)
 |cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r Garrote (Stance/stealth bar 1, 2)
 |cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r Escape Artist (Action Bar 2, Shift+1)
 |cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r Expose Armor (Action Bar 2, Shift+4)
@@ -132,7 +133,7 @@
 |cff66ccffWyldKeys:|r   Main bar, R: best bomb in your bags (Large Copper Bomb)
 |cff66ccffWyldKeys:|r   Main bar, T: Throw
 |cff66ccffWyldKeys:|r   Stance/stealth bar 1, §: Stealth
-|cff66ccffWyldKeys:|r   Stance/stealth bar 1, 1: Backstab
+|cff66ccffWyldKeys:|r   Stance/stealth bar 1, 1: Ambush
 |cff66ccffWyldKeys:|r   Stance/stealth bar 1, 2: Garrote
 |cff66ccffWyldKeys:|r   Stance/stealth bar 1, 4: Pick Pocket
 |cff66ccffWyldKeys:|r   Stance/stealth bar 1, Q: Evasion
@@ -152,7 +153,7 @@
 |cff66ccffWyldKeys:|r   Action Bar 3, Shift+Space: Feint
 |cff66ccffWyldKeys:|r Bindings will be saved for every character that uses account-wide bindings.
 1=ACTIONBUTTON2 2=ACTIONBUTTON3 3=ACTIONBUTTON4 4=ACTIONBUTTON5 5=ACTIONBUTTON6 BUTTON3=TOGGLEAUTORUN BUTTON4=TOGGLEAUTORUN CTRL-1=MULTIACTIONBAR2BUTTON1 CTRL-2=MULTIACTIONBAR2BUTTON2 CTRL-3=MULTIACTIONBAR2BUTTON3 CTRL-4=MULTIACTIONBAR2BUTTON4 CTRL-5=MULTIACTIONBAR2BUTTON7 CTRL-Q=MULTIACTIONBAR2BUTTON8 CTRL-R=REPLY CTRL-X=SITORSTAND CTRL-Z=TOGGLESHEATH E=ACTIONBUTTON8 F8=MOVEBACKWARD F=ACTIONBUTTON10 G=ACTIONBUTTON12 Q=ACTIONBUTTON7 R=ACTIONBUTTON9 S=MOVEBACKWARD SHIFT-1=MULTIACTIONBAR1BUTTON1 SHIFT-2=MULTIACTIONBAR1BUTTON2 SHIFT-3=MULTIACTIONBAR1BUTTON3 SHIFT-4=MULTIACTIONBAR1BUTTON4 SHIFT-5=MULTIACTIONBAR1BUTTON5 SHIFT-E=MULTIACTIONBAR1BUTTON7 SHIFT-F=MULTIACTIONBAR1BUTTON9 SHIFT-Q=MULTIACTIONBAR1BUTTON6 SHIFT-R=MULTIACTIONBAR1BUTTON8 SHIFT-SPACE=MULTIACTIONBAR2BUTTON9 SHIFT-X=MULTIACTIONBAR2BUTTON6 SHIFT-Z=MULTIACTIONBAR2BUTTON5 SHIFT-§=MULTIACTIONBAR1BUTTON10 T=ACTIONBUTTON11 X=MULTIACTIONBAR1BUTTON12 Z=MULTIACTIONBAR1BUTTON11 §=ACTIONBUTTON1
-11:spell2764 1:spell1784 2:spell1752 3:spell53 49:spell1804 4:spell2098 5:spell5171 66:item858 68:spell900003 6:spell1776 70:spell2983 71:item1178 73:spell1784 74:spell53 77:spell921 79:spell5277 7:spell5277 80:spell1766 81:item4370 82:spell6770 83:spell2764 8:spell1766 9:item4370
+11:spell2764 1:spell1784 2:spell1752 3:spell53 49:spell1804 4:spell2098 5:spell5171 66:item858 68:spell900003 6:spell1776 70:spell2983 71:item1178 73:spell1784 77:spell921 79:spell5277 7:spell5277 80:spell1766 81:item4370 82:spell6770 83:spell2764 8:spell1766 9:item4370
 ---- restore
 |cff66ccffWyldKeys:|r Keys and bars put back as they were before /kb apply.
 0=ACTIONBUTTON10 1=ACTIONBUTTON1 2=ACTIONBUTTON2 6=ACTIONBUTTON6 BUTTON4=TOGGLEAUTORUN F8=MOVEBACKWARD F9=MULTIACTIONBAR2BUTTON12 Q=TURNLEFT R=REPLY S=MOVEBACKWARD X=SITORSTAND Z=TOGGLESHEATH

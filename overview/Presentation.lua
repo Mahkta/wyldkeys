@@ -159,7 +159,7 @@ return {
       ["Shift+1"] = "Escape Artist: gnome racial, frees you from roots and snares. Next to Sprint on Shift + §.",
       ["Shift+Space"] = "Shift + Space is for the mitigation you use most, quick to reach.",
     },
-    ["meagor-stealth"] = { ["1"] = "Opener for now; Ambush takes this key at level 18." },
+    ["meagor-stealth"] = { ["1"] = "Ambush: the opener of this build. Needs a dagger in the main hand; Backstab stays on 2 out of stealth." },
     leorn = {
       ["Shift+2"] = "Frostfire Bolt (level 40) can take this key if it beats Fireball.",
       ["Shift+§"] = "Skyborne racial: free, steerable slow fall.",

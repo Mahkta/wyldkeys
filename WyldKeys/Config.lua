@@ -160,7 +160,7 @@ ns.Config = {
     },
     stealth = {
       ["§"] = "Stealth",
-      ["1"] = "Backstab",
+      ["1"] = "Ambush",               -- level 18; the opener, needs a dagger in the main hand
       ["2"] = "Garrote",              -- level 14
       ["4"] = "Pick Pocket",
       ["Q"] = "Evasion",
