@@ -93,7 +93,6 @@ return {
       ["Shift+3"] = { "Kidney Shot (level 30)", "Kidney Shot" },
       ["Shift+5"] = "Blind (level 34)",
       ["Shift+E"] = "Shank (level 24)",
-      ["Shift+F"] = "Feint (level 16)",
       ["X"] = { "Preparation (talent, level 30)", "Preparation" },
     },
     ["meagor-stealth"] = {
