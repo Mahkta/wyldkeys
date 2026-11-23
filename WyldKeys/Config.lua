@@ -46,6 +46,7 @@
 --              out-of-combat spells
 --   Shift+Z/X  casters with mana: drink / food; others: food on Shift+Z
 --   Ctrl+Q     bandages
+--   Shift+Space  the damage mitigation used most often
 --   Item(id, "Name")               one item, by item ID
 --   Macro("Name", "label")         a macro by name; the label is for the overview only
 --
@@ -150,7 +151,7 @@ ns.Config = {
       ["Shift+4"] = "Expose Armor",   -- level 14; finisher, beside Slice and Dice
       ["Shift+Q"] = BEST_POTION,
       ["Shift+R"] = "Eureka!",
-      ["Shift+F"] = "Feint",          -- level 16; drops threat in groups        -- gnome racial, 2 min burst cooldown
+      ["Shift+Space"] = "Feint",      -- level 16; the most used mitigation goes on Shift+Space        -- gnome racial, 2 min burst cooldown
       ["Shift+§"] = "Sprint",
       ["Z"] = Item(1178, "Explosive Rocket"),
       ["Shift+Z"] = BEST_FOOD,

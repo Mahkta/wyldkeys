@@ -38,7 +38,7 @@ local function keyOf(label)
   local mod, rest = label:match("^(%a+)%+(.+)$")
   if mod == "Shift" then layer, key = "shift", rest
   elseif mod == "Ctrl" then layer, key = "ctrl", rest end
-  if key == "§" then key = "sec" end
+  if key == "§" then key = "sec" elseif key == "Space" then key = "space" end
   return layer, key
 end
 
@@ -47,7 +47,7 @@ local CATEGORY = {
   base = { sec = "open", ["1"] = "core", ["2"] = "core", ["3"] = "core", ["4"] = "core", ["5"] = "core",
            Q = "cd", E = "intr", R = "aoe", F = "util", T = "rng", G = "def", Z = "rare", X = "rare" },
   shift = { sec = "open", ["1"] = "alt", ["2"] = "alt", ["3"] = "alt", ["4"] = "alt", ["5"] = "alt",
-            Q = "def", E = "big", R = "big", F = "big", Z = "ooc", X = "ooc" },
+            Q = "def", E = "big", R = "big", F = "big", Z = "ooc", X = "ooc", space = "def" },
   ctrl = { ["1"] = "ooc", ["2"] = "ooc", ["3"] = "ooc", ["4"] = "ooc", ["5"] = "ooc", Q = "ooc" },
 }
 local function category(layer, key) return (CATEGORY[layer] and CATEGORY[layer][key]) or "rare" end
