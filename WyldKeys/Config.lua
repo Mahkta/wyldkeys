@@ -146,6 +146,7 @@ ns.Config = {
       ["E"] = "Kick",
       ["R"] = BEST_BOMB,
       ["T"] = "Throw",
+      ["Shift+1"] = "Escape Artist",  -- gnome racial: breaks roots and snares, beside Sprint
       ["Shift+4"] = "Expose Armor",   -- level 14; finisher, beside Slice and Dice
       ["Shift+Q"] = BEST_POTION,
       ["Shift+R"] = "Eureka!",        -- gnome racial, 2 min burst cooldown

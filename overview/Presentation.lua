@@ -89,7 +89,6 @@ return {
     meagor = {
       ["F"] = { "Ghostly Strike (talent, level 25)", "Ghostly Strike" },
       ["G"] = "Vanish (level 22)",
-      ["Shift+1"] = { "Death Mark (level not confirmed)", "Death Mark" },
       ["Shift+2"] = { "Preparation (talent, level 30)", "Preparation" },
       ["Shift+3"] = { "Kidney Shot (level 30)", "Kidney Shot" },
       ["Shift+5"] = "Blind (level 34)",
@@ -157,7 +156,7 @@ return {
       ["Z"] = "Poisons take Z at level 20.",
       ["1"] = "Hemorrhage (talent, level 30) replaces Sinister Strike here as the combo point builder.",
       ["Shift+E"] = "Shank gives energy and an extra combo point; use it on cooldown.",
-      ["Shift+1"] = "Use with Slice and Dice to burst bosses and elites. Level to be checked in game.",
+      ["Shift+1"] = "Escape Artist: gnome racial, frees you from roots and snares. Next to Sprint on Shift + §.",
     },
     ["meagor-stealth"] = { ["1"] = "Opener for now; Ambush takes this key at level 18." },
     leorn = {
@@ -177,7 +176,7 @@ return {
     ["drealltar-bear"] = "Bear Form (10), laid out like Galdorin's tanking keys: Demoralizing Roar on Q, Bash on the interrupt key E, Swipe on R, Growl on F.",
     galdorin = "Tank layout, used in Defensive Stance. Ctrl + 1 (Arms) and Ctrl + 2 (Tank) switch stance and equipment set, and Ctrl + 3 is kept for Berserker Stance; see the Battle Stance view for the arms bar. Not placed yet at level 24: Mocking Blow.",
     ["galdorin-battle"] = "Arms in Battle Stance with the two-hander. Only the main bar keys § 1–5 Q E R F T G change with the stance; Shift, Z, X and Ctrl keys stay as on the tank layout.",
-    meagor = "Planned for the Subtlety Ambush build (Warcraft Tavern's rogue leveling guide): open with Ambush from stealth, build with Hemorrhage from 30, Ghostly Strike on cooldown for extra Ambushes. Dashed keys are kept free for what comes later. Finishers sit on 3 and 4 with their Shift partners (Kidney Shot, Expose Armor). Rupture (20) stays in the spellbook, since this build doesn't use it. Stealth switches to the stealth bar automatically; see the stealth view.",
+    meagor = "Planned for the Subtlety Ambush build (Warcraft Tavern's rogue leveling guide): open with Ambush from stealth, build with Hemorrhage from 30, Ghostly Strike on cooldown for extra Ambushes. Dashed keys are kept free for what comes later. Finishers sit on 3 and 4 with their Shift partners (Kidney Shot, Expose Armor). Rupture (20) stays in the spellbook, since this build doesn't use it. Death Mark gets a key once its level is known. Racials: Escape Artist on Shift + 1, Eureka! on Shift + R. Stealth switches to the stealth bar automatically; see the stealth view.",
     ["meagor-stealth"] = "In stealth, the stealth bar replaces the main bar keys § 1–5 Q E R F T G. Shift and Ctrl keys stay as on the normal bar.",
     leorn = "Arcane mage, planned to level 40, with 1–4 kept for arcane spells. Dashed keys are kept free for what comes later. Drink and food on Shift + Z and Shift + X and bandages on Ctrl + Q are the best in the bags at /kb apply; run it again after conjuring a better rank. Amplify and Dampen Magic (group buffs, used situationally) sit on Z and X; Arcane Intellect and the armor on Ctrl + 1 and Ctrl + 2. Flamestrike, teleports and portals stay in the spellbook.",
     thorim = "Damage first while levelling, up to level 20. The layout is reworked at 20, when Call of the Elements and the other totem spells arrive. Stoneform (dwarf racial) gets a key then too. Cure Poison (16) and Tremor Totem (18) are placed by /kb apply once learned.",

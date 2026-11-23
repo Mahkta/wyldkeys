@@ -59,6 +59,7 @@
 |cff66ccffWyldKeys:|r   Stance/stealth bar 1, R: best bomb in your bags (Large Copper Bomb)
 |cff66ccffWyldKeys:|r   Stance/stealth bar 1, F: Sap
 |cff66ccffWyldKeys:|r   Stance/stealth bar 1, T: Throw
+|cff66ccffWyldKeys:|r   Action Bar 2, Shift+1: Escape Artist
 |cff66ccffWyldKeys:|r   Action Bar 2, Shift+4: Expose Armor
 |cff66ccffWyldKeys:|r   Action Bar 2, Shift+Q (healing potion): best healing potion in your bags (Lesser Healing Potion)
 |cff66ccffWyldKeys:|r   Action Bar 2, Shift+R: Eureka!
@@ -71,8 +72,9 @@
 ---- apply
 |cff66ccffWyldKeys:|r Saved a copy of your current keys and bars. /kb restore puts them back.
 |cff66ccffWyldKeys:|r Keys set and saved for every character that uses account-wide bindings.
-|cff66ccffWyldKeys:|r Abilities placed: 23 of 27.
+|cff66ccffWyldKeys:|r Abilities placed: 23 of 28.
 |cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r Garrote (Stance/stealth bar 1, 2)
+|cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r Escape Artist (Action Bar 2, Shift+1)
 |cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r Expose Armor (Action Bar 2, Shift+4)
 |cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r best food in your bags (none found) (Action Bar 3, Shift+Z)
 |cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r best bandage in your bags (none found) (Action Bar 3, Ctrl+Q)
@@ -134,6 +136,7 @@
 |cff66ccffWyldKeys:|r   Stance/stealth bar 1, R: best bomb in your bags (Large Copper Bomb)
 |cff66ccffWyldKeys:|r   Stance/stealth bar 1, F: Sap
 |cff66ccffWyldKeys:|r   Stance/stealth bar 1, T: Throw
+|cff66ccffWyldKeys:|r   Action Bar 2, Shift+1: Escape Artist
 |cff66ccffWyldKeys:|r   Action Bar 2, Shift+4: Expose Armor
 |cff66ccffWyldKeys:|r   Action Bar 2, Shift+Q (healing potion): best healing potion in your bags (Lesser Healing Potion)
 |cff66ccffWyldKeys:|r   Action Bar 2, Shift+R: Eureka!
