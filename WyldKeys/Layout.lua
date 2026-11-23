@@ -65,7 +65,7 @@ end
 
 -- Bars that replace the main bar in a stance or in stealth (bonus bar number).
 -- They use the main bar keys.
-ns.BONUS_BARS = { stealth = 1, battle = 1, defensive = 2 }
+ns.BONUS_BARS = { stealth = 1, battle = 1, defensive = 2, cat = 1, prowl = 2, bear = 3 }
 
 -- Entries Config.lua can use besides spell names.
 -- Engineering bombs: the best explosive in the bags at the time of /kb apply.

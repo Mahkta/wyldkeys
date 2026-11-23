@@ -71,7 +71,16 @@ local function categoryFor(layer, key, label)
   return (o and label and o[label]) or category(layer, key)
 end
 
+-- An ability the character hasn't reached yet (P.learnedAt, P.level) is drawn
+-- like a key kept free for it.
 local function entryFor(name, layer, key, label)
+  local who = currentView:match("^[^-]+")
+  local at = P.learnedAt and P.learnedAt[who] and P.learnedAt[who][name]
+  local lv = P.level and P.level[who]
+  if at and lv and at > lv then
+    local when = type(at) == "number" and ("level " .. at) or at
+    return { free = 1, c = categoryFor(layer, key, label), later = name .. " (" .. when .. ")", ls = P.short[name] or name }
+  end
   return { a = name, s = P.short[name], c = categoryFor(layer, key, label) }
 end
 

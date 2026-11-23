@@ -59,6 +59,10 @@ return {
     ["Reply to whisper"] = "Reply",
     ["Arcane Missiles"] = "Arc. Missiles",
     ["Arcane Explosion"] = "Arc. Explosion",
+    ["Mark of the Wild"] = "Mark of the Wild",
+    ["Entangling Roots"] = "Entangling Roots",
+    ["Frenzied Regeneration"] = "Frenzied Regen.",
+    ["Demoralizing Roar"] = "Demo. Roar",
     ["Arcane Intellect"] = "Arc. Intellect",
     ["Polymorph"] = "Poly\194\173morph",
     ["Conjure water, then food"] = "Conjure",
@@ -122,10 +126,32 @@ return {
   -- doesn't fit (for example stances on Ctrl keys).
   categories = {
     galdorin = { ["Ctrl+1"] = "alt", ["Ctrl+2"] = "alt", ["Ctrl+3"] = "alt" },
+    drealltar = { ["Ctrl+1"] = "alt", ["Ctrl+2"] = "alt", ["Ctrl+3"] = "alt", ["Ctrl+4"] = "alt" },
   },
 
   -- An extra line in the key's details, per view.
   hints = {
+    drealltar = {
+      ["§"] = "Shadowmeld: hide while standing still, also to drop threat. Night elf racial.",
+      ["T"] = "Faerie Fire pulls from range without leaving a form; the same key in every form.",
+      ["Shift+R"] = "Elune's Light: +10% crit for 15 seconds. Night elf racial, like Meagor's Eureka! on the same key.",
+      ["Shift+F"] = "Abolish Poison (26) replaces Cure Poison.",
+      ["Ctrl+1"] = "Dire Bear Form (40) replaces Bear Form.",
+      ["Ctrl+4"] = "Travel Form gathers herbs without leaving the form.",
+    },
+    ["drealltar-cat"] = {
+      ["3"] = "Damage finisher, like Eviscerate on Meagor's 3. Sources disagree on 24 or 32.",
+      ["4"] = "Bleed finisher at 4-5 combo points.",
+    },
+    ["drealltar-prowl"] = {
+      ["1"] = "Opener; until Ravage, open with Shred on 2.",
+      ["3"] = "Stun opener, like Cheap Shot on Meagor's stealth 3.",
+    },
+    ["drealltar-bear"] = {
+      ["§"] = "Like Galdorin's Charge on §. Talent.",
+      ["F"] = "Taunt, like Galdorin's Taunt on F.",
+      ["E"] = "Stun and interrupt on the interrupt key.",
+    },
     galdorin = { ["Shift+4"] = "Execute in Battle and Berserker Stance; Shield Wall (level 28) in Defensive Stance." },
     meagor = {
       ["Z"] = "Poisons take Z at level 20.",
@@ -145,6 +171,10 @@ return {
 
   -- A note under each view.
   notes = {
+    drealltar = "Feral druid focused on gathering (Herbalism and Skinning), planned to level 40 from Warcraft Tavern's druid leveling guide. Dashed keys are abilities not reached yet; /kb apply places them once learned. Forms sit on Ctrl + 1–4 in the game's own form order. Travel Form (30) and Aquatic Form (16) keep this caster bar, so roots, Shadowmeld and heals work while gathering; Dash (Shift + §) and Prowl get you to nodes past mobs. Buffs on Z and X; drink and food on Shift + Z and Shift + X.",
+    ["drealltar-cat"] = "Cat Form (20): build with Claw, or Shred from behind; Rake and Rip bleed, Ferocious Bite finishes. Prowl on § switches to the prowl bar.",
+    ["drealltar-prowl"] = "While prowling, this bar replaces the cat bar. Shift and Ctrl keys stay as on the normal bar.",
+    ["drealltar-bear"] = "Bear Form (10), laid out like Galdorin's tanking keys: Demoralizing Roar on Q, Bash on the interrupt key E, Swipe on R, Growl on F.",
     galdorin = "Tank layout, used in Defensive Stance. Ctrl + 1 (Arms) and Ctrl + 2 (Tank) switch stance and equipment set, and Ctrl + 3 is kept for Berserker Stance; see the Battle Stance view for the arms bar. Not placed yet at level 24: Mocking Blow.",
     ["galdorin-battle"] = "Arms in Battle Stance with the two-hander. Only the main bar keys § 1–5 Q E R F T G change with the stance; Shift, Z, X and Ctrl keys stay as on the tank layout.",
     meagor = "Planned for the Subtlety Ambush build (Warcraft Tavern's rogue leveling guide): open with Ambush from stealth, build with Hemorrhage from 30, Ghostly Strike on cooldown for extra Ambushes. Dashed keys are kept free for what comes later. Finishers sit on 3 and 4 with their Shift partners (Kidney Shot, Expose Armor). Rupture (20) stays in the spellbook, since this build doesn't use it. Stealth switches to the stealth bar automatically; see the stealth view.",
@@ -154,7 +184,24 @@ return {
   },
 
   -- View titles for stance and stealth bars.
-  barTitles = { stealth = "in stealth", battle = "in Battle Stance", defensive = "in Defensive Stance" },
+  barTitles = { stealth = "in stealth", battle = "in Battle Stance", defensive = "in Defensive Stance",
+                cat = "in Cat Form", prowl = "in Cat Form, prowling", bear = "in Bear Form" },
+
+  -- Each character's level, and the level (or a note) at which an ability in
+  -- Config.lua arrives. Keys for abilities above the level are drawn dashed.
+  level = { drealltar = 6 },
+  learnedAt = {
+    drealltar = {
+      ["Entangling Roots"] = 8, ["Nature's Grasp"] = 10, Regrowth = 12, Revive = 12,
+      ["Cure Poison"] = 14, ["Faerie Fire"] = 18, Hibernate = 18, Rebirth = 20,
+      ["Remove Curse"] = 24, Dash = 26, Innervate = 40, Barkskin = 44,
+      ["Bear Form"] = 10, ["Aquatic Form"] = 16, ["Cat Form"] = 20, ["Travel Form"] = 30,
+      Maul = 10, ["Demoralizing Roar"] = 10, Growl = 10, Enrage = 12, Bash = 14, Swipe = 16,
+      ["Feral Charge"] = 20, Lacerate = 25, ["Primal Bite"] = 40, ["Frenzied Regeneration"] = 36,
+      Prowl = 20, Claw = 20, Shred = 20, Rip = 20, Rake = 24, ["Ferocious Bite"] = 24,
+      Cower = 28, ["Shifting Power"] = 40, Ravage = 32, Pounce = 36,
+    },
+  },
 
   -- Placed by hand on every character with a section (shown, not set by the addon).
   -- Empty now: food, drink and bandages are set by the addon from Config.lua.

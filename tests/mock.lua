@@ -53,6 +53,8 @@ local KNOWN = {
  -- Fire Nova and Ancestral Spirit not learned yet
  -- Dampen Magic not learned yet
  Leorn={["Arcane Missiles"]=5143,Frostbolt=116,["Fire Blast"]=2136,Polymorph=118,Shoot=5019,["Frost Nova"]=122,["Walk on Air"]=900001,Fireball=133,["Arcane Intellect"]=1459,["Frost Armor"]=168,["Read Leyline"]=900002,["Conjure Water"]=5504,["Conjure Food"]=587},
+ -- level 6: forms and everything feral still to come
+ Drealltar={Wrath=5176,Moonfire=8921,["Healing Touch"]=5185,Rejuvenation=774,["Mark of the Wild"]=1126,Thorns=467,Shadowmeld=20580,["Elune's Light"]=900004},
  Thorim={["Lightning Bolt"]=403,["Flame Shock"]=8050,["Healing Wave"]=331,["Searing Totem"]=3599,["Strength of Earth Totem"]=8075,["Stoneclaw Totem"]=5730,["Earth Shock"]=8042,Purge=370,["Stoneskin Totem"]=8071,["Earthbind Totem"]=2484,["Lightning Shield"]=324,["Rockbiter Weapon"]=8017,["Flametongue Weapon"]=8024},
 }
 local known=KNOWN[CHAR] or {}

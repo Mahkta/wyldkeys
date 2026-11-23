@@ -22,7 +22,7 @@
 --   ["Name"] = { ... }            or ["Name-Realm"] = { ... }; "Name-Realm" wins
 --                                  (realm written without spaces, e.g. "Name-SomeRealm").
 --   keys = { [key] = ability }     the ability on the button that key presses.
---   stealth / battle / defensive = { [key] = ability }
+--   stealth / battle / defensive / cat / prowl / bear = { [key] = ability }
 --                                  the bar that replaces the main bar in stealth
 --                                  or in that stance; main bar keys only.
 --                                  = "keys" means the same main bar abilities as keys.
@@ -31,7 +31,7 @@
 --   Main bar:      §  1  2  3  4  5  Q  E  R  F  T  G      (E is the interrupt)
 --   Action Bar 2:  Shift+1 … Shift+5  Shift+Q (healing potion)  Shift+E  Shift+R
 --                  Shift+F  Shift+§  Z  X
---   Action Bar 3:  Ctrl+1 (food, by hand)  Ctrl+2 (bandage, by hand)  Ctrl+3
+--   Action Bar 3:  Ctrl+1 … Ctrl+5  Shift+Z  Shift+X  Ctrl+Q
 --
 -- Abilities:
 --   "Spell Name"                   a spell, by its name in the spellbook
@@ -230,4 +230,72 @@ ns.Config = {
     },
   },
 
+  -- Feral druid with Herbalism and Skinning; planned to level 40 on 23 Nov 2026
+  -- (Warcraft Tavern's druid leveling guide). Abilities he hasn't learned yet are
+  -- listed as "not learned" at /kb apply and placed once he has them.
+  -- Forms on Ctrl+1-4 in the game's own form order. Travel and Aquatic Form use
+  -- the main (caster) bar, so the gathering keys work in them.
+  ["Drealltar"] = {
+    keys = {
+      ["§"] = "Shadowmeld",           -- night elf racial: hide, drop threat
+      ["1"] = "Wrath",
+      ["2"] = "Moonfire",
+      ["3"] = "Healing Touch",
+      ["4"] = "Rejuvenation",
+      ["5"] = "Regrowth",             -- 12
+      ["Q"] = "Barkskin",             -- 44
+      ["E"] = "Entangling Roots",     -- 8
+      ["R"] = "Innervate",            -- 40
+      ["F"] = "Hibernate",            -- 18
+      ["T"] = "Faerie Fire",          -- 18; pulls from range in every form
+      ["G"] = "Nature's Grasp",       -- 10
+      ["Shift+2"] = "Remove Curse",   -- 24
+      ["Shift+Q"] = BEST_POTION,
+      ["Shift+E"] = "Rebirth",        -- 20
+      ["Shift+R"] = "Elune's Light",  -- night elf racial: burst
+      ["Shift+F"] = "Cure Poison",    -- 14 (quest)
+      ["Shift+§"] = "Dash",           -- 26, Cat Form
+      ["Z"] = "Mark of the Wild",
+      ["X"] = "Thorns",
+      ["Ctrl+1"] = "Bear Form",       -- 10 (quest)
+      ["Ctrl+2"] = "Aquatic Form",    -- 16 (quest)
+      ["Ctrl+3"] = "Cat Form",        -- 20 (quest)
+      ["Ctrl+4"] = "Travel Form",     -- 30; gathers herbs without leaving form
+      ["Ctrl+5"] = "Revive",          -- 12
+      ["Shift+Z"] = BEST_DRINK,
+      ["Shift+X"] = BEST_FOOD,
+      ["Ctrl+Q"] = BEST_BANDAGE,
+    },
+    bear = {
+      ["§"] = "Feral Charge",         -- talent, 20
+      ["1"] = "Maul",
+      ["2"] = "Lacerate",             -- talent, 25
+      ["3"] = "Primal Bite",          -- talent, 40
+      ["4"] = "Enrage",               -- 12
+      ["Q"] = "Demoralizing Roar",
+      ["E"] = "Bash",                 -- 14
+      ["R"] = "Swipe",                -- 16
+      ["F"] = "Growl",
+      ["T"] = "Faerie Fire",
+      ["G"] = "Frenzied Regeneration", -- 36
+    },
+    cat = {
+      ["§"] = "Prowl",
+      ["1"] = "Claw",
+      ["2"] = "Shred",
+      ["3"] = "Ferocious Bite",       -- 24 or 32, sources differ
+      ["4"] = "Rip",
+      ["5"] = "Rake",                 -- 24
+      ["Q"] = "Cower",                -- 28
+      ["R"] = "Shifting Power",       -- talent, 40
+      ["T"] = "Faerie Fire",
+    },
+    prowl = {
+      ["§"] = "Prowl",
+      ["1"] = "Ravage",               -- 32
+      ["2"] = "Shred",
+      ["3"] = "Pounce",               -- 36
+      ["5"] = "Rake",
+    },
+  },
 }

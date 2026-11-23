@@ -4,7 +4,7 @@
 set -e
 cd "$(dirname "$0")/.."
 fail=0
-for c in Galdorin Meagor Thorim Leorn Nobody; do
+for c in Galdorin Meagor Thorim Leorn Drealltar Nobody; do
   out=$(lua5.1 tests/mock.lua "$c")
   if [ "$1" = "--update" ]; then
     printf '%s\n' "$out" > "tests/expected/$c.txt"; echo "updated $c"
