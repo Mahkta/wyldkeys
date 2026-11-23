@@ -94,6 +94,7 @@ return {
       ["Shift+5"] = "Blind (level 34)",
       ["Shift+E"] = "Shank (level 24)",
       ["Shift+F"] = "Feint (level 16)",
+      ["X"] = { "Death Mark (talent, about level 40)", "Death Mark" },
     },
     ["meagor-stealth"] = {
       ["3"] = "Cheap Shot (level 26)",
@@ -176,7 +177,7 @@ return {
     ["drealltar-bear"] = "Bear Form (10), laid out like Galdorin's tanking keys: Demoralizing Roar on Q, Bash on the interrupt key E, Swipe on R, Growl on F.",
     galdorin = "Tank layout, used in Defensive Stance. Ctrl + 1 (Arms) and Ctrl + 2 (Tank) switch stance and equipment set, and Ctrl + 3 is kept for Berserker Stance; see the Battle Stance view for the arms bar. Not placed yet at level 24: Mocking Blow.",
     ["galdorin-battle"] = "Arms in Battle Stance with the two-hander. Only the main bar keys § 1–5 Q E R F T G change with the stance; Shift, Z, X and Ctrl keys stay as on the tank layout.",
-    meagor = "Planned for the Subtlety Ambush build (Warcraft Tavern's rogue leveling guide): open with Ambush from stealth, build with Hemorrhage from 30, Ghostly Strike on cooldown for extra Ambushes. Dashed keys are kept free for what comes later. Finishers sit on 3 and 4 with their Shift partners (Kidney Shot, Expose Armor). Rupture (20) stays in the spellbook, since this build doesn't use it. Death Mark gets a key once its level is known. Racials: Escape Artist on Shift + 1, Eureka! on Shift + R. Stealth switches to the stealth bar automatically; see the stealth view.",
+    meagor = "Planned for the Subtlety Ambush build (Warcraft Tavern's rogue leveling guide): open with Ambush from stealth, build with Hemorrhage from 30, Ghostly Strike on cooldown for extra Ambushes. Dashed keys are kept free for what comes later. Finishers sit on 3 and 4 with their Shift partners (Kidney Shot, Expose Armor). Rupture (20) stays in the spellbook, since this build doesn't use it. Death Mark, the last Subtlety talent (about level 40), gets X: a burst key used together with Slice and Dice. Racials: Escape Artist on Shift + 1, Eureka! on Shift + R. Stealth switches to the stealth bar automatically; see the stealth view.",
     ["meagor-stealth"] = "In stealth, the stealth bar replaces the main bar keys § 1–5 Q E R F T G. Shift and Ctrl keys stay as on the normal bar.",
     leorn = "Arcane mage, planned to level 40, with 1–4 kept for arcane spells. Dashed keys are kept free for what comes later. Drink and food on Shift + Z and Shift + X and bandages on Ctrl + Q are the best in the bags at /kb apply; run it again after conjuring a better rank. Amplify and Dampen Magic (group buffs, used situationally) sit on Z and X; Arcane Intellect and the armor on Ctrl + 1 and Ctrl + 2. Flamestrike, teleports and portals stay in the spellbook.",
     thorim = "Damage first while levelling, up to level 20. The layout is reworked at 20, when Call of the Elements and the other totem spells arrive. Stoneform (dwarf racial) gets a key then too. Cure Poison (16) and Tremor Totem (18) are placed by /kb apply once learned.",
