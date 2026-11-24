@@ -97,7 +97,7 @@ return {
     },
     ["meagor-stealth"] = {
       ["3"] = "Cheap Shot (level 26)",
-      ["5"] = { "Premeditation (talent, level 20)", "Premeditation" },
+      ["5"] = { "Premeditation (talent, when taken)", "Premeditation" },
       ["G"] = "Distract (level 22)",
     },
     leorn = {
