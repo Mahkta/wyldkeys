@@ -50,7 +50,7 @@ return {
     ["Healing potion (best in bags)"] = "Potion",
     ["Explosive Rocket"] = "Rocket",
     ["Arms: Battle Stance and Arms set"] = "Arms",
-    ["Ranged pull: Throw or Shoot, by weapon"] = "Pull",
+    ["Ranged pull: fires the ranged weapon equipped"] = "Pull",
     ["Execute, or Shield Wall in Defensive Stance"] = "Execute / Wall",
     ["Tank: Defensive Stance and Tanking set"] = "Tank",
     ["Victory Rush"] = "Victory Rush",

@@ -61,6 +61,14 @@ local addonName, ns = ...
 local BEST_BOMB, BEST_POTION, Item, Macro = ns.BEST_BOMB, ns.BEST_POTION, ns.Item, ns.Macro
 local BEST_DRINK, BEST_FOOD, BEST_BANDAGE = ns.BEST_DRINK, ns.BEST_FOOD, ns.BEST_BANDAGE
 
+-- T fires the ranged weapon equipped, for every character that can use one.
+-- Each of them lists PULL_MACRO under macros (the game keeps macros per character).
+local PULL = Macro("WK Pull", "Ranged pull: fires the ranged weapon equipped")
+local PULL_MACRO = [[
+#showtooltip
+/cast [equipped:Wands] Shoot; [equipped:Thrown] Throw; [equipped:Guns] Shoot Gun; [equipped:Crossbows] Shoot Crossbow; [equipped:Bows] Shoot Bow
+]]
+
 ns.Config = {
 
   ["Galdorin"] = {
@@ -75,7 +83,7 @@ ns.Config = {
       ["E"] = "Shield Bash",
       ["R"] = "Cleave",
       ["F"] = "Taunt",
-      ["T"] = Macro("WK Pull", "Ranged pull: Throw or Shoot, by weapon"),
+      ["T"] = PULL,
       ["G"] = "Disarm",
       ["Shift+2"] = "Stoneform",   -- dwarf racial
       ["Shift+3"] = "Rend",
@@ -103,7 +111,7 @@ ns.Config = {
       ["Q"] = "Demoralizing Shout",
       ["R"] = "Cleave",
       ["F"] = "Hamstring",
-      ["T"] = Macro("WK Pull", "Ranged pull: Throw or Shoot, by weapon"),
+      ["T"] = PULL,
       ["G"] = "Retaliation",
     },
     defensive = "keys",
@@ -117,16 +125,12 @@ ns.Config = {
 /cast Battle Stance
 /equipset Arms
 ]],
-      -- Ranged pull with whatever ranged weapon is worn.
       -- Stance 2 is Defensive Stance.
       ["WK Execute"] = [[
 #showtooltip
 /cast [stance:2] Shield Wall; Execute
 ]],
-      ["WK Pull"] = [[
-#showtooltip
-/cast [equipped:Thrown] Throw; [equipped:Guns] Shoot Gun; [equipped:Crossbows] Shoot Crossbow; Shoot Bow
-]],
+      ["WK Pull"] = PULL_MACRO,
       ["WK Tank"] = [[
 #showtooltip Defensive Stance
 /cast Defensive Stance
@@ -146,7 +150,7 @@ ns.Config = {
       ["Q"] = "Evasion",
       ["E"] = "Kick",
       ["R"] = BEST_BOMB,
-      ["T"] = "Throw",
+      ["T"] = PULL,
       ["Shift+1"] = "Escape Artist",  -- gnome racial: breaks roots and snares, beside Sprint
       ["Shift+4"] = "Expose Armor",   -- level 14; finisher, beside Slice and Dice
       ["Shift+Q"] = BEST_POTION,
@@ -167,7 +171,10 @@ ns.Config = {
       ["E"] = "Kick",
       ["R"] = BEST_BOMB,
       ["F"] = "Sap",
-      ["T"] = "Throw",
+      ["T"] = PULL,
+    },
+    macros = {
+      ["WK Pull"] = PULL_MACRO,
     },
   },
 
@@ -209,7 +216,7 @@ ns.Config = {
       ["Q"] = "Fire Blast",
       ["R"] = "Arcane Explosion",      -- level 14
       ["F"] = "Polymorph",
-      ["T"] = "Shoot",
+      ["T"] = PULL,
       ["G"] = "Frost Nova",
       ["Shift+§"] = "Walk on Air",
       ["Shift+2"] = "Fireball",
@@ -225,6 +232,7 @@ ns.Config = {
       ["Ctrl+5"] = "Slow Fall",        -- level 12; mainly for the group, Walk on Air covers her
     },
     macros = {
+      ["WK Pull"] = PULL_MACRO,
       -- Press once for water, again for food; starts over after a minute.
       ["WK Conjure"] = [[
 #showtooltip
