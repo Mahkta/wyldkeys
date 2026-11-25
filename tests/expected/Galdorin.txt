@@ -80,6 +80,7 @@
 |cff66ccffWyldKeys:|r   Stance/stealth bar 2, F: Taunt
 |cff66ccffWyldKeys:|r   Stance/stealth bar 2, T: macro WK Pull
 |cff66ccffWyldKeys:|r   Stance/stealth bar 2, G: Disarm
+|cff66ccffWyldKeys:|r   Action Bar 2, Shift+1: Last Stand
 |cff66ccffWyldKeys:|r   Action Bar 2, Shift+2: Stoneform
 |cff66ccffWyldKeys:|r   Action Bar 2, Shift+3: Rend
 |cff66ccffWyldKeys:|r   Action Bar 2, Shift+4: macro WK Execute
@@ -105,7 +106,8 @@
 |cff66ccffWyldKeys:|r Macro WK Pull created.
 [mock] CreateMacro WK Tank per=true
 |cff66ccffWyldKeys:|r Macro WK Tank created.
-|cff66ccffWyldKeys:|r Abilities placed: 43 of 48.
+|cff66ccffWyldKeys:|r Abilities placed: 43 of 49.
+|cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r Last Stand (Action Bar 2, Shift+1)
 |cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r Stoneform (Action Bar 2, Shift+2)
 |cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r best healing potion in your bags (none found) (Action Bar 2, Shift+Q (healing potion))
 |cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r Challenging Shout (Action Bar 2, Shift+F)
@@ -190,6 +192,7 @@
 |cff66ccffWyldKeys:|r   Stance/stealth bar 2, F: Taunt
 |cff66ccffWyldKeys:|r   Stance/stealth bar 2, T: macro WK Pull
 |cff66ccffWyldKeys:|r   Stance/stealth bar 2, G: Disarm
+|cff66ccffWyldKeys:|r   Action Bar 2, Shift+1: Last Stand
 |cff66ccffWyldKeys:|r   Action Bar 2, Shift+2: Stoneform
 |cff66ccffWyldKeys:|r   Action Bar 2, Shift+3: Rend
 |cff66ccffWyldKeys:|r   Action Bar 2, Shift+4: macro WK Execute

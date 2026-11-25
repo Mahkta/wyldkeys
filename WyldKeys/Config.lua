@@ -85,6 +85,7 @@ ns.Config = {
       ["F"] = "Taunt",
       ["T"] = PULL,
       ["G"] = "Disarm",
+      ["Shift+1"] = "Last Stand",  -- emergency cooldown, next to Stoneform
       ["Shift+2"] = "Stoneform",   -- dwarf racial
       ["Shift+3"] = "Rend",
       -- Execute in Battle and Berserker Stance, Shield Wall (28) in Defensive.
