@@ -93,6 +93,7 @@ ns.Config = {
       ["Shift+Q"] = BEST_POTION,
       ["Shift+E"] = "Bloodrage",
       ["Shift+R"] = "Thunder Clap",
+      ["Shift+F"] = "Challenging Shout", -- level 26; area taunt, next to Taunt on F
       ["Z"] = "Battle Shout",
       -- Stances on Ctrl+1-3 (Berserker Stance at 30 gets Ctrl+3).
       ["Ctrl+1"] = Macro("WK Arms", "Arms: Battle Stance and Arms set"),

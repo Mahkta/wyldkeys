@@ -87,6 +87,7 @@
 |cff66ccffWyldKeys:|r   Action Bar 2, Shift+Q (healing potion): best healing potion in your bags (none found)
 |cff66ccffWyldKeys:|r   Action Bar 2, Shift+E: Bloodrage
 |cff66ccffWyldKeys:|r   Action Bar 2, Shift+R: Thunder Clap
+|cff66ccffWyldKeys:|r   Action Bar 2, Shift+F: Challenging Shout
 |cff66ccffWyldKeys:|r   Action Bar 2, Z: Battle Shout
 |cff66ccffWyldKeys:|r   Action Bar 3, Ctrl+1: macro WK Arms
 |cff66ccffWyldKeys:|r   Action Bar 3, Ctrl+2: macro WK Tank
@@ -104,9 +105,10 @@
 |cff66ccffWyldKeys:|r Macro WK Pull created.
 [mock] CreateMacro WK Tank per=true
 |cff66ccffWyldKeys:|r Macro WK Tank created.
-|cff66ccffWyldKeys:|r Abilities placed: 43 of 47.
+|cff66ccffWyldKeys:|r Abilities placed: 43 of 48.
 |cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r Stoneform (Action Bar 2, Shift+2)
 |cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r best healing potion in your bags (none found) (Action Bar 2, Shift+Q (healing potion))
+|cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r Challenging Shout (Action Bar 2, Shift+F)
 |cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r best food in your bags (none found) (Action Bar 3, Shift+Z)
 |cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r best bandage in your bags (none found) (Action Bar 3, Ctrl+Q)
 ---- preview again
@@ -195,6 +197,7 @@
 |cff66ccffWyldKeys:|r   Action Bar 2, Shift+Q (healing potion): best healing potion in your bags (none found)
 |cff66ccffWyldKeys:|r   Action Bar 2, Shift+E: Bloodrage
 |cff66ccffWyldKeys:|r   Action Bar 2, Shift+R: Thunder Clap
+|cff66ccffWyldKeys:|r   Action Bar 2, Shift+F: Challenging Shout
 |cff66ccffWyldKeys:|r   Action Bar 2, Z: Battle Shout
 |cff66ccffWyldKeys:|r   Action Bar 3, Ctrl+1: macro WK Arms
 |cff66ccffWyldKeys:|r   Action Bar 3, Ctrl+2: macro WK Tank
