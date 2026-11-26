@@ -38,17 +38,29 @@ end
 local MAIN_KEYS = labelsOf(ns.MAIN)
 local SHIFT_KEYS = labelsOf(ns.SHIFT)
 local CTRL_KEYS = labelsOf(ns.CTRL)
+local BAR4_KEYS = labelsOf(ns.BAR4)
+local BAR5_KEYS = labelsOf(ns.BAR5)
 
 -- Profiles ------------------------------------------------------------------------
 
 -- Turns a Config.lua section into button numbers 1-12 per bar:
--- { main, bonus = { [bar number] = ... }, shift, ctrl }.
+-- { main, bonus = { [bar number] = ... }, shift, ctrl, bar4, bar5 }, plus std:
+-- the slots filled from ns.UTILITY, the standard entries shared by everyone.
 -- Returns nil and a message if the section has a mistake.
 local function buildProfile(c)
-  local p = { main = {}, bonus = {}, shift = {}, ctrl = {} }
-  for key, entry in pairs(c.keys or {}) do
+  local p = { main = {}, bonus = {}, shift = {}, ctrl = {}, bar4 = {}, bar5 = {}, std = {} }
+  local own = c.keys or {}
+  for key, entry in pairs(ns.UTILITY or {}) do
+    local k = ns.KEYS[key]
+    if own[key] == nil then
+      p[k.section][k.button] = entry
+      p.std[k.section .. k.button] = true
+    end
+  end
+  for key, entry in pairs(own) do
     local k = ns.KEYS[key]
     if not k then return nil, "unknown key \"" .. tostring(key) .. "\"" end
+    if entry == false then entry = nil end
     p[k.section][k.button] = entry
   end
   p.macros = {}
@@ -105,6 +117,8 @@ local function slotMain(i) return i end
 local function slotBonus(n, i) return (pages() + n - 1) * 12 + i end
 local function slotShift(i) return ((BOTTOMLEFT_ACTIONBAR_PAGE or 6) - 1) * 12 + i end
 local function slotCtrl(i) return ((BOTTOMRIGHT_ACTIONBAR_PAGE or 5) - 1) * 12 + i end
+local function slotBar4(i) return ((RIGHT_ACTIONBAR_PAGE or 3) - 1) * 12 + i end
+local function slotBar5(i) return ((LEFT_ACTIONBAR_PAGE or 4) - 1) * 12 + i end
 
 -- Bindings ---------------------------------------------------------------------
 
@@ -182,6 +196,38 @@ function ns.ItemUse(id)
   return (get(id))
 end
 
+-- Does the item in this bag slot make you Well Fed? Read from its tooltip.
+local scanner
+local function wellFed(bag, slot)
+  if not bag then return false end
+  local lines = {}
+  if C_TooltipInfo and C_TooltipInfo.GetBagItem then
+    local data = C_TooltipInfo.GetBagItem(bag, slot)
+    for _, l in ipairs(data and data.lines or {}) do lines[#lines + 1] = l.leftText end
+  elseif CreateFrame and GameTooltip then
+    scanner = scanner or CreateFrame("GameTooltip", "WyldKeysScanTip", nil, "GameTooltipTemplate")
+    scanner:SetOwner(WorldFrame or UIParent, "ANCHOR_NONE")
+    scanner:SetBagItem(bag, slot)
+    for i = 1, scanner:NumLines() do
+      local fs = _G["WyldKeysScanTipTextLeft" .. i]
+      lines[#lines + 1] = fs and fs:GetText()
+    end
+  end
+  for _, text in ipairs(lines) do
+    if text and text:lower():find("well fed", 1, true) then return true end
+  end
+  return false
+end
+
+local function named(...)
+  local patterns = { ... }
+  return function(id, name)
+    if not name then return false end
+    for _, pat in ipairs(patterns) do if name:find(pat) then return true end end
+    return false
+  end
+end
+
 local MATCH = {
   bomb = function(id, name, sub, classID, subID) return sub == "Explosives" or (classID == 7 and subID == 2) end,
   potion = function(id, name) return name and name:find("Healing Potion", 1, true) ~= nil end,
@@ -193,15 +239,36 @@ local MATCH = {
   crippling = function(id, name) return name and name:find("^Crippling Poison") ~= nil end,
   deadly = function(id, name) return name and name:find("^Deadly Poison") ~= nil end,
   mindnumbing = function(id, name) return name and name:find("^Mind%-numbing Poison") ~= nil end,
+  weightstone = named("Weightstone"),
+  oil = named("Wizard Oil$"),
+  mana = named("Mana Potion"),
+  agielixir = named("^Elixir of .*Agility", "^Elixir of the Mongoose"),
+  strelixir = named("^Elixir of .*Strength", "^Elixir of Giants"),
+  intelixir = named("^Elixir of Wisdom", "^Elixir of .*Intellect", "^Elixir of the Sages"),
+  guardian = named("^Elixir of .*Defense", "^Elixir of .*Fortitude"),
+  agiscroll = named("^Scroll of Agility"),
+  strscroll = named("^Scroll of Strength"),
+  intscroll = named("^Scroll of Intellect"),
+  antivenom = named("Anti%-Venom$"),
+  wellfed = function(id, name, sub, classID, subID, bag, slot)
+    local u = ns.ItemUse(id)
+    return (u == "Food" or u == "Refreshment") and wellFed(bag, slot)
+  end,
 }
 local LABEL = { bomb = "bomb", potion = "healing potion", drink = "drink", food = "food", bandage = "bandage",
   stone = "sharpening stone", instant = "Instant Poison", crippling = "Crippling Poison",
-  deadly = "Deadly Poison", mindnumbing = "Mind-numbing Poison" }
+  deadly = "Deadly Poison", mindnumbing = "Mind-numbing Poison",
+  weightstone = "weightstone", oil = "wizard oil", mana = "mana potion",
+  agielixir = "Agility elixir", strelixir = "Strength elixir", intelixir = "Intellect elixir",
+  guardian = "guardian elixir", agiscroll = "Scroll of Agility", strscroll = "Scroll of Strength",
+  intscroll = "Scroll of Intellect", antivenom = "Anti-Venom", wellfed = "buff food" }
 -- Used in a macro when nothing of the kind is in the bags.
 local FALLBACK = { stone = "Rough Sharpening Stone", instant = "Instant Poison", crippling = "Crippling Poison",
-  deadly = "Deadly Poison", mindnumbing = "Mind-numbing Poison" }
+  deadly = "Deadly Poison", mindnumbing = "Mind-numbing Poison", weightstone = "Rough Weightstone",
+  oil = "Minor Wizard Oil" }
 
 -- The matching item with the highest item level in the bags, or nil.
+-- Plain food prefers food that is not buff food, so Shift+X does not eat it.
 local function bestItem(kind)
   local numSlots = (C_Container and C_Container.GetContainerNumSlots) or GetContainerNumSlots
   local itemID = (C_Container and C_Container.GetContainerItemID) or GetContainerItemID
@@ -211,8 +278,9 @@ local function bestItem(kind)
       local id = itemID(bag, slot)
       if id then
         local _, _, sub, _, _, classID, subID = itemInfoInstant(id)
-        if MATCH[kind](id, itemName(id), sub, classID, subID) then
+        if MATCH[kind](id, itemName(id), sub, classID, subID, bag, slot) then
           local lvl = itemLevel(id)
+          if kind == "food" and not wellFed(bag, slot) then lvl = lvl + 1000 end
           if not best or lvl > bestLvl then best, bestLvl = id, lvl end
         end
       end
@@ -230,8 +298,16 @@ local function macroBody(body)
   end))
 end
 
+-- The first spell in a First(...) entry that the character knows.
+local function firstKnown(entry)
+  for _, n in ipairs(entry.any) do
+    if C_Spell and C_Spell.GetSpellInfo and C_Spell.GetSpellInfo(n) then return n end
+  end
+end
+
 -- Name of a layout entry for messages.
 local function entryName(entry)
+  if type(entry) == "table" and entry.any then return firstKnown(entry) or table.concat(entry.any, " or ") end
   if type(entry) == "table" and entry.macro then return "macro " .. entry.macro end
   if type(entry) == "table" and entry.item then return entry.name or itemName(entry.item) or ("item " .. entry.item) end
   if type(entry) == "table" and entry.best then
@@ -243,6 +319,10 @@ end
 
 -- Puts a layout entry on the cursor: a spell by name, or the best bomb.
 local function pickupEntry(entry)
+  if type(entry) == "table" and entry.any then
+    local n = firstKnown(entry)
+    return n and pickupSpell(n) or false
+  end
   if type(entry) == "table" and entry.macro then
     ClearCursor()
     local idx = GetMacroIndexByName(entry.macro)
@@ -305,10 +385,13 @@ end
 -- Builds the list of { slot, spell, where } for this character.
 local function placements(layout)
   local P = {}
-  local function add(list, slotFn, labels, barName)
+  local function add(list, slotFn, labels, barName, section)
     for i = 1, 12 do
       local spell = list and list[i]
-      if spell then P[#P + 1] = { slot = slotFn(i), spell = spell, where = barName .. ", " .. (labels[i] or ("button " .. i)) } end
+      if spell then
+        P[#P + 1] = { slot = slotFn(i), spell = spell, where = barName .. ", " .. (labels[i] or ("button " .. i)),
+                      std = section and layout.std and layout.std[section .. i] }
+      end
     end
   end
   add(layout.main, slotMain, MAIN_KEYS, ns.MAIN.barText)
@@ -320,6 +403,8 @@ local function placements(layout)
   end
   add(layout.shift, slotShift, SHIFT_KEYS, ns.SHIFT.barText)
   add(layout.ctrl, slotCtrl, CTRL_KEYS, ns.CTRL.barText)
+  add(layout.bar4, slotBar4, BAR4_KEYS, ns.BAR4.barText, "bar4")
+  add(layout.bar5, slotBar5, BAR5_KEYS, ns.BAR5.barText, "bar5")
   return P
 end
 
@@ -341,6 +426,12 @@ local function barWarnings()
   end
   if MultiBarBottomRight and not MultiBarBottomRight:IsShown() then
     say("|cffffcc00Action Bar 3 is hidden.|r Turn it on in Edit Mode, or Ctrl+1-3 may do nothing.")
+  end
+  if MultiBarRight and not MultiBarRight:IsShown() then
+    say("|cffffcc00Action Bar 4 is hidden.|r Turn it on to see professions and travel.")
+  end
+  if MultiBarLeft and not MultiBarLeft:IsShown() then
+    say("|cffffcc00Action Bar 5 is hidden.|r Turn it on to see buffs and consumables.")
   end
 end
 
@@ -427,6 +518,18 @@ local function apply()
     WyldKeys_Char.backup = { at = time(), set = GetCurrentBindingSet(), bindings = snapshotBindings(), actions = actions }
     say("Saved a copy of your current keys" .. (#plan > 0 and " and bars" or "") .. ". /kb restore puts them back.")
   end
+  -- Slots the layout fills for the first time (new in a later version) are
+  -- added to the copy before they change, so /kb restore covers them too.
+  local added = 0
+  for _, p in ipairs(plan) do
+    if WyldKeys_Char.backup.actions[p.slot] == nil then
+      WyldKeys_Char.backup.actions[p.slot] = actionRecord(p.slot)
+      added = added + 1
+    end
+  end
+  if added > 0 then
+    say("Added " .. added .. " more buttons to the saved copy. /kb restore puts them back too.")
+  end
 
   -- Bindings. Mouse side buttons are not part of the layout; forget any
   -- that an earlier version stored.
@@ -446,18 +549,22 @@ local function apply()
   -- Abilities
   if layout then
     ensureMacros(layout.macros)
-    local missing = {}
+    local missing, empty = {}, {}
     for _, p in ipairs(plan) do
       if pickupEntry(p.spell) then
         PlaceAction(p.slot)
         ClearCursor()
+      elseif p.std or (type(p.spell) == "table" and p.spell.best and p.where:find("^Action Bar [45]")) then
+        local e = p.spell
+        empty[#empty + 1] = (type(e) == "table" and e.best and LABEL[e.best]) or entryName(e)
       else
         missing[#missing + 1] = entryName(p.spell) .. " (" .. p.where .. ")"
       end
     end
     ClearCursor()
-    say("Abilities placed: " .. (#plan - #missing) .. " of " .. #plan .. ".")
+    say("Abilities placed: " .. (#plan - #missing - #empty) .. " of " .. #plan .. ".")
     for _, m in ipairs(missing) do say("|cffffcc00Not learned or not found:|r " .. m) end
+    if #empty > 0 then say("Not learned or none in the bags, so those buttons are left as they were: " .. table.concat(empty, ", ") .. ".") end
     for i = 1, 12 do
       if not layout.main[i] then
         local cur = actionName(actionRecord(slotMain(i)))

@@ -41,6 +41,7 @@
 |cff66ccffWyldKeys:|r   Ctrl+X = Sit / swim down
 |cff66ccffWyldKeys:|r   Middle button = Autorun
 |cff66ccffWyldKeys:|r Old keys on the main bar, Action Bar 2 and Ctrl+1-3 are cleared first, so 6-0 stop working.
+|cff66ccffWyldKeys:|r   Macro WK Coat: will be created
 |cff66ccffWyldKeys:|r   Main bar, 1: Lightning Bolt
 |cff66ccffWyldKeys:|r   Main bar, 2: Flame Shock
 |cff66ccffWyldKeys:|r   Main bar, 3: Healing Wave
@@ -63,11 +64,29 @@
 |cff66ccffWyldKeys:|r   Action Bar 3, Shift+Z: best drink in your bags (none found)
 |cff66ccffWyldKeys:|r   Action Bar 3, Shift+X: best food in your bags (none found)
 |cff66ccffWyldKeys:|r   Action Bar 3, Ctrl+Q: best bandage in your bags (none found)
+|cff66ccffWyldKeys:|r   Action Bar 3, Click 1: macro WK Coat
+|cff66ccffWyldKeys:|r   Action Bar 4, button 1: Leatherworking
+|cff66ccffWyldKeys:|r   Action Bar 4, button 2: Skinning
+|cff66ccffWyldKeys:|r   Action Bar 4, button 4: Find Treasure
+|cff66ccffWyldKeys:|r   Action Bar 4, button 5: Cooking
+|cff66ccffWyldKeys:|r   Action Bar 4, button 6: First Aid
+|cff66ccffWyldKeys:|r   Action Bar 4, button 7: Fishing
+|cff66ccffWyldKeys:|r   Action Bar 4, button 11: Hearthstone
+|cff66ccffWyldKeys:|r   Action Bar 5, button 1: best Intellect elixir in your bags (none found)
+|cff66ccffWyldKeys:|r   Action Bar 5, button 2: best guardian elixir in your bags (none found)
+|cff66ccffWyldKeys:|r   Action Bar 5, button 3: best mana potion in your bags (Minor Mana Potion)
+|cff66ccffWyldKeys:|r   Action Bar 5, button 4: best Scroll of Intellect in your bags (none found)
+|cff66ccffWyldKeys:|r   Action Bar 5, button 5: best buff food in your bags (none found)
+|cff66ccffWyldKeys:|r   Action Bar 5, button 6: best Anti-Venom in your bags (none found)
 |cff66ccffWyldKeys:|r Bindings will be saved for every character that uses account-wide bindings.
 ---- apply
 |cff66ccffWyldKeys:|r Saved a copy of your current keys and bars. /kb restore puts them back.
 |cff66ccffWyldKeys:|r Keys set and saved for every character that uses account-wide bindings.
-|cff66ccffWyldKeys:|r Abilities placed: 15 of 22.
+[mock] CreateMacro WK Coat per=true
+[mock]   /use [equipped:One-Handed Maces/Two-Handed Maces/Staves] Rough Weightstone; Rough Sharpening Stone
+[mock]   /use [mod:shift] 17; 16
+|cff66ccffWyldKeys:|r Macro WK Coat created.
+|cff66ccffWyldKeys:|r Abilities placed: 18 of 36.
 |cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r Fire Nova (Main bar, R)
 |cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r Cure Poison (Action Bar 2, Shift+F)
 |cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r Tremor Totem (Action Bar 2, Shift+§)
@@ -75,6 +94,10 @@
 |cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r best drink in your bags (none found) (Action Bar 3, Shift+Z)
 |cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r best food in your bags (none found) (Action Bar 3, Shift+X)
 |cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r best bandage in your bags (none found) (Action Bar 3, Ctrl+Q)
+|cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r Leatherworking (Action Bar 4, button 1)
+|cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r Skinning (Action Bar 4, button 2)
+|cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r Find Treasure (Action Bar 4, button 4)
+|cff66ccffWyldKeys:|r Not learned or none in the bags, so those buttons are left as they were: Cooking, First Aid, Fishing, Intellect elixir, guardian elixir, Scroll of Intellect, buff food, Anti-Venom.
 |cff66ccffWyldKeys:|r Left as it was: main bar § has Lightning Bolt.
 |cff66ccffWyldKeys:|r Left as it was: main bar G has My macro.
 ---- preview again
@@ -117,6 +140,7 @@
 |cff66ccffWyldKeys:|r   Ctrl+X = Sit / swim down
 |cff66ccffWyldKeys:|r   Middle button = Autorun
 |cff66ccffWyldKeys:|r Old keys on the main bar, Action Bar 2 and Ctrl+1-3 are cleared first, so 6-0 stop working.
+|cff66ccffWyldKeys:|r   Macro WK Coat: unchanged
 |cff66ccffWyldKeys:|r   Main bar, 1: Lightning Bolt
 |cff66ccffWyldKeys:|r   Main bar, 2: Flame Shock
 |cff66ccffWyldKeys:|r   Main bar, 3: Healing Wave
@@ -139,9 +163,23 @@
 |cff66ccffWyldKeys:|r   Action Bar 3, Shift+Z: best drink in your bags (none found)
 |cff66ccffWyldKeys:|r   Action Bar 3, Shift+X: best food in your bags (none found)
 |cff66ccffWyldKeys:|r   Action Bar 3, Ctrl+Q: best bandage in your bags (none found)
+|cff66ccffWyldKeys:|r   Action Bar 3, Click 1: macro WK Coat
+|cff66ccffWyldKeys:|r   Action Bar 4, button 1: Leatherworking
+|cff66ccffWyldKeys:|r   Action Bar 4, button 2: Skinning
+|cff66ccffWyldKeys:|r   Action Bar 4, button 4: Find Treasure
+|cff66ccffWyldKeys:|r   Action Bar 4, button 5: Cooking
+|cff66ccffWyldKeys:|r   Action Bar 4, button 6: First Aid
+|cff66ccffWyldKeys:|r   Action Bar 4, button 7: Fishing
+|cff66ccffWyldKeys:|r   Action Bar 4, button 11: Hearthstone  (replaces Item6948)
+|cff66ccffWyldKeys:|r   Action Bar 5, button 1: best Intellect elixir in your bags (none found)
+|cff66ccffWyldKeys:|r   Action Bar 5, button 2: best guardian elixir in your bags (none found)
+|cff66ccffWyldKeys:|r   Action Bar 5, button 3: best mana potion in your bags (Minor Mana Potion)
+|cff66ccffWyldKeys:|r   Action Bar 5, button 4: best Scroll of Intellect in your bags (none found)
+|cff66ccffWyldKeys:|r   Action Bar 5, button 5: best buff food in your bags (none found)
+|cff66ccffWyldKeys:|r   Action Bar 5, button 6: best Anti-Venom in your bags (none found)
 |cff66ccffWyldKeys:|r Bindings will be saved for every character that uses account-wide bindings.
 1=ACTIONBUTTON2 2=ACTIONBUTTON3 3=ACTIONBUTTON4 4=ACTIONBUTTON5 5=ACTIONBUTTON6 BUTTON3=TOGGLEAUTORUN BUTTON4=TOGGLEAUTORUN CTRL-1=MULTIACTIONBAR2BUTTON1 CTRL-2=MULTIACTIONBAR2BUTTON2 CTRL-3=MULTIACTIONBAR2BUTTON3 CTRL-4=MULTIACTIONBAR2BUTTON4 CTRL-5=MULTIACTIONBAR2BUTTON7 CTRL-Q=MULTIACTIONBAR2BUTTON8 CTRL-R=REPLY CTRL-X=SITORSTAND CTRL-Z=TOGGLESHEATH E=ACTIONBUTTON8 F8=MOVEBACKWARD F=ACTIONBUTTON10 G=ACTIONBUTTON12 Q=ACTIONBUTTON7 R=ACTIONBUTTON9 S=MOVEBACKWARD SHIFT-1=MULTIACTIONBAR1BUTTON1 SHIFT-2=MULTIACTIONBAR1BUTTON2 SHIFT-3=MULTIACTIONBAR1BUTTON3 SHIFT-4=MULTIACTIONBAR1BUTTON4 SHIFT-5=MULTIACTIONBAR1BUTTON5 SHIFT-E=MULTIACTIONBAR1BUTTON7 SHIFT-F=MULTIACTIONBAR1BUTTON9 SHIFT-Q=MULTIACTIONBAR1BUTTON6 SHIFT-R=MULTIACTIONBAR1BUTTON8 SHIFT-SPACE=MULTIACTIONBAR2BUTTON9 SHIFT-X=MULTIACTIONBAR2BUTTON6 SHIFT-Z=MULTIACTIONBAR2BUTTON5 SHIFT-§=MULTIACTIONBAR1BUTTON10 T=ACTIONBUTTON11 X=MULTIACTIONBAR1BUTTON12 Z=MULTIACTIONBAR1BUTTON11 §=ACTIONBUTTON1
-10:spell370 11:spell403 12:macro3 1:spell403 2:spell403 3:spell8050 4:spell331 5:spell3599 61:spell8071 62:spell2484 66:item858 67:spell324 6:spell8075 70:item117 71:spell8017 72:spell8024 7:spell5730 8:spell8042
+10:spell370 11:spell403 12:macro3 1:spell403 2:spell403 35:item6948 39:item2455 3:spell8050 4:spell331 58:macro121 5:spell3599 61:spell8071 62:spell2484 66:item858 67:spell324 6:spell8075 70:item117 71:spell8017 72:spell8024 7:spell5730 8:spell8042
 ---- restore
 |cff66ccffWyldKeys:|r Keys and bars put back as they were before /kb apply.
 |cff66ccffWyldKeys:|r |cffffcc00Could not put back action slots:|r 5 (mounts, pets or similar). Drag those back by hand.

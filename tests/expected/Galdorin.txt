@@ -42,6 +42,7 @@
 |cff66ccffWyldKeys:|r   Middle button = Autorun
 |cff66ccffWyldKeys:|r Old keys on the main bar, Action Bar 2 and Ctrl+1-3 are cleared first, so 6-0 stop working.
 |cff66ccffWyldKeys:|r   Macro WK Arms: will be created
+|cff66ccffWyldKeys:|r   Macro WK Coat: will be created
 |cff66ccffWyldKeys:|r   Macro WK Execute: will be created
 |cff66ccffWyldKeys:|r   Macro WK Pull: will be created
 |cff66ccffWyldKeys:|r   Macro WK Tank: will be created
@@ -94,25 +95,43 @@
 |cff66ccffWyldKeys:|r   Action Bar 3, Ctrl+2: macro WK Tank
 |cff66ccffWyldKeys:|r   Action Bar 3, Shift+Z: best food in your bags (none found)
 |cff66ccffWyldKeys:|r   Action Bar 3, Ctrl+Q: best bandage in your bags (none found)
+|cff66ccffWyldKeys:|r   Action Bar 3, Click 1: macro WK Coat
+|cff66ccffWyldKeys:|r   Action Bar 4, button 1: Blacksmithing
+|cff66ccffWyldKeys:|r   Action Bar 4, button 2: Mining
+|cff66ccffWyldKeys:|r   Action Bar 4, button 4: Find Treasure
+|cff66ccffWyldKeys:|r   Action Bar 4, button 5: Cooking
+|cff66ccffWyldKeys:|r   Action Bar 4, button 6: First Aid
+|cff66ccffWyldKeys:|r   Action Bar 4, button 7: Fishing
+|cff66ccffWyldKeys:|r   Action Bar 4, button 11: Hearthstone
+|cff66ccffWyldKeys:|r   Action Bar 5, button 1: best Strength elixir in your bags (none found)
+|cff66ccffWyldKeys:|r   Action Bar 5, button 2: best guardian elixir in your bags (none found)
+|cff66ccffWyldKeys:|r   Action Bar 5, button 4: best Scroll of Strength in your bags (none found)
+|cff66ccffWyldKeys:|r   Action Bar 5, button 5: best buff food in your bags (none found)
+|cff66ccffWyldKeys:|r   Action Bar 5, button 6: best Anti-Venom in your bags (none found)
 |cff66ccffWyldKeys:|r Bindings will be saved for every character that uses account-wide bindings.
 ---- apply
 |cff66ccffWyldKeys:|r Saved a copy of your current keys and bars. /kb restore puts them back.
 |cff66ccffWyldKeys:|r Keys set and saved for every character that uses account-wide bindings.
 [mock] CreateMacro WK Arms per=true
 |cff66ccffWyldKeys:|r Macro WK Arms created.
+[mock] CreateMacro WK Coat per=true
+[mock]   /use [equipped:One-Handed Maces/Two-Handed Maces/Staves] Rough Weightstone; Rough Sharpening Stone
+[mock]   /use [mod:shift] 17; 16
+|cff66ccffWyldKeys:|r Macro WK Coat created.
 [mock] CreateMacro WK Execute per=true
 |cff66ccffWyldKeys:|r Macro WK Execute created.
 [mock] CreateMacro WK Pull per=true
 |cff66ccffWyldKeys:|r Macro WK Pull created.
 [mock] CreateMacro WK Tank per=true
 |cff66ccffWyldKeys:|r Macro WK Tank created.
-|cff66ccffWyldKeys:|r Abilities placed: 43 of 49.
+|cff66ccffWyldKeys:|r Abilities placed: 51 of 62.
 |cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r Last Stand (Action Bar 2, Shift+1)
 |cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r Stoneform (Action Bar 2, Shift+2)
 |cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r best healing potion in your bags (none found) (Action Bar 2, Shift+Q (healing potion))
 |cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r Challenging Shout (Action Bar 2, Shift+F)
 |cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r best food in your bags (none found) (Action Bar 3, Shift+Z)
 |cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r best bandage in your bags (none found) (Action Bar 3, Ctrl+Q)
+|cff66ccffWyldKeys:|r Not learned or none in the bags, so those buttons are left as they were: Strength elixir, guardian elixir, Scroll of Strength, buff food, Anti-Venom.
 ---- preview again
 |cff66ccffWyldKeys:|r Preview. Nothing is changed.
 |cff66ccffWyldKeys:|r   § = main bar button 1
@@ -154,6 +173,7 @@
 |cff66ccffWyldKeys:|r   Middle button = Autorun
 |cff66ccffWyldKeys:|r Old keys on the main bar, Action Bar 2 and Ctrl+1-3 are cleared first, so 6-0 stop working.
 |cff66ccffWyldKeys:|r   Macro WK Arms: unchanged
+|cff66ccffWyldKeys:|r   Macro WK Coat: unchanged
 |cff66ccffWyldKeys:|r   Macro WK Execute: unchanged
 |cff66ccffWyldKeys:|r   Macro WK Pull: unchanged
 |cff66ccffWyldKeys:|r   Macro WK Tank: unchanged
@@ -206,9 +226,22 @@
 |cff66ccffWyldKeys:|r   Action Bar 3, Ctrl+2: macro WK Tank
 |cff66ccffWyldKeys:|r   Action Bar 3, Shift+Z: best food in your bags (none found)
 |cff66ccffWyldKeys:|r   Action Bar 3, Ctrl+Q: best bandage in your bags (none found)
+|cff66ccffWyldKeys:|r   Action Bar 3, Click 1: macro WK Coat
+|cff66ccffWyldKeys:|r   Action Bar 4, button 1: Blacksmithing
+|cff66ccffWyldKeys:|r   Action Bar 4, button 2: Mining
+|cff66ccffWyldKeys:|r   Action Bar 4, button 4: Find Treasure
+|cff66ccffWyldKeys:|r   Action Bar 4, button 5: Cooking
+|cff66ccffWyldKeys:|r   Action Bar 4, button 6: First Aid
+|cff66ccffWyldKeys:|r   Action Bar 4, button 7: Fishing
+|cff66ccffWyldKeys:|r   Action Bar 4, button 11: Hearthstone  (replaces Item6948)
+|cff66ccffWyldKeys:|r   Action Bar 5, button 1: best Strength elixir in your bags (none found)
+|cff66ccffWyldKeys:|r   Action Bar 5, button 2: best guardian elixir in your bags (none found)
+|cff66ccffWyldKeys:|r   Action Bar 5, button 4: best Scroll of Strength in your bags (none found)
+|cff66ccffWyldKeys:|r   Action Bar 5, button 5: best buff food in your bags (none found)
+|cff66ccffWyldKeys:|r   Action Bar 5, button 6: best Anti-Venom in your bags (none found)
 |cff66ccffWyldKeys:|r Bindings will be saved for every character that uses account-wide bindings.
 1=ACTIONBUTTON2 2=ACTIONBUTTON3 3=ACTIONBUTTON4 4=ACTIONBUTTON5 5=ACTIONBUTTON6 BUTTON3=TOGGLEAUTORUN BUTTON4=TOGGLEAUTORUN CTRL-1=MULTIACTIONBAR2BUTTON1 CTRL-2=MULTIACTIONBAR2BUTTON2 CTRL-3=MULTIACTIONBAR2BUTTON3 CTRL-4=MULTIACTIONBAR2BUTTON4 CTRL-5=MULTIACTIONBAR2BUTTON7 CTRL-Q=MULTIACTIONBAR2BUTTON8 CTRL-R=REPLY CTRL-X=SITORSTAND CTRL-Z=TOGGLESHEATH E=ACTIONBUTTON8 F8=MOVEBACKWARD F=ACTIONBUTTON10 G=ACTIONBUTTON12 Q=ACTIONBUTTON7 R=ACTIONBUTTON9 S=MOVEBACKWARD SHIFT-1=MULTIACTIONBAR1BUTTON1 SHIFT-2=MULTIACTIONBAR1BUTTON2 SHIFT-3=MULTIACTIONBAR1BUTTON3 SHIFT-4=MULTIACTIONBAR1BUTTON4 SHIFT-5=MULTIACTIONBAR1BUTTON5 SHIFT-E=MULTIACTIONBAR1BUTTON7 SHIFT-F=MULTIACTIONBAR1BUTTON9 SHIFT-Q=MULTIACTIONBAR1BUTTON6 SHIFT-R=MULTIACTIONBAR1BUTTON8 SHIFT-SPACE=MULTIACTIONBAR2BUTTON9 SHIFT-X=MULTIACTIONBAR2BUTTON6 SHIFT-Z=MULTIACTIONBAR2BUTTON5 SHIFT-§=MULTIACTIONBAR1BUTTON10 T=ACTIONBUTTON11 X=MULTIACTIONBAR1BUTTON12 Z=MULTIACTIONBAR1BUTTON11 §=ACTIONBUTTON1
-10:spell355 11:macro123 12:spell676 1:spell100 2:spell2565 3:spell6572 49:macro121 4:spell78 50:macro124 5:spell7386 63:spell772 64:macro122 65:spell5246 67:spell2687 68:spell6343 6:spell34428 70:item117 71:spell6673 73:spell100 74:spell7384 75:spell772 76:spell78 77:spell1464 78:spell34428 79:spell1160 7:spell1160 81:spell845 82:spell1715 83:macro123 84:spell20230 85:spell100 86:spell2565 87:spell6572 88:spell78 89:spell7386 8:spell72 90:spell34428 91:spell1160 92:spell72 93:spell845 94:spell355 95:macro123 96:spell676 9:spell845
+10:spell355 11:macro124 12:spell676 1:spell100 25:spell2018 26:spell2575 28:spell2481 29:spell2550 2:spell2565 30:spell3273 31:spell7620 35:item6948 3:spell6572 49:macro121 4:spell78 50:macro125 58:macro122 5:spell7386 63:spell772 64:macro123 65:spell5246 67:spell2687 68:spell6343 6:spell34428 70:item117 71:spell6673 73:spell100 74:spell7384 75:spell772 76:spell78 77:spell1464 78:spell34428 79:spell1160 7:spell1160 81:spell845 82:spell1715 83:macro124 84:spell20230 85:spell100 86:spell2565 87:spell6572 88:spell78 89:spell7386 8:spell72 90:spell34428 91:spell1160 92:spell72 93:spell845 94:spell355 95:macro124 96:spell676 9:spell845
 ---- restore
 |cff66ccffWyldKeys:|r Keys and bars put back as they were before /kb apply.
 |cff66ccffWyldKeys:|r |cffffcc00Could not put back action slots:|r 5 (mounts, pets or similar). Drag those back by hand.

@@ -60,6 +60,12 @@ local function abilityName(entry)
   if type(entry) == "table" and entry.best == "drink" then return "Drink (best in bags)" end
   if type(entry) == "table" and entry.best == "food" then return "Food (best in bags)" end
   if type(entry) == "table" and entry.best == "bandage" then return "Bandage (best in bags)" end
+  local BEST = { mana = "Mana potion", agielixir = "Agility elixir", strelixir = "Strength elixir",
+    intelixir = "Intellect elixir", guardian = "Guardian elixir", agiscroll = "Scroll of Agility",
+    strscroll = "Scroll of Strength", intscroll = "Scroll of Intellect", wellfed = "Buff food",
+    antivenom = "Anti-Venom" }
+  if type(entry) == "table" and entry.best and BEST[entry.best] then return BEST[entry.best] end
+  if type(entry) == "table" and entry.any then return table.concat(entry.any, " or ") end
   if type(entry) == "table" and entry.item then return entry.name or ("Item " .. entry.item) end
   if type(entry) == "table" and entry.macro then return entry.label or ("Macro " .. entry.macro) end
   error("unknown ability entry: " .. tostring(entry))
@@ -97,19 +103,8 @@ local MAIN_LABELS = ns.MAIN.keys
 local function buildView(view, title, keys, isBonus, parent)
   currentView = view
   local out = { n = title, base = {}, shift = {}, ctrl = {}, note = P.notes[view], parent = parent }
-  -- Buttons with no key (Click 1-3) are listed after the note.
-  local clicks = {}
   for label, entry in pairs(keys) do
-    if label:match("^Click") then clicks[#clicks + 1] = { label, entry } end
-  end
-  table.sort(clicks, function(a, b) return a[1] < b[1] end)
-  if #clicks > 0 then
-    local parts = {}
-    for _, c in ipairs(clicks) do parts[#parts + 1] = c[1] .. ": " .. abilityName(c[2]) end
-    out.note = (out.note and (out.note .. " ") or "") .. "Buttons to click on Action Bar 3 (no key): " .. table.concat(parts, "; ") .. "."
-  end
-  for label, entry in pairs(keys) do
-    if not label:match("^Click") then
+    if not label:match("^Click") and not label:match("^Bar ") then
       if not ns.KEYS[label] then error(view .. ": unknown key " .. label) end
       local layer, key = keyOf(label)
       out[layer][key] = entryFor(abilityName(entry), layer, key, label)
@@ -138,9 +133,26 @@ local function buildView(view, title, keys, isBonus, parent)
   return out
 end
 
+-- The bars without keys per character: shared slots (ns.UTILITY) under the
+-- character's own, as /kb apply merges them. Slot number -> name.
+local function utilityFor(keys)
+  local out = { bar3 = {}, bar4 = {}, bar5 = {} }
+  local function put(label, entry)
+    local click = label:match("^Click (%d)$")
+    local bar, n = label:match("^Bar (%d) (%d+)$")
+    if click then out.bar3[tostring(9 + tonumber(click))] = entry and (abilityName(entry):gsub(":.*$", "")) or nil
+    elseif bar then out["bar" .. bar][n] = entry and abilityName(entry) or nil end
+  end
+  for label, entry in pairs(ns.UTILITY) do if keys[label] == nil then put(label, entry) end end
+  for label, entry in pairs(keys) do put(label, entry) end
+  return out
+end
+P.utility.chars = {}
+
 local profiles = {}
 for name, section in pairs(ns.Config) do
   local view = name:lower()
+  P.utility.chars[view] = utilityFor(section.keys or {})
   profiles[view] = buildView(view, name, section.keys or {}, false)
   for bar in pairs(ns.BONUS_BARS) do
     local keys = section[bar]

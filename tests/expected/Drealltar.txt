@@ -94,11 +94,24 @@
 |cff66ccffWyldKeys:|r   Action Bar 3, Ctrl+5: Revive
 |cff66ccffWyldKeys:|r   Action Bar 3, Ctrl+Q: best bandage in your bags (none found)
 |cff66ccffWyldKeys:|r   Action Bar 3, Shift+Space: Barkskin
+|cff66ccffWyldKeys:|r   Action Bar 4, button 1: Alchemy
+|cff66ccffWyldKeys:|r   Action Bar 4, button 2: Herbalism
+|cff66ccffWyldKeys:|r   Action Bar 4, button 4: Find Herbs
+|cff66ccffWyldKeys:|r   Action Bar 4, button 5: Cooking
+|cff66ccffWyldKeys:|r   Action Bar 4, button 6: First Aid
+|cff66ccffWyldKeys:|r   Action Bar 4, button 7: Fishing
+|cff66ccffWyldKeys:|r   Action Bar 4, button 11: Hearthstone
+|cff66ccffWyldKeys:|r   Action Bar 5, button 1: best Agility elixir in your bags (none found)
+|cff66ccffWyldKeys:|r   Action Bar 5, button 2: best guardian elixir in your bags (none found)
+|cff66ccffWyldKeys:|r   Action Bar 5, button 3: best mana potion in your bags (Minor Mana Potion)
+|cff66ccffWyldKeys:|r   Action Bar 5, button 4: best Scroll of Agility in your bags (none found)
+|cff66ccffWyldKeys:|r   Action Bar 5, button 5: best buff food in your bags (none found)
+|cff66ccffWyldKeys:|r   Action Bar 5, button 6: best Anti-Venom in your bags (none found)
 |cff66ccffWyldKeys:|r Bindings will be saved for every character that uses account-wide bindings.
 ---- apply
 |cff66ccffWyldKeys:|r Saved a copy of your current keys and bars. /kb restore puts them back.
 |cff66ccffWyldKeys:|r Keys set and saved for every character that uses account-wide bindings.
-|cff66ccffWyldKeys:|r Abilities placed: 9 of 53.
+|cff66ccffWyldKeys:|r Abilities placed: 11 of 66.
 |cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r Regrowth (Main bar, 5)
 |cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r Entangling Roots (Main bar, E)
 |cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r Innervate (Main bar, R)
@@ -143,6 +156,10 @@
 |cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r Revive (Action Bar 3, Ctrl+5)
 |cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r best bandage in your bags (none found) (Action Bar 3, Ctrl+Q)
 |cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r Barkskin (Action Bar 3, Shift+Space)
+|cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r Alchemy (Action Bar 4, button 1)
+|cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r Herbalism (Action Bar 4, button 2)
+|cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r Find Herbs (Action Bar 4, button 4)
+|cff66ccffWyldKeys:|r Not learned or none in the bags, so those buttons are left as they were: Cooking, First Aid, Fishing, Agility elixir, guardian elixir, Scroll of Agility, buff food, Anti-Venom.
 ---- preview again
 |cff66ccffWyldKeys:|r Preview. Nothing is changed.
 |cff66ccffWyldKeys:|r   § = main bar button 1
@@ -236,9 +253,22 @@
 |cff66ccffWyldKeys:|r   Action Bar 3, Ctrl+5: Revive
 |cff66ccffWyldKeys:|r   Action Bar 3, Ctrl+Q: best bandage in your bags (none found)
 |cff66ccffWyldKeys:|r   Action Bar 3, Shift+Space: Barkskin
+|cff66ccffWyldKeys:|r   Action Bar 4, button 1: Alchemy
+|cff66ccffWyldKeys:|r   Action Bar 4, button 2: Herbalism
+|cff66ccffWyldKeys:|r   Action Bar 4, button 4: Find Herbs
+|cff66ccffWyldKeys:|r   Action Bar 4, button 5: Cooking
+|cff66ccffWyldKeys:|r   Action Bar 4, button 6: First Aid
+|cff66ccffWyldKeys:|r   Action Bar 4, button 7: Fishing
+|cff66ccffWyldKeys:|r   Action Bar 4, button 11: Hearthstone  (replaces Item6948)
+|cff66ccffWyldKeys:|r   Action Bar 5, button 1: best Agility elixir in your bags (none found)
+|cff66ccffWyldKeys:|r   Action Bar 5, button 2: best guardian elixir in your bags (none found)
+|cff66ccffWyldKeys:|r   Action Bar 5, button 3: best mana potion in your bags (Minor Mana Potion)
+|cff66ccffWyldKeys:|r   Action Bar 5, button 4: best Scroll of Agility in your bags (none found)
+|cff66ccffWyldKeys:|r   Action Bar 5, button 5: best buff food in your bags (none found)
+|cff66ccffWyldKeys:|r   Action Bar 5, button 6: best Anti-Venom in your bags (none found)
 |cff66ccffWyldKeys:|r Bindings will be saved for every character that uses account-wide bindings.
 1=ACTIONBUTTON2 2=ACTIONBUTTON3 3=ACTIONBUTTON4 4=ACTIONBUTTON5 5=ACTIONBUTTON6 BUTTON3=TOGGLEAUTORUN BUTTON4=TOGGLEAUTORUN CTRL-1=MULTIACTIONBAR2BUTTON1 CTRL-2=MULTIACTIONBAR2BUTTON2 CTRL-3=MULTIACTIONBAR2BUTTON3 CTRL-4=MULTIACTIONBAR2BUTTON4 CTRL-5=MULTIACTIONBAR2BUTTON7 CTRL-Q=MULTIACTIONBAR2BUTTON8 CTRL-R=REPLY CTRL-X=SITORSTAND CTRL-Z=TOGGLESHEATH E=ACTIONBUTTON8 F8=MOVEBACKWARD F=ACTIONBUTTON10 G=ACTIONBUTTON12 Q=ACTIONBUTTON7 R=ACTIONBUTTON9 S=MOVEBACKWARD SHIFT-1=MULTIACTIONBAR1BUTTON1 SHIFT-2=MULTIACTIONBAR1BUTTON2 SHIFT-3=MULTIACTIONBAR1BUTTON3 SHIFT-4=MULTIACTIONBAR1BUTTON4 SHIFT-5=MULTIACTIONBAR1BUTTON5 SHIFT-E=MULTIACTIONBAR1BUTTON7 SHIFT-F=MULTIACTIONBAR1BUTTON9 SHIFT-Q=MULTIACTIONBAR1BUTTON6 SHIFT-R=MULTIACTIONBAR1BUTTON8 SHIFT-SPACE=MULTIACTIONBAR2BUTTON9 SHIFT-X=MULTIACTIONBAR2BUTTON6 SHIFT-Z=MULTIACTIONBAR2BUTTON5 SHIFT-§=MULTIACTIONBAR1BUTTON10 T=ACTIONBUTTON11 X=MULTIACTIONBAR1BUTTON12 Z=MULTIACTIONBAR1BUTTON11 §=ACTIONBUTTON1
-1:spell20580 2:spell5176 3:spell8921 4:spell5185 5:spell774 66:item858 68:spell900004 70:item117 71:spell1126 72:spell467
+1:spell20580 2:spell5176 35:item6948 39:item2455 3:spell8921 4:spell5185 5:spell774 66:item858 68:spell900004 70:item117 71:spell1126 72:spell467
 ---- restore
 |cff66ccffWyldKeys:|r Keys and bars put back as they were before /kb apply.
 |cff66ccffWyldKeys:|r |cffffcc00Could not put back action slots:|r 5 (mounts, pets or similar). Drag those back by hand.

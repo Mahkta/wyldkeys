@@ -105,7 +105,7 @@ td:first-child{white-space:nowrap;font-weight:600}
 </ol><h2>Setting it in game</h2><p class="notes">The WyldKeys addon applies this layout: <b>/kb setup</b> once (learns what the game calls §), then <b>/kb preview</b> and <b>/kb apply</b> on each character. <b>/kb restore</b> undoes it. Shift keys, Z and X use Action Bar 2; Ctrl + 1–3 use Action Bar 3. Healing potion is on Shift + Q for every character. Interrupt is on E for every character; the mouse side buttons are not used for now, because Logi Options+ only sends them on release.</p><p class="notes">The character views are generated from the addon’s Config.lua (overview/build.lua in the WyldKeys repository), so they match what /kb apply sets.</p></div>
 <div class="card" style="grid-column:span 2" id="listcard"><h2 id="listh">All bindings on this layer</h2><div class="scroll"><table class="stack"><thead><tr><th>Key</th><th>Ability</th><th>Role</th><th>Game default here</th></tr></thead><tbody id="list"></tbody></table></div></div>
 </div>
-<div class="card ub" id="ubcard"><h2>Buttons without keys <span class="chip" style="background:#12161b;color:#fff">Proposal</span></h2><p class="notes" id="ubnote"></p><div class="scroll" id="ub"></div><div class="legend" id="ublegend" style="margin-top:12px"></div></div>
+<div class="card ub" id="ubcard"><h2>Buttons without keys</h2><p class="notes" id="ubnote"></p><div class="scroll" id="ub"></div><div class="legend" id="ublegend" style="margin-top:12px"></div></div>
 <p class="src">Game defaults from a third-party list (Magic Game World's WoW Forever PC controls guide); check them in game under Options → Keybindings. C and V keep their defaults.</p>
 </div></div>
 <script>
@@ -200,7 +200,7 @@ function utility(){
    else{txt=s[1];st='background:'+k.bg+';color:'+k.fg}
    h+='<div class="'+cls+'" style="'+st+'" title="'+s[1]+'"><span class="n">'+i+'</span><span>'+txt+'</span></div>'}
   return '<div class="ubar"><b>'+t+(sm?'<small>'+sm+'</small>':'')+'</b><div class="slots">'+h+'</div></div>'}).join('');
- $('ubnote').innerHTML=c?('What '+p.n.split(' ')[0]+' would have on the buttons you click. Same slot, same kind of thing on every character; “Empty here” is a standard slot this character has no use for yet, so it is free on this character until it gets one.'):(c===undefined&&prof!=='general'?'No standard bars proposed for this character yet.':'The same slot holds the same kind of thing on every character. The keyed buttons (main bar, Action Bar 2, Action Bar 3 buttons 1–9) are not changed. Pick a character to see what each one would get. Hover a button for what the slot is for.');
+ $('ubnote').innerHTML=c?('What '+p.n.split(' ')[0]+' gets on the buttons you click (/kb apply). Same slot, same kind of thing on every character; “Empty here” is a standard slot this character has no use for yet, so it is free on this character until it gets one.'):(c===undefined&&prof!=='general'?'No standard bars proposed for this character yet.':'The same slot holds the same kind of thing on every character. The keyed buttons (main bar, Action Bar 2, Action Bar 3 buttons 1–9) are not changed. Pick a character to see what each one would get. Hover a button for what the slot is for.');
  $('ublegend').innerHTML=Object.values(UK).map(k=>'<span class="chip" style="background:'+k.bg+';color:'+k.fg+'">'+k.n+'</span>').join('')}
 function render(){
  $('board').innerHTML=ROWS.map(r=>'<div class="row" style="grid-template-columns:'+r.map(k=>k[2]+'fr').join(' ')+'">'+r.map(cap).join('')+'</div>').join('');

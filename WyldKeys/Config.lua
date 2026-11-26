@@ -32,6 +32,10 @@
 --   Action Bar 2:  Shift+1 … Shift+5  Shift+Q (healing potion)  Shift+E  Shift+R
 --                  Shift+F  Shift+§  Z  X
 --   Action Bar 3:  Ctrl+1 … Ctrl+5  Shift+Z  Shift+X  Ctrl+Q
+--                  Click 1-3 (buttons 10-12, no key)
+--   Action Bar 4 and 5, no keys:  "Bar 4 1" … "Bar 4 12", "Bar 5 1" … "Bar 5 12".
+--                  The shared slots are in Layout.lua (ns.UTILITY); a character
+--                  sets the rest, and false leaves a shared slot alone.
 --
 -- Abilities:
 --   "Spell Name"                   a spell, by its name in the spellbook
@@ -48,6 +52,8 @@
 --   Ctrl+Q     bandages
 --   Shift+Space  the damage mitigation used most often
 --   Item(id, "Name")               one item, by item ID
+--   First("A", "B")                the first of these spells the character knows
+--   Best("kind")                   the best item of a kind in the bags at /kb apply
 --   Macro("Name", "label")         a macro by name; the label is for the overview only
 --
 -- Macros, optional:
@@ -60,6 +66,7 @@
 local addonName, ns = ...
 local BEST_BOMB, BEST_POTION, Item, Macro = ns.BEST_BOMB, ns.BEST_POTION, ns.Item, ns.Macro
 local BEST_DRINK, BEST_FOOD, BEST_BANDAGE = ns.BEST_DRINK, ns.BEST_FOOD, ns.BEST_BANDAGE
+local First, Best = ns.First, ns.Best
 
 -- T fires the ranged weapon equipped, for every character that can use one.
 -- Each of them lists PULL_MACRO under macros (the game keeps macros per character).
@@ -67,6 +74,21 @@ local PULL = Macro("WK Pull", "Ranged pull: fires the ranged weapon equipped")
 local PULL_MACRO = [[
 #showtooltip
 /cast [equipped:Wands] Shoot; [equipped:Thrown] Throw; [equipped:Guns] Shoot Gun; [equipped:Crossbows] Shoot Crossbow; [equipped:Bows] Shoot Bow
+]]
+
+-- Click 1 (Action Bar 3, button 10): the coating for the weapon held.
+-- Click: main hand, Shift+click: off hand.
+local COAT = Macro("WK Coat", "Weapon coating for the weapon held: click main hand, Shift+click off hand")
+local COAT_MACRO = [[
+#showtooltip
+/use [equipped:One-Handed Maces/Two-Handed Maces/Staves] {best:weightstone}; {best:stone}
+/use [mod:shift] 17; 16
+]]
+local OIL = Macro("WK Oil", "Wizard oil on the weapon")
+local OIL_MACRO = [[
+#showtooltip
+/use {best:oil}
+/use 16
 ]]
 
 ns.Config = {
@@ -101,6 +123,14 @@ ns.Config = {
       ["Ctrl+2"] = Macro("WK Tank", "Tank: Defensive Stance and Tanking set"),
       ["Shift+Z"] = BEST_FOOD,
       ["Ctrl+Q"] = BEST_BANDAGE,
+      -- Bars without keys (shared slots in Layout.lua)
+      ["Click 1"] = COAT,
+      ["Bar 4 1"] = "Blacksmithing",
+      ["Bar 4 2"] = First("Smelting", "Mining"),
+      ["Bar 4 4"] = First("Find Minerals", "Find Treasure"),
+      ["Bar 5 1"] = Best("strelixir"),
+      ["Bar 5 3"] = false,              -- no mana
+      ["Bar 5 4"] = Best("strscroll"),
     },
     -- Arms in Battle Stance: two-hander, no shield, so no interrupt on E.
     battle = {
@@ -132,6 +162,7 @@ ns.Config = {
 #showtooltip
 /cast [stance:2] Shield Wall; Execute
 ]],
+      ["WK Coat"] = COAT_MACRO,
       ["WK Pull"] = PULL_MACRO,
       ["WK Tank"] = [[
 #showtooltip Defensive Stance
@@ -157,16 +188,22 @@ ns.Config = {
       ["Shift+3"] = "Rupture",        -- bleed finisher, beside Eviscerate
       ["Shift+4"] = "Expose Armor",   -- level 14; finisher, beside Slice and Dice
       ["Shift+Q"] = BEST_POTION,
-      ["Shift+R"] = "Eureka!",
+      ["Shift+R"] = "Eureka!",       -- gnome racial, 2 min burst cooldown
       ["Shift+Space"] = "Feint",      -- level 16; the most used mitigation goes on Shift+Space
       -- Weapon coatings, clicked out of combat. Click: main hand, Shift+click: off hand.
       ["Click 1"] = Macro("WK Stone", "Sharpening stone: click main hand, Shift+click off hand"),
       ["Click 2"] = Macro("WK Instant", "Instant Poison: click main hand, Shift+click off hand"),
-      ["Click 3"] = Macro("WK Crippling", "Crippling Poison: click main hand, Shift+click off hand"),        -- gnome racial, 2 min burst cooldown
+      ["Click 3"] = Macro("WK Crippling", "Crippling Poison: click main hand, Shift+click off hand"),
       ["Shift+§"] = "Sprint",
       ["Z"] = Item(1178, "Explosive Rocket"),
       ["Shift+Z"] = BEST_FOOD,
       ["Ctrl+Q"] = BEST_BANDAGE,
+      -- Bars without keys (shared slots in Layout.lua)
+      ["Bar 4 1"] = "Engineering",
+      ["Bar 4 2"] = "Alchemy",
+      ["Bar 5 1"] = Best("agielixir"),
+      ["Bar 5 3"] = false,              -- no mana
+      ["Bar 5 4"] = Best("agiscroll"),
       ["Ctrl+1"] = "Pick Lock",
     },
     stealth = {
@@ -226,7 +263,17 @@ ns.Config = {
       ["Shift+Z"] = BEST_DRINK,
       ["Shift+X"] = BEST_FOOD,
       ["Ctrl+Q"] = BEST_BANDAGE,
+      -- Bars without keys (shared slots in Layout.lua)
+      ["Click 1"] = COAT,
+      ["Bar 4 1"] = "Leatherworking",
+      ["Bar 4 2"] = "Skinning",
+      ["Bar 4 4"] = "Find Treasure",
+      ["Bar 5 1"] = Best("intelixir"),
+      ["Bar 5 4"] = Best("intscroll"),
       ["Ctrl+1"] = "Ancestral Spirit",
+    },
+    macros = {
+      ["WK Coat"] = COAT_MACRO,
     },
   },
 
@@ -251,10 +298,18 @@ ns.Config = {
       ["Shift+Z"] = BEST_DRINK,
       ["Shift+X"] = BEST_FOOD,
       ["Ctrl+Q"] = BEST_BANDAGE,
+      -- Bars without keys (shared slots in Layout.lua)
+      ["Click 1"] = OIL,
+      ["Bar 4 1"] = "Tailoring",
+      ["Bar 4 2"] = "Enchanting",
+      ["Bar 4 3"] = "Disenchant",
+      ["Bar 5 1"] = Best("intelixir"),
+      ["Bar 5 4"] = Best("intscroll"),
       ["Ctrl+4"] = "Read Leyline",
       ["Ctrl+5"] = "Slow Fall",        -- level 12; mainly for the group, Walk on Air covers her
     },
     macros = {
+      ["WK Oil"] = OIL_MACRO,
       ["WK Pull"] = PULL_MACRO,
       -- Press once for water, again for food; starts over after a minute.
       ["WK Conjure"] = [[
@@ -298,6 +353,12 @@ ns.Config = {
       ["Shift+Z"] = BEST_DRINK,
       ["Shift+X"] = BEST_FOOD,
       ["Ctrl+Q"] = BEST_BANDAGE,
+      -- Bars without keys (shared slots in Layout.lua)
+      ["Bar 4 1"] = "Alchemy",
+      ["Bar 4 2"] = "Herbalism",
+      ["Bar 4 4"] = "Find Herbs",
+      ["Bar 5 1"] = Best("agielixir"),
+      ["Bar 5 4"] = Best("agiscroll"),
       ["Shift+Space"] = "Barkskin",   -- 44; the most used mitigation, same key in every form
     },
     bear = {

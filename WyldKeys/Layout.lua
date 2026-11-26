@@ -46,6 +46,15 @@ ns.CTRL = {
   binds = { "CTRL-1", "CTRL-2", "CTRL-3", "CTRL-4", "SHIFT-Z", "SHIFT-X", "CTRL-5", "CTRL-Q", "SHIFT-SPACE" },
 }
 
+-- Action Bar 4 and 5 have no keys: buttons to click. The layout puts the same
+-- kind of thing in the same slot on every character (ns.UTILITY below and each
+-- character's own "Bar 4 n" / "Bar 5 n" in Config.lua). Slots nothing is set
+-- for are never touched, so they are free for whatever you put there.
+local function clickKeys(bar) local t = {} for i = 1, 12 do t[i] = bar .. " " .. i end return t end
+local BUTTONS = {} for i = 1, 12 do BUTTONS[i] = "button " .. i end
+ns.BAR4 = { barText = "Action Bar 4", keys = clickKeys("Bar 4"), labels = BUTTONS }
+ns.BAR5 = { barText = "Action Bar 5", keys = clickKeys("Bar 5"), labels = BUTTONS }
+
 -- Other bindings, after the bars: { game key, command, message text }.
 ns.SYSTEM = {
   { "CTRL-R", "REPLY", "Ctrl+R = Reply to whisper" },
@@ -62,7 +71,7 @@ for _, i in ipairs({ 1, 2, 3, 4, 5, 6, 7, 8, 9, 12 }) do ns.MANAGED[#ns.MANAGED 
 
 -- Key label -> bar and button, for Config.lua. Built from the bars above.
 ns.KEYS = {}
-for section, bar in pairs({ main = ns.MAIN, shift = ns.SHIFT, ctrl = ns.CTRL }) do
+for section, bar in pairs({ main = ns.MAIN, shift = ns.SHIFT, ctrl = ns.CTRL, bar4 = ns.BAR4, bar5 = ns.BAR5 }) do
   for i, key in ipairs(bar.keys) do ns.KEYS[key] = { section = section, button = i } end
 end
 
@@ -87,3 +96,28 @@ function ns.Item(id, name) return { item = id, name = name } end
 -- {best:mindnumbing} become the name of the best such item in the bags at /kb apply.
 -- The label is only used by the keybinds overview.
 function ns.Macro(name, label) return { macro = name, label = label } end
+-- The first of several spells the character knows, e.g. First("Smelting", "Mining").
+function ns.First(...) return { any = { ... } } end
+-- The best item of a kind in the bags at /kb apply (kinds: see MATCH in Core.lua).
+function ns.Best(kind) return { best = kind } end
+
+-- The same on every character, on the bars without keys. A character's own
+-- entry for the same slot wins; false there leaves the slot alone. Nothing to
+-- put there (a profession not learned, no such item in the bags) leaves the
+-- slot as it is.
+--   Action Bar 4:  1 crafting profession  2 second profession  3 profession action
+--                  4 tracking  5 Cooking  6 First Aid  7 Fishing  8-10 free
+--                  11 Hearthstone  12 mount (later)
+--   Action Bar 5:  1 battle elixir  2 guardian elixir  3 mana potion  4 scroll
+--                  5 buff food  6 Anti-Venom  7-12 free
+--   Action Bar 3:  Click 1 weapon coating, Click 2-3 rogue poisons (else free)
+ns.UTILITY = {
+  ["Bar 4 5"] = "Cooking",
+  ["Bar 4 6"] = "First Aid",
+  ["Bar 4 7"] = "Fishing",
+  ["Bar 4 11"] = ns.Item(6948, "Hearthstone"),
+  ["Bar 5 2"] = ns.Best("guardian"),
+  ["Bar 5 3"] = ns.Best("mana"),
+  ["Bar 5 5"] = ns.Best("wellfed"),
+  ["Bar 5 6"] = ns.Best("antivenom"),
+}
