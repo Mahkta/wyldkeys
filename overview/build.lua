@@ -97,10 +97,23 @@ local MAIN_LABELS = ns.MAIN.keys
 local function buildView(view, title, keys, isBonus, parent)
   currentView = view
   local out = { n = title, base = {}, shift = {}, ctrl = {}, note = P.notes[view], parent = parent }
+  -- Buttons with no key (Click 1-3) are listed after the note.
+  local clicks = {}
   for label, entry in pairs(keys) do
-    if not ns.KEYS[label] then error(view .. ": unknown key " .. label) end
-    local layer, key = keyOf(label)
-    out[layer][key] = entryFor(abilityName(entry), layer, key, label)
+    if label:match("^Click") then clicks[#clicks + 1] = { label, entry } end
+  end
+  table.sort(clicks, function(a, b) return a[1] < b[1] end)
+  if #clicks > 0 then
+    local parts = {}
+    for _, c in ipairs(clicks) do parts[#parts + 1] = c[1] .. ": " .. abilityName(c[2]) end
+    out.note = (out.note and (out.note .. " ") or "") .. "Buttons to click on Action Bar 3 (no key): " .. table.concat(parts, "; ") .. "."
+  end
+  for label, entry in pairs(keys) do
+    if not label:match("^Click") then
+      if not ns.KEYS[label] then error(view .. ": unknown key " .. label) end
+      local layer, key = keyOf(label)
+      out[layer][key] = entryFor(abilityName(entry), layer, key, label)
+    end
   end
   -- Main bar keys with nothing on them are shown as free.
   for _, label in ipairs(MAIN_LABELS) do

@@ -153,7 +153,6 @@ return {
     },
     galdorin = { ["Shift+4"] = "Execute in Battle and Berserker Stance; Shield Wall (level 28) in Defensive Stance." },
     meagor = {
-      ["Z"] = "Poisons take Z at level 20.",
       ["1"] = "Hemorrhage (talent, level 30) replaces Sinister Strike here as the combo point builder.",
       ["Shift+E"] = "Shank gives energy and an extra combo point; use it on cooldown.",
       ["Shift+1"] = "Escape Artist: gnome racial, frees you from roots and snares. Next to Sprint on Shift + §.",

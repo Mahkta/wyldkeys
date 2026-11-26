@@ -24,6 +24,8 @@ local addonName, ns = ...
 --   labels  optional message text that differs from keys
 --   command the binding command; the button number is appended
 --   bindText / barText  bar name in the binding list and in the ability list
+-- A key without a bind (Click 1-3 on Action Bar 3) is a button with no key:
+-- the layout places things there to click.
 ns.MAIN = {
   command = "ACTIONBUTTON", bindText = "main bar button", barText = "Main bar",
   keys  = { "§", "1", "2", "3", "4", "5", "Q", "E", "R", "F", "T", "G" },
@@ -39,7 +41,8 @@ ns.SHIFT = {
 
 ns.CTRL = {
   command = "MULTIACTIONBAR2BUTTON", bindText = "Action Bar 3 button", barText = "Action Bar 3",
-  keys  = { "Ctrl+1", "Ctrl+2", "Ctrl+3", "Ctrl+4", "Shift+Z", "Shift+X", "Ctrl+5", "Ctrl+Q", "Shift+Space" },
+  keys  = { "Ctrl+1", "Ctrl+2", "Ctrl+3", "Ctrl+4", "Shift+Z", "Shift+X", "Ctrl+5", "Ctrl+Q", "Shift+Space",
+            "Click 1", "Click 2", "Click 3" },
   binds = { "CTRL-1", "CTRL-2", "CTRL-3", "CTRL-4", "SHIFT-Z", "SHIFT-X", "CTRL-5", "CTRL-Q", "SHIFT-SPACE" },
 }
 
@@ -80,5 +83,7 @@ ns.BEST_BANDAGE = { best = "bandage" }
 -- A fixed item by ID; the name is used in messages.
 function ns.Item(id, name) return { item = id, name = name } end
 -- A macro by name, made from the character's macros section (or one you made in the game).
+-- In a macro's text, {best:stone}, {best:instant}, {best:crippling}, {best:deadly} and
+-- {best:mindnumbing} become the name of the best such item in the bags at /kb apply.
 -- The label is only used by the keybinds overview.
 function ns.Macro(name, label) return { macro = name, label = label } end

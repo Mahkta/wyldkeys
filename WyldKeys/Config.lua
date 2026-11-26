@@ -158,7 +158,11 @@ ns.Config = {
       ["Shift+4"] = "Expose Armor",   -- level 14; finisher, beside Slice and Dice
       ["Shift+Q"] = BEST_POTION,
       ["Shift+R"] = "Eureka!",
-      ["Shift+Space"] = "Feint",      -- level 16; the most used mitigation goes on Shift+Space        -- gnome racial, 2 min burst cooldown
+      ["Shift+Space"] = "Feint",      -- level 16; the most used mitigation goes on Shift+Space
+      -- Weapon coatings, clicked out of combat. Click: main hand, Shift+click: off hand.
+      ["Click 1"] = Macro("WK Stone", "Sharpening stone: click main hand, Shift+click off hand"),
+      ["Click 2"] = Macro("WK Instant", "Instant Poison: click main hand, Shift+click off hand"),
+      ["Click 3"] = Macro("WK Crippling", "Crippling Poison: click main hand, Shift+click off hand"),        -- gnome racial, 2 min burst cooldown
       ["Shift+§"] = "Sprint",
       ["Z"] = Item(1178, "Explosive Rocket"),
       ["Shift+Z"] = BEST_FOOD,
@@ -178,6 +182,22 @@ ns.Config = {
     },
     macros = {
       ["WK Pull"] = PULL_MACRO,
+      -- {best:...} is the best such item in the bags at /kb apply; run it again after buying better ones.
+      ["WK Stone"] = [[
+#showtooltip
+/use {best:stone}
+/use [mod:shift] 17; 16
+]],
+      ["WK Instant"] = [[
+#showtooltip
+/use {best:instant}
+/use [mod:shift] 17; 16
+]],
+      ["WK Crippling"] = [[
+#showtooltip
+/use {best:crippling}
+/use [mod:shift] 17; 16
+]],
     },
   },
 

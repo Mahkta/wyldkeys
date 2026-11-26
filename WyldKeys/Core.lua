@@ -188,8 +188,18 @@ local MATCH = {
   drink = function(id) local u = ns.ItemUse(id); return u == "Drink" or u == "Refreshment" end,
   food = function(id) local u = ns.ItemUse(id); return u == "Food" or u == "Refreshment" end,
   bandage = function(id, name, sub) return sub == "Bandages" or sub == "Bandage" end,
+  stone = function(id, name) return name and name:find("Sharpening Stone", 1, true) ~= nil end,
+  instant = function(id, name) return name and name:find("^Instant Poison") ~= nil end,
+  crippling = function(id, name) return name and name:find("^Crippling Poison") ~= nil end,
+  deadly = function(id, name) return name and name:find("^Deadly Poison") ~= nil end,
+  mindnumbing = function(id, name) return name and name:find("^Mind%-numbing Poison") ~= nil end,
 }
-local LABEL = { bomb = "bomb", potion = "healing potion", drink = "drink", food = "food", bandage = "bandage" }
+local LABEL = { bomb = "bomb", potion = "healing potion", drink = "drink", food = "food", bandage = "bandage",
+  stone = "sharpening stone", instant = "Instant Poison", crippling = "Crippling Poison",
+  deadly = "Deadly Poison", mindnumbing = "Mind-numbing Poison" }
+-- Used in a macro when nothing of the kind is in the bags.
+local FALLBACK = { stone = "Rough Sharpening Stone", instant = "Instant Poison", crippling = "Crippling Poison",
+  deadly = "Deadly Poison", mindnumbing = "Mind-numbing Poison" }
 
 -- The matching item with the highest item level in the bags, or nil.
 local function bestItem(kind)
@@ -209,6 +219,15 @@ local function bestItem(kind)
     end
   end
   return best
+end
+
+-- A macro's text with {best:kind} replaced by the best such item in the bags.
+local function macroBody(body)
+  return (body:gsub("{best:(%a+)}", function(kind)
+    if not MATCH[kind] then return nil end
+    local id = bestItem(kind)
+    return (id and itemName(id)) or FALLBACK[kind] or LABEL[kind]
+  end))
 end
 
 -- Name of a layout entry for messages.
@@ -345,7 +364,7 @@ end
 -- Creates or updates the character's macros from Config.lua (per character).
 local function ensureMacros(macros)
   for _, name in ipairs(sortedNames(macros)) do
-    local body = macros[name]
+    local body = macroBody(macros[name])
     local state = macroState(name, body)
     if state ~= "unchanged" then
       local ok
@@ -379,7 +398,7 @@ local function preview()
   say("Old keys on the main bar, Action Bar 2 and Ctrl+1-3 are cleared first, so 6-0 stop working.")
   if layout then
     for _, name in ipairs(sortedNames(layout.macros)) do
-      local state = macroState(name, layout.macros[name])
+      local state = macroState(name, macroBody(layout.macros[name]))
       say("  Macro " .. name .. ": " .. (state == "create" and "will be created" or state == "update" and "will be updated" or "unchanged"))
     end
     for _, p in ipairs(placements(layout)) do
