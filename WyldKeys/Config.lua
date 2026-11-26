@@ -154,6 +154,7 @@ ns.Config = {
       ["R"] = BEST_BOMB,
       ["T"] = PULL,
       ["Shift+1"] = "Escape Artist",  -- gnome racial: breaks roots and snares, beside Sprint
+      ["Shift+3"] = "Rupture",        -- bleed finisher, beside Eviscerate
       ["Shift+4"] = "Expose Armor",   -- level 14; finisher, beside Slice and Dice
       ["Shift+Q"] = BEST_POTION,
       ["Shift+R"] = "Eureka!",
