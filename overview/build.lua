@@ -184,7 +184,7 @@ end
 
 local f = assert(io.open(here .. "/template.html", "rb"))
 local template = f:read("*a"); f:close()
-local data = json({ global = global, profiles = profiles })
+local data = json({ global = global, profiles = profiles, utility = P.utility })
 local s, e = template:find("/*@GEN@*/null", 1, true)
 assert(s, "placeholder /*@GEN@*/null not found in template.html")
 local html = template:sub(1, s - 1) .. data .. template:sub(e + 1)

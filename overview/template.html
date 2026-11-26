@@ -67,6 +67,17 @@ th{font-size:14px;color:var(--mute);font-weight:600}
 td:first-child{white-space:nowrap;font-weight:600}
 .dot{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:baseline}
 .src{color:var(--mute);font-size:13px;margin-top:14px}
+.ub{margin-top:20px}
+.ub h2{font-size:18px;margin:0 0 4px}
+.ubar{display:grid;grid-template-columns:7.5em minmax(0,1fr);gap:10px;align-items:center;margin-top:10px}
+.ubar>b{font-size:14px;font-weight:600}
+.ubar>b small{display:block;color:var(--mute);font-weight:500;font-size:12px}
+.slots{display:grid;grid-template-columns:repeat(12,minmax(86px,1fr));gap:6px;min-width:1100px}
+.slot{border-radius:8px;height:64px;padding:5px 7px;display:flex;flex-direction:column;justify-content:space-between;font-size:12.5px;line-height:1.15;font-weight:600;background:var(--cap);color:var(--capink);box-shadow:inset 0 -4px 0 rgba(0,0,0,.3)}
+.slot .n{font-size:11px;opacity:.75}
+.slot.none{background:#2c3037;color:var(--capmute);font-weight:500}
+.slot.fr{background:#2c3037;outline:2px dashed #9aa1ab;outline-offset:-4px;color:var(--capmute);font-weight:500}
+.slot.gone{visibility:hidden}
 @media(max-width:900px){.grid3{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.grid3 .card:first-child{grid-column:1/-1}}
 @media(max-width:600px){.grid3{grid-template-columns:minmax(0,1fr)}table{font-size:13px}.stack thead{display:none}.stack tr{display:grid;padding-block:10px;border-bottom:1px solid var(--line)}.stack td{display:flex;justify-content:space-between;gap:12px;border:0;padding:3px 0}.stack td::before{content:attr(data-l);color:var(--mute);font-weight:500}}
 @media(prefers-reduced-motion:reduce){.key{transition:none}.key:active{transform:none}}
@@ -94,6 +105,7 @@ td:first-child{white-space:nowrap;font-weight:600}
 </ol><h2>Setting it in game</h2><p class="notes">The WyldKeys addon applies this layout: <b>/kb setup</b> once (learns what the game calls §), then <b>/kb preview</b> and <b>/kb apply</b> on each character. <b>/kb restore</b> undoes it. Shift keys, Z and X use Action Bar 2; Ctrl + 1–3 use Action Bar 3. Healing potion is on Shift + Q for every character. Interrupt is on E for every character; the mouse side buttons are not used for now, because Logi Options+ only sends them on release.</p><p class="notes">The character views are generated from the addon’s Config.lua (overview/build.lua in the WyldKeys repository), so they match what /kb apply sets.</p></div>
 <div class="card" style="grid-column:span 2" id="listcard"><h2 id="listh">All bindings on this layer</h2><div class="scroll"><table class="stack"><thead><tr><th>Key</th><th>Ability</th><th>Role</th><th>Game default here</th></tr></thead><tbody id="list"></tbody></table></div></div>
 </div>
+<div class="card ub" id="ubcard"><h2>Buttons without keys <span class="chip" style="background:#12161b;color:#fff">Proposal</span></h2><p class="notes" id="ubnote"></p><div class="scroll" id="ub"></div><div class="legend" id="ublegend" style="margin-top:12px"></div></div>
 <p class="src">Game defaults from a third-party list (Magic Game World's WoW Forever PC controls guide); check them in game under Options → Keybindings. C and V keep their defaults.</p>
 </div></div>
 <script>
@@ -174,6 +186,22 @@ function detail(){
  h+='<p class="def">'+verdict(b,d)+'</p>';
  if(p.note)h+='<p class="def">'+p.note+'</p>';
  $('detail').innerHTML=h}
+const UT=GEN.utility;
+const UK={prof:{n:'Profession',bg:'#2f7d4f',fg:'#fff'},buff:{n:'Buff or consumable',bg:'#b8562f',fg:'#fff'},coat:{n:'Weapon coating',bg:'#7a5c2e',fg:'#fff'},travel:{n:'Travel',bg:'#3c6ea8',fg:'#fff'},free:{n:'Free, never touched by /kb apply',bg:'#2c3037',fg:'#e9ebef'}};
+function utility(){
+ const p=PROF[prof],who=p.parent||prof,c=UT.chars[who];
+ const bars=[['bar3','Action Bar 3','buttons 10–12'],['bar4','Action Bar 4',''],['bar5','Action Bar 5','']];
+ $('ub').innerHTML=bars.map(([b,t,sm])=>{const sl=UT.slots[b];let h='';
+  for(let i=1;i<=12;i++){const s=sl[i];
+   if(!s){h+='<div class="slot gone"></div>';continue}
+   const k=UK[s[2]];let txt,cls='slot',st='';
+   if(s[2]==='free'){cls+=' fr';txt='Free'}
+   else if(c){const v=(c[b]||{})[i];if(v){txt=v;st='background:'+k.bg+';color:'+k.fg}else{cls+=' none';txt='Empty here'}}
+   else{txt=s[1];st='background:'+k.bg+';color:'+k.fg}
+   h+='<div class="'+cls+'" style="'+st+'" title="'+s[1]+'"><span class="n">'+i+'</span><span>'+txt+'</span></div>'}
+  return '<div class="ubar"><b>'+t+(sm?'<small>'+sm+'</small>':'')+'</b><div class="slots">'+h+'</div></div>'}).join('');
+ $('ubnote').innerHTML=c?('What '+p.n.split(' ')[0]+' would have on the buttons you click. Same slot, same kind of thing on every character; “Empty here” is a standard slot this character has no use for yet, so it is free on this character until it gets one.'):(c===undefined&&prof!=='general'?'No standard bars proposed for this character yet.':'The same slot holds the same kind of thing on every character. The keyed buttons (main bar, Action Bar 2, Action Bar 3 buttons 1–9) are not changed. Pick a character to see what each one would get. Hover a button for what the slot is for.');
+ $('ublegend').innerHTML=Object.values(UK).map(k=>'<span class="chip" style="background:'+k.bg+';color:'+k.fg+'">'+k.n+'</span>').join('')}
 function render(){
  $('board').innerHTML=ROWS.map(r=>'<div class="row" style="grid-template-columns:'+r.map(k=>k[2]+'fr').join(' ')+'">'+r.map(cap).join('')+'</div>').join('');
  $('profs').innerHTML=Object.keys(PROF).map(k=>'<button data-p="'+k+'" aria-pressed="'+(k===prof)+'">'+PROF[k].n+'</button>').join('');
@@ -188,7 +216,7 @@ function render(){
  
  $('list').innerHTML=rows.join('');
  $('listh').textContent='All bindings: '+p.n+', '+LAYERS.find(l=>l[0]===layer)[1].toLowerCase()+' layer';
- detail()}
+ detail();utility()}
 document.addEventListener('click',e=>{
  const k=e.target.closest('.key');if(k){sel=k.dataset.id;render();return}
  const pb=e.target.closest('[data-p]');if(pb){location.hash=pb.dataset.p;return}

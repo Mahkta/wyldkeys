@@ -205,4 +205,74 @@ return {
   -- Placed by hand on every character with a section (shown, not set by the addon).
   -- Empty now: food, drink and bandages are set by the addon from Config.lua.
   manual = {},
+
+  -- PROPOSAL, not set by the addon yet: the buttons without keys, the same on
+  -- every character. Action Bar 3 buttons 10-12 (Click 1-3), Action Bar 4 and
+  -- Action Bar 5. Each slot: { what it is for, kind }. Kinds: prof, buff, coat,
+  -- travel, free. Free slots are never touched by /kb apply.
+  utility = {
+    slots = {
+      bar3 = {
+        [10] = { "Weapon coating: stone, weightstone or oil for the weapon held (Shift+click: off hand)", "coat" },
+        [11] = { "Rogue: poison 1 (others: free)", "coat" },
+        [12] = { "Rogue: poison 2 (others: free)", "coat" },
+      },
+      bar4 = {
+        { "Crafting profession", "prof" },
+        { "Second profession (craft, or the gathering window)", "prof" },
+        { "Profession action (Disenchant)", "prof" },
+        { "Tracking (Find Treasure, Find Herbs, Find Minerals)", "prof" },
+        { "Cooking", "prof" },
+        { "First Aid", "prof" },
+        { "Fishing", "prof" },
+        { "Free", "free" }, { "Free", "free" }, { "Free", "free" },
+        { "Hearthstone", "travel" },
+        { "Mount (when you have one)", "travel" },
+      },
+      bar5 = {
+        { "Battle elixir (best in bags for the class)", "buff" },
+        { "Guardian elixir (Defense, Fortitude)", "buff" },
+        { "Mana potion (best in bags)", "buff" },
+        { "Scroll for the main stat", "buff" },
+        { "Buff food (Well Fed)", "buff" },
+        { "Anti-Venom (First Aid)", "buff" },
+        { "Free", "free" }, { "Free", "free" }, { "Free", "free" },
+        { "Free", "free" }, { "Free", "free" }, { "Free", "free" },
+      },
+    },
+    -- What each slot would hold, per character. A slot left out stays empty on
+    -- that character (and is free to use there).
+    chars = {
+      galdorin = {
+        bar3 = { [10] = "Weightstone or stone" },
+        bar4 = { "Blacksmithing", "Mining", nil, "Find Treasure", "Cooking", "First Aid", "Fishing",
+                 [11] = "Hearthstone" },
+        bar5 = { "Strength elixir", "Defense elixir", nil, "Strength scroll", "Buff food", "Anti-Venom" },
+      },
+      meagor = {
+        bar3 = { [10] = "Sharpening stone", [11] = "Instant Poison", [12] = "Crippling Poison" },
+        bar4 = { "Engineering", "Alchemy", nil, nil, "Cooking", "First Aid", "Fishing",
+                 [11] = "Hearthstone" },
+        bar5 = { "Agility elixir", "Defense elixir", nil, "Agility scroll", "Buff food", "Anti-Venom" },
+      },
+      thorim = {
+        bar3 = { [10] = "Weightstone or stone" },
+        bar4 = { "Leatherworking", "Skinning", nil, "Find Treasure", "Cooking", "First Aid", "Fishing",
+                 [11] = "Hearthstone" },
+        bar5 = { "Wisdom elixir", "Defense elixir", "Mana potion", "Intellect scroll", "Buff food", "Anti-Venom" },
+      },
+      leorn = {
+        bar3 = { [10] = "Wizard oil" },
+        bar4 = { "Tailoring", "Enchanting", "Disenchant", nil, "Cooking", "First Aid", "Fishing",
+                 [11] = "Hearthstone" },
+        bar5 = { "Intellect elixir", "Defense elixir", "Mana potion", "Intellect scroll", "Buff food", "Anti-Venom" },
+      },
+      drealltar = {
+        bar3 = {},
+        bar4 = { "Alchemy", "Herbalism", nil, "Find Herbs", "Cooking", "First Aid", nil,
+                 [11] = "Hearthstone" },
+        bar5 = { "Agility elixir", "Defense elixir", "Mana potion", "Agility scroll", "Buff food", "Anti-Venom" },
+      },
+    },
+  },
 }
