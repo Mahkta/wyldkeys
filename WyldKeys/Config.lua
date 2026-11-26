@@ -257,7 +257,6 @@ ns.Config = {
       ["3"] = "Healing Touch",
       ["4"] = "Rejuvenation",
       ["5"] = "Regrowth",             -- 12
-      ["Q"] = "Barkskin",             -- 44
       ["E"] = "Entangling Roots",     -- 8
       ["R"] = "Innervate",            -- 40
       ["F"] = "Hibernate",            -- 18
@@ -279,6 +278,7 @@ ns.Config = {
       ["Shift+Z"] = BEST_DRINK,
       ["Shift+X"] = BEST_FOOD,
       ["Ctrl+Q"] = BEST_BANDAGE,
+      ["Shift+Space"] = "Barkskin",   -- 44; the most used mitigation, same key in every form
     },
     bear = {
       ["§"] = "Feral Charge",         -- talent, 20
