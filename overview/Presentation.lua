@@ -189,7 +189,7 @@ return {
 
   -- Each character's level, and the level (or a note) at which an ability in
   -- Config.lua arrives. Keys for abilities above the level are drawn dashed.
-  level = { drealltar = 6 },
+  level = { drealltar = 8 },
   learnedAt = {
     drealltar = {
       ["Entangling Roots"] = 8, ["Nature's Grasp"] = 10, Regrowth = 12, Revive = 12,
