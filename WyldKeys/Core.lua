@@ -23,6 +23,7 @@
 --   /kb apply    set the bindings (and abilities on characters in Config.lua)
 --   /kb restore  put back what was there before the first /kb apply
 --   /kb forget   drop that saved copy, so the next /kb apply saves a fresh one
+--   /kb prof     list the abilities in the profession book (for checking)
 
 local addonName, ns = ...
 local PREFIX = "|cff66ccffWyldKeys:|r "
@@ -158,7 +159,56 @@ end
 
 -- Abilities ----------------------------------------------------------------------
 
+-- Profession buttons live in the profession book, not in the spellbook. The
+-- same name looked up as a spell can give another spell (wrong icon), so a
+-- profession ability is picked up from its place in the book, the way
+-- dragging it from the book does. Returns a list of { slot, name, bank }.
+local function professionBook()
+  local list = {}
+  if not (GetProfessions and GetProfessionInfo) then return list end
+  local idx = { GetProfessions() }
+  local bank = (Enum and Enum.SpellBookSpellBank and Enum.SpellBookSpellBank.Player) or BOOKTYPE_PROFESSION or "professions"
+  for n = 1, select("#", GetProfessions()) do
+    local i = idx[n]
+    if i then
+      local _, _, _, _, numSpells, offset = GetProfessionInfo(i)
+      for k = 1, (numSpells or 0) do
+        local slot = (offset or 0) + k
+        local name
+        if C_SpellBook and C_SpellBook.GetSpellBookItemName then
+          name = C_SpellBook.GetSpellBookItemName(slot, bank)
+        elseif GetSpellBookItemName then
+          name = GetSpellBookItemName(slot, bank)
+        end
+        if name then list[#list + 1] = { slot = slot, name = name, bank = bank } end
+      end
+    end
+  end
+  return list
+end
+
+local function inProfessionBook(name)
+  for _, e in ipairs(professionBook()) do if e.name == name then return e end end
+end
+
+local function pickupBookItem(e)
+  ClearCursor()
+  if C_SpellBook and C_SpellBook.PickupSpellBookItem then
+    C_SpellBook.PickupSpellBookItem(e.slot, e.bank)
+  elseif PickupSpellBookItem then
+    PickupSpellBookItem(e.slot, e.bank)
+  end
+  return GetCursorInfo() ~= nil
+end
+
+local function knownSpell(name)
+  if inProfessionBook(name) then return true end
+  return C_Spell and C_Spell.GetSpellInfo and C_Spell.GetSpellInfo(name) ~= nil
+end
+
 local function pickupSpell(name)
+  local book = inProfessionBook(name)
+  if book and pickupBookItem(book) then return true end
   ClearCursor()
   local id
   if C_Spell and C_Spell.GetSpellInfo then
@@ -301,7 +351,7 @@ end
 -- The first spell in a First(...) entry that the character knows.
 local function firstKnown(entry)
   for _, n in ipairs(entry.any) do
-    if C_Spell and C_Spell.GetSpellInfo and C_Spell.GetSpellInfo(n) then return n end
+    if knownSpell(n) then return n end
   end
 end
 
@@ -670,6 +720,11 @@ SlashCmdList.WYLDKEYS = function(msg)
   if cmd == "setup" then setup()
   elseif cmd == "preview" then preview()
   elseif cmd == "apply" then apply()
+  elseif cmd == "prof" then
+    local list = professionBook()
+    if not (GetProfessions and GetProfessionInfo) then say("This game version has no profession book functions.") end
+    if #list == 0 then say("No profession abilities found in the profession book.") end
+    for _, e in ipairs(list) do say("Profession book " .. e.slot .. ": " .. e.name) end
   elseif cmd == "restore" then restore()
   elseif cmd == "forget" then
     WyldKeys_Char.backup = nil
@@ -678,7 +733,7 @@ SlashCmdList.WYLDKEYS = function(msg)
     local k = WyldKeys_Account.keys or {}
     say("§ key = " .. tostring(k.sec))
   else
-    say("/kb setup, /kb preview, /kb apply, /kb restore, /kb forget, /kb keys")
+    say("/kb setup, /kb preview, /kb apply, /kb restore, /kb forget, /kb keys, /kb prof")
   end
 end
 

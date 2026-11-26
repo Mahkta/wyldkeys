@@ -43,6 +43,8 @@
 |cff66ccffWyldKeys:|r Old keys on the main bar, Action Bar 2 and Ctrl+1-3 are cleared first, so 6-0 stop working.
 |cff66ccffWyldKeys:|r No abilities are placed for this character, only keys.
 |cff66ccffWyldKeys:|r Bindings will be saved for every character that uses account-wide bindings.
+|cff66ccffWyldKeys:|r This game version has no profession book functions.
+|cff66ccffWyldKeys:|r No profession abilities found in the profession book.
 ---- apply
 |cff66ccffWyldKeys:|r Saved a copy of your current keys. /kb restore puts them back.
 |cff66ccffWyldKeys:|r Keys set and saved for every character that uses account-wide bindings.

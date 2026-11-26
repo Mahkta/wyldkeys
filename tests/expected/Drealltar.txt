@@ -108,6 +108,8 @@
 |cff66ccffWyldKeys:|r   Action Bar 5, button 5: best buff food in your bags (none found)
 |cff66ccffWyldKeys:|r   Action Bar 5, button 6: best Anti-Venom in your bags (none found)
 |cff66ccffWyldKeys:|r Bindings will be saved for every character that uses account-wide bindings.
+|cff66ccffWyldKeys:|r This game version has no profession book functions.
+|cff66ccffWyldKeys:|r No profession abilities found in the profession book.
 ---- apply
 |cff66ccffWyldKeys:|r Saved a copy of your current keys and bars. /kb restore puts them back.
 |cff66ccffWyldKeys:|r Keys set and saved for every character that uses account-wide bindings.

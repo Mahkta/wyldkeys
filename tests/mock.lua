@@ -49,7 +49,7 @@ local CHAR = arg[1] or "Meagor"
 local KNOWN = {
  Meagor={["Eureka!"]=900003,Stealth=1784,["Sinister Strike"]=1752,Backstab=53,Eviscerate=2098,["Slice and Dice"]=5171,Gouge=1776,Evasion=5277,Throw=2764,["Pick Pocket"]=921,Sap=6770,Sprint=2983,["Pick Lock"]=1804,Kick=1766},
  -- every Galdorin spell is known
- Galdorin={Charge=100,["Sunder Armor"]=7386,Revenge=6572,["Heroic Strike"]=78,["Shield Block"]=2565,["Thunder Clap"]=6343,["Demoralizing Shout"]=1160,["Shield Bash"]=72,Cleave=845,Taunt=355,Throw=2764,Disarm=676,["Battle Stance"]=2457,["Defensive Stance"]=71,Bloodrage=2687,["Battle Shout"]=6673,Overpower=7384,Rend=772,Slam=1464,["Victory Rush"]=34428,Hamstring=1715,Retaliation=20230,["Intimidating Shout"]=5246,Blacksmithing=2018,Mining=2575,["Find Treasure"]=2481,Cooking=2550,["First Aid"]=3273,Fishing=7620},
+ Galdorin={Charge=100,["Sunder Armor"]=7386,Revenge=6572,["Heroic Strike"]=78,["Shield Block"]=2565,["Thunder Clap"]=6343,["Demoralizing Shout"]=1160,["Shield Bash"]=72,Cleave=845,Taunt=355,Throw=2764,Disarm=676,["Battle Stance"]=2457,["Defensive Stance"]=71,Bloodrage=2687,["Battle Shout"]=6673,Overpower=7384,Rend=772,Slam=1464,["Victory Rush"]=34428,Hamstring=1715,Retaliation=20230,["Intimidating Shout"]=5246,["Find Treasure"]=2481,["First Aid"]=3273},
  -- Fire Nova and Ancestral Spirit not learned yet
  -- Dampen Magic not learned yet
  Leorn={["Arcane Missiles"]=5143,Frostbolt=116,["Fire Blast"]=2136,Polymorph=118,Shoot=5019,["Frost Nova"]=122,["Walk on Air"]=900001,Fireball=133,["Arcane Intellect"]=1459,["Frost Armor"]=168,["Read Leyline"]=900002,["Conjure Water"]=5504,["Conjure Food"]=587},
@@ -65,6 +65,15 @@ C_Item={PickupItem=function(id) cursor={"item",id} end, GetItemNameByID=function
  GetItemInfoInstant=function(id) if id==4360 or id==4370 then return id,"Trade Goods","Explosives","",0,7,2 end if id==1251 or id==2581 then return id,"Consumable","Bandages","",0,0,7 end return id,"Consumable","Other","",0,0,8 end,
  GetItemInfo=function(id) local l={[4360]=14,[4370]=20,[1178]=8,[118]=5,[858]=13,[2455]=5,[5350]=5,[2288]=15,[5349]=5,[1113]=15,[2593]=10,[1251]=5,[2581]=15,[2862]=5,[2863]=15,[6947]=20,[2680]=10,[5997]=2,[3241]=5} return "x","l",1,l[id] or 1 end}
 C_Item.GetItemSpell=function(id) return C_Item_GetItemSpell and C_Item_GetItemSpell(id) end
+-- Galdorin: professions in the profession book (as in the game), where the
+-- spell looked up by name would be another spell. Book slots 40-44.
+if CHAR=="Galdorin" then
+  Enum={SpellBookSpellBank={Player=0}}
+  local book={[40]="Blacksmithing",[41]="Mining",[42]="Smelting",[43]="Cooking",[44]="Fishing"}
+  function GetProfessions() return 1,2,nil,4,5 end
+  function GetProfessionInfo(i) local t={[1]={"Blacksmithing",1,0},[2]={"Mining",2,1},[4]={"Fishing",1,4},[5]={"Cooking",1,3}} local e=t[i] return e[1],"icon",1,75,e[2],39+e[3] end
+  C_SpellBook={GetSpellBookItemName=function(slot,bank) return bank==0 and book[slot] end, PickupSpellBookItem=function(slot,bank) if book[slot] then cursor={"book",slot} end end}
+end
 local bag={[0]={1178,4360,118,2455},[1]={4370,858}}
 if CHAR=="Galdorin" then bag={[0]={2455,4360,3241}} end -- no healing potion; a mana potion he should not get
 -- Meagor: two sharpening stones (the coarse one should win) and Instant Poison, no Crippling Poison.
@@ -120,6 +129,7 @@ cap.scripts.OnKeyDown(nil,"§")
 kb("keys")
 WyldKeys_Account.keys.back="F8"; WyldKeys_Account.keys.interrupt="F9"
 kb("preview")
+kb("prof")
 print("---- apply")
 kb("apply")
 print("---- preview again")
