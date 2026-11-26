@@ -41,9 +41,12 @@
 |cff66ccffWyldKeys:|r   Ctrl+X = Sit / swim down
 |cff66ccffWyldKeys:|r   Middle button = Autorun
 |cff66ccffWyldKeys:|r Old keys on the main bar, Action Bar 2 and Ctrl+1-3 are cleared first, so 6-0 stop working.
+|cff66ccffWyldKeys:|r   Macro WK Apply: will be created
 |cff66ccffWyldKeys:|r   Macro WK Conjure: will be created
 |cff66ccffWyldKeys:|r   Macro WK Oil: will be created
+|cff66ccffWyldKeys:|r   Macro WK Preview: will be created
 |cff66ccffWyldKeys:|r   Macro WK Pull: will be created
+|cff66ccffWyldKeys:|r   Macro WK Reload: will be created
 |cff66ccffWyldKeys:|r   Main bar, 1: Arcane Missiles
 |cff66ccffWyldKeys:|r   Main bar, 5: Frostbolt
 |cff66ccffWyldKeys:|r   Main bar, Q: Fire Blast
@@ -70,6 +73,9 @@
 |cff66ccffWyldKeys:|r   Action Bar 4, button 5: Cooking
 |cff66ccffWyldKeys:|r   Action Bar 4, button 6: First Aid
 |cff66ccffWyldKeys:|r   Action Bar 4, button 7: Fishing
+|cff66ccffWyldKeys:|r   Action Bar 4, button 8: macro WK Reload
+|cff66ccffWyldKeys:|r   Action Bar 4, button 9: macro WK Preview
+|cff66ccffWyldKeys:|r   Action Bar 4, button 10: macro WK Apply
 |cff66ccffWyldKeys:|r   Action Bar 4, button 11: Hearthstone
 |cff66ccffWyldKeys:|r   Action Bar 5, button 1: best Intellect elixir in your bags (none found)
 |cff66ccffWyldKeys:|r   Action Bar 5, button 2: best guardian elixir in your bags (Elixir of Minor Defense)
@@ -83,15 +89,21 @@
 ---- apply
 |cff66ccffWyldKeys:|r Saved a copy of your current keys and bars. /kb restore puts them back.
 |cff66ccffWyldKeys:|r Keys set and saved for every character that uses account-wide bindings.
+[mock] CreateMacro WK Apply per=true
+|cff66ccffWyldKeys:|r Macro WK Apply created.
 [mock] CreateMacro WK Conjure per=true
 |cff66ccffWyldKeys:|r Macro WK Conjure created.
 [mock] CreateMacro WK Oil per=true
 [mock]   /use Minor Wizard Oil
 [mock]   /use 16
 |cff66ccffWyldKeys:|r Macro WK Oil created.
+[mock] CreateMacro WK Preview per=true
+|cff66ccffWyldKeys:|r Macro WK Preview created.
 [mock] CreateMacro WK Pull per=true
 |cff66ccffWyldKeys:|r Macro WK Pull created.
-|cff66ccffWyldKeys:|r Abilities placed: 20 of 33.
+[mock] CreateMacro WK Reload per=true
+|cff66ccffWyldKeys:|r Macro WK Reload created.
+|cff66ccffWyldKeys:|r Abilities placed: 23 of 36.
 |cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r Arcane Explosion (Main bar, R)
 |cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r Dampen Magic (Action Bar 2, X)
 |cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r Slow Fall (Action Bar 3, Ctrl+5)
@@ -140,9 +152,12 @@
 |cff66ccffWyldKeys:|r   Ctrl+X = Sit / swim down
 |cff66ccffWyldKeys:|r   Middle button = Autorun
 |cff66ccffWyldKeys:|r Old keys on the main bar, Action Bar 2 and Ctrl+1-3 are cleared first, so 6-0 stop working.
+|cff66ccffWyldKeys:|r   Macro WK Apply: unchanged
 |cff66ccffWyldKeys:|r   Macro WK Conjure: unchanged
 |cff66ccffWyldKeys:|r   Macro WK Oil: unchanged
+|cff66ccffWyldKeys:|r   Macro WK Preview: unchanged
 |cff66ccffWyldKeys:|r   Macro WK Pull: unchanged
+|cff66ccffWyldKeys:|r   Macro WK Reload: unchanged
 |cff66ccffWyldKeys:|r   Main bar, 1: Arcane Missiles
 |cff66ccffWyldKeys:|r   Main bar, 5: Frostbolt
 |cff66ccffWyldKeys:|r   Main bar, Q: Fire Blast
@@ -169,6 +184,9 @@
 |cff66ccffWyldKeys:|r   Action Bar 4, button 5: Cooking
 |cff66ccffWyldKeys:|r   Action Bar 4, button 6: First Aid
 |cff66ccffWyldKeys:|r   Action Bar 4, button 7: Fishing
+|cff66ccffWyldKeys:|r   Action Bar 4, button 8: macro WK Reload
+|cff66ccffWyldKeys:|r   Action Bar 4, button 9: macro WK Preview
+|cff66ccffWyldKeys:|r   Action Bar 4, button 10: macro WK Apply
 |cff66ccffWyldKeys:|r   Action Bar 4, button 11: Hearthstone  (replaces Item6948)
 |cff66ccffWyldKeys:|r   Action Bar 5, button 1: best Intellect elixir in your bags (none found)
 |cff66ccffWyldKeys:|r   Action Bar 5, button 2: best guardian elixir in your bags (Elixir of Minor Defense)
@@ -178,7 +196,7 @@
 |cff66ccffWyldKeys:|r   Action Bar 5, button 6: best Anti-Venom in your bags (none found)
 |cff66ccffWyldKeys:|r Bindings will be saved for every character that uses account-wide bindings.
 1=ACTIONBUTTON2 2=ACTIONBUTTON3 3=ACTIONBUTTON4 4=ACTIONBUTTON5 5=ACTIONBUTTON6 BUTTON3=TOGGLEAUTORUN BUTTON4=TOGGLEAUTORUN CTRL-1=MULTIACTIONBAR2BUTTON1 CTRL-2=MULTIACTIONBAR2BUTTON2 CTRL-3=MULTIACTIONBAR2BUTTON3 CTRL-4=MULTIACTIONBAR2BUTTON4 CTRL-5=MULTIACTIONBAR2BUTTON7 CTRL-Q=MULTIACTIONBAR2BUTTON8 CTRL-R=REPLY CTRL-X=SITORSTAND CTRL-Z=TOGGLESHEATH E=ACTIONBUTTON8 F8=MOVEBACKWARD F=ACTIONBUTTON10 G=ACTIONBUTTON12 Q=ACTIONBUTTON7 R=ACTIONBUTTON9 S=MOVEBACKWARD SHIFT-1=MULTIACTIONBAR1BUTTON1 SHIFT-2=MULTIACTIONBAR1BUTTON2 SHIFT-3=MULTIACTIONBAR1BUTTON3 SHIFT-4=MULTIACTIONBAR1BUTTON4 SHIFT-5=MULTIACTIONBAR1BUTTON5 SHIFT-E=MULTIACTIONBAR1BUTTON7 SHIFT-F=MULTIACTIONBAR1BUTTON9 SHIFT-Q=MULTIACTIONBAR1BUTTON6 SHIFT-R=MULTIACTIONBAR1BUTTON8 SHIFT-SPACE=MULTIACTIONBAR2BUTTON9 SHIFT-X=MULTIACTIONBAR2BUTTON6 SHIFT-Z=MULTIACTIONBAR2BUTTON5 SHIFT-§=MULTIACTIONBAR1BUTTON10 T=ACTIONBUTTON11 X=MULTIACTIONBAR1BUTTON12 Z=MULTIACTIONBAR1BUTTON11 §=ACTIONBUTTON1
-10:spell118 11:macro123 12:spell122 2:spell5143 35:item6948 38:item5997 41:item2680 49:spell1459 50:spell168 51:macro121 52:spell900002 53:item2288 54:item1113 56:item2581 58:macro122 5:spell1752 62:spell133 66:item118 6:spell116 70:spell900001 7:spell2136
+10:spell118 11:macro125 12:spell122 2:spell5143 32:macro126 33:macro124 34:macro121 35:item6948 38:item5997 41:item2680 49:spell1459 50:spell168 51:macro122 52:spell900002 53:item2288 54:item1113 56:item2581 58:macro123 5:spell1752 62:spell133 66:item118 6:spell116 70:spell900001 7:spell2136
 ---- restore
 |cff66ccffWyldKeys:|r Keys and bars put back as they were before /kb apply.
 0=ACTIONBUTTON10 1=ACTIONBUTTON1 2=ACTIONBUTTON2 6=ACTIONBUTTON6 BUTTON4=TOGGLEAUTORUN F8=MOVEBACKWARD F9=MULTIACTIONBAR2BUTTON12 Q=TURNLEFT R=REPLY S=MOVEBACKWARD X=SITORSTAND Z=TOGGLESHEATH

@@ -187,7 +187,7 @@ function detail(){
  if(p.note)h+='<p class="def">'+p.note+'</p>';
  $('detail').innerHTML=h}
 const UT=GEN.utility;
-const UK={prof:{n:'Profession',bg:'#2f7d4f',fg:'#fff'},buff:{n:'Buff or consumable',bg:'#b8562f',fg:'#fff'},coat:{n:'Weapon coating',bg:'#7a5c2e',fg:'#fff'},travel:{n:'Travel',bg:'#3c6ea8',fg:'#fff'},free:{n:'Free, never touched by /kb apply',bg:'#2c3037',fg:'#e9ebef'}};
+const UK={prof:{n:'Profession',bg:'#2f7d4f',fg:'#fff'},buff:{n:'Buff or consumable',bg:'#b8562f',fg:'#fff'},coat:{n:'Weapon coating',bg:'#7a5c2e',fg:'#fff'},travel:{n:'Travel',bg:'#3c6ea8',fg:'#fff'},tool:{n:'WyldKeys',bg:'#5b616b',fg:'#fff'},free:{n:'Free, never touched by /kb apply',bg:'#2c3037',fg:'#e9ebef'}};
 function utility(){
  const p=PROF[prof],who=p.parent||prof,c=UT.chars[who];
  const bars=[['bar3','Action Bar 3','buttons 10–12'],['bar4','Action Bar 4',''],['bar5','Action Bar 5','']];

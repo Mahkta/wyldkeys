@@ -41,9 +41,12 @@
 |cff66ccffWyldKeys:|r   Ctrl+X = Sit / swim down
 |cff66ccffWyldKeys:|r   Middle button = Autorun
 |cff66ccffWyldKeys:|r Old keys on the main bar, Action Bar 2 and Ctrl+1-3 are cleared first, so 6-0 stop working.
+|cff66ccffWyldKeys:|r   Macro WK Apply: will be created
 |cff66ccffWyldKeys:|r   Macro WK Crippling: will be created
 |cff66ccffWyldKeys:|r   Macro WK Instant: will be created
+|cff66ccffWyldKeys:|r   Macro WK Preview: will be created
 |cff66ccffWyldKeys:|r   Macro WK Pull: will be created
+|cff66ccffWyldKeys:|r   Macro WK Reload: will be created
 |cff66ccffWyldKeys:|r   Macro WK Stone: will be created
 |cff66ccffWyldKeys:|r   Main bar, §: Stealth
 |cff66ccffWyldKeys:|r   Main bar, 1: Sinister Strike
@@ -83,6 +86,9 @@
 |cff66ccffWyldKeys:|r   Action Bar 4, button 5: Cooking
 |cff66ccffWyldKeys:|r   Action Bar 4, button 6: First Aid
 |cff66ccffWyldKeys:|r   Action Bar 4, button 7: Fishing
+|cff66ccffWyldKeys:|r   Action Bar 4, button 8: macro WK Reload
+|cff66ccffWyldKeys:|r   Action Bar 4, button 9: macro WK Preview
+|cff66ccffWyldKeys:|r   Action Bar 4, button 10: macro WK Apply
 |cff66ccffWyldKeys:|r   Action Bar 4, button 11: Hearthstone
 |cff66ccffWyldKeys:|r   Action Bar 5, button 1: best Agility elixir in your bags (none found)
 |cff66ccffWyldKeys:|r   Action Bar 5, button 2: best guardian elixir in your bags (none found)
@@ -95,6 +101,8 @@
 ---- apply
 |cff66ccffWyldKeys:|r Saved a copy of your current keys and bars. /kb restore puts them back.
 |cff66ccffWyldKeys:|r Keys set and saved for every character that uses account-wide bindings.
+[mock] CreateMacro WK Apply per=true
+|cff66ccffWyldKeys:|r Macro WK Apply created.
 [mock] CreateMacro WK Crippling per=true
 [mock]   /use Crippling Poison
 [mock]   /use [mod:shift] 17; 16
@@ -103,13 +111,17 @@
 [mock]   /use Instant Poison
 [mock]   /use [mod:shift] 17; 16
 |cff66ccffWyldKeys:|r Macro WK Instant created.
+[mock] CreateMacro WK Preview per=true
+|cff66ccffWyldKeys:|r Macro WK Preview created.
 [mock] CreateMacro WK Pull per=true
 |cff66ccffWyldKeys:|r Macro WK Pull created.
+[mock] CreateMacro WK Reload per=true
+|cff66ccffWyldKeys:|r Macro WK Reload created.
 [mock] CreateMacro WK Stone per=true
 [mock]   /use Coarse Sharpening Stone
 [mock]   /use [mod:shift] 17; 16
 |cff66ccffWyldKeys:|r Macro WK Stone created.
-|cff66ccffWyldKeys:|r Abilities placed: 26 of 44.
+|cff66ccffWyldKeys:|r Abilities placed: 29 of 47.
 |cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r Ambush (Stance/stealth bar 1, 1)
 |cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r Garrote (Stance/stealth bar 1, 2)
 |cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r Escape Artist (Action Bar 2, Shift+1)
@@ -161,9 +173,12 @@
 |cff66ccffWyldKeys:|r   Ctrl+X = Sit / swim down
 |cff66ccffWyldKeys:|r   Middle button = Autorun
 |cff66ccffWyldKeys:|r Old keys on the main bar, Action Bar 2 and Ctrl+1-3 are cleared first, so 6-0 stop working.
+|cff66ccffWyldKeys:|r   Macro WK Apply: unchanged
 |cff66ccffWyldKeys:|r   Macro WK Crippling: unchanged
 |cff66ccffWyldKeys:|r   Macro WK Instant: unchanged
+|cff66ccffWyldKeys:|r   Macro WK Preview: unchanged
 |cff66ccffWyldKeys:|r   Macro WK Pull: unchanged
+|cff66ccffWyldKeys:|r   Macro WK Reload: unchanged
 |cff66ccffWyldKeys:|r   Macro WK Stone: unchanged
 |cff66ccffWyldKeys:|r   Main bar, §: Stealth
 |cff66ccffWyldKeys:|r   Main bar, 1: Sinister Strike
@@ -203,6 +218,9 @@
 |cff66ccffWyldKeys:|r   Action Bar 4, button 5: Cooking
 |cff66ccffWyldKeys:|r   Action Bar 4, button 6: First Aid
 |cff66ccffWyldKeys:|r   Action Bar 4, button 7: Fishing
+|cff66ccffWyldKeys:|r   Action Bar 4, button 8: macro WK Reload
+|cff66ccffWyldKeys:|r   Action Bar 4, button 9: macro WK Preview
+|cff66ccffWyldKeys:|r   Action Bar 4, button 10: macro WK Apply
 |cff66ccffWyldKeys:|r   Action Bar 4, button 11: Hearthstone  (replaces Item6948)
 |cff66ccffWyldKeys:|r   Action Bar 5, button 1: best Agility elixir in your bags (none found)
 |cff66ccffWyldKeys:|r   Action Bar 5, button 2: best guardian elixir in your bags (none found)
@@ -211,7 +229,7 @@
 |cff66ccffWyldKeys:|r   Action Bar 5, button 6: best Anti-Venom in your bags (none found)
 |cff66ccffWyldKeys:|r Bindings will be saved for every character that uses account-wide bindings.
 1=ACTIONBUTTON2 2=ACTIONBUTTON3 3=ACTIONBUTTON4 4=ACTIONBUTTON5 5=ACTIONBUTTON6 BUTTON3=TOGGLEAUTORUN BUTTON4=TOGGLEAUTORUN CTRL-1=MULTIACTIONBAR2BUTTON1 CTRL-2=MULTIACTIONBAR2BUTTON2 CTRL-3=MULTIACTIONBAR2BUTTON3 CTRL-4=MULTIACTIONBAR2BUTTON4 CTRL-5=MULTIACTIONBAR2BUTTON7 CTRL-Q=MULTIACTIONBAR2BUTTON8 CTRL-R=REPLY CTRL-X=SITORSTAND CTRL-Z=TOGGLESHEATH E=ACTIONBUTTON8 F8=MOVEBACKWARD F=ACTIONBUTTON10 G=ACTIONBUTTON12 Q=ACTIONBUTTON7 R=ACTIONBUTTON9 S=MOVEBACKWARD SHIFT-1=MULTIACTIONBAR1BUTTON1 SHIFT-2=MULTIACTIONBAR1BUTTON2 SHIFT-3=MULTIACTIONBAR1BUTTON3 SHIFT-4=MULTIACTIONBAR1BUTTON4 SHIFT-5=MULTIACTIONBAR1BUTTON5 SHIFT-E=MULTIACTIONBAR1BUTTON7 SHIFT-F=MULTIACTIONBAR1BUTTON9 SHIFT-Q=MULTIACTIONBAR1BUTTON6 SHIFT-R=MULTIACTIONBAR1BUTTON8 SHIFT-SPACE=MULTIACTIONBAR2BUTTON9 SHIFT-X=MULTIACTIONBAR2BUTTON6 SHIFT-Z=MULTIACTIONBAR2BUTTON5 SHIFT-§=MULTIACTIONBAR1BUTTON10 T=ACTIONBUTTON11 X=MULTIACTIONBAR1BUTTON12 Z=MULTIACTIONBAR1BUTTON11 §=ACTIONBUTTON1
-11:macro123 1:spell1784 2:spell1752 35:item6948 3:spell53 49:spell1804 4:spell2098 58:macro124 59:macro122 5:spell5171 60:macro121 66:item858 68:spell900003 6:spell1776 70:spell2983 71:item1178 73:spell1784 77:spell921 79:spell5277 7:spell5277 80:spell1766 81:item4370 82:spell6770 83:macro123 8:spell1766 9:item4370
+11:macro125 1:spell1784 2:spell1752 32:macro126 33:macro124 34:macro121 35:item6948 3:spell53 49:spell1804 4:spell2098 58:macro127 59:macro123 5:spell5171 60:macro122 66:item858 68:spell900003 6:spell1776 70:spell2983 71:item1178 73:spell1784 77:spell921 79:spell5277 7:spell5277 80:spell1766 81:item4370 82:spell6770 83:macro125 8:spell1766 9:item4370
 ---- restore
 |cff66ccffWyldKeys:|r Keys and bars put back as they were before /kb apply.
 0=ACTIONBUTTON10 1=ACTIONBUTTON1 2=ACTIONBUTTON2 6=ACTIONBUTTON6 BUTTON4=TOGGLEAUTORUN F8=MOVEBACKWARD F9=MULTIACTIONBAR2BUTTON12 Q=TURNLEFT R=REPLY S=MOVEBACKWARD X=SITORSTAND Z=TOGGLESHEATH

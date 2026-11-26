@@ -208,7 +208,7 @@ return {
 
   -- The buttons without keys, the same on every character. Action Bar 3 buttons 10-12 (Click 1-3), Action Bar 4 and
   -- Action Bar 5. Each slot: { what it is for, kind }. Kinds: prof, buff, coat,
-  -- travel, free. Free slots are never touched by /kb apply.
+  -- travel, tool, free. Free slots are never touched by /kb apply.
   utility = {
     slots = {
       bar3 = {
@@ -224,7 +224,7 @@ return {
         { "Cooking", "prof" },
         { "First Aid", "prof" },
         { "Fishing", "prof" },
-        { "Free", "free" }, { "Free", "free" }, { "Free", "free" },
+        { "/reload", "tool" }, { "/kb preview", "tool" }, { "/kb apply", "tool" },
         { "Hearthstone", "travel" },
         { "Mount (when you have one)", "travel" },
       },

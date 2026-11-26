@@ -75,6 +75,9 @@ local function buildProfile(c)
       p.macros[mname] = body
     end
   end
+  for mname, body in pairs(ns.UTILITY_MACROS or {}) do
+    if p.macros[mname] == nil then p.macros[mname] = body end
+  end
   for name, list in pairs(c) do
     if name ~= "keys" and name ~= "macros" then
       local n = ns.BONUS_BARS[name]
@@ -507,12 +510,13 @@ local function ensureMacros(macros)
   for _, name in ipairs(sortedNames(macros)) do
     local body = macroBody(macros[name])
     local state = macroState(name, body)
+    local icon = (ns.MACRO_ICONS and ns.MACRO_ICONS[name]) or "INV_MISC_QUESTIONMARK"
     if state ~= "unchanged" then
       local ok
       if state == "create" then
-        ok = pcall(CreateMacro, name, "INV_MISC_QUESTIONMARK", body, true)
+        ok = pcall(CreateMacro, name, icon, body, true)
       else
-        ok = pcall(EditMacro, GetMacroIndexByName(name), name, "INV_MISC_QUESTIONMARK", body)
+        ok = pcall(EditMacro, GetMacroIndexByName(name), name, icon, body)
       end
       if ok and (GetMacroIndexByName(name) or 0) > 0 then
         say("Macro " .. name .. (state == "create" and " created." or " updated."))

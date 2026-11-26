@@ -106,8 +106,8 @@ function ns.Best(kind) return { best = kind } end
 -- put there (a profession not learned, no such item in the bags) leaves the
 -- slot as it is.
 --   Action Bar 4:  1 crafting profession  2 second profession  3 profession action
---                  4 tracking  5 Cooking  6 First Aid  7 Fishing  8-10 free
---                  11 Hearthstone  12 mount (later)
+--                  4 tracking  5 Cooking  6 First Aid  7 Fishing
+--                  8 /reload  9 /kb preview  10 /kb apply  11 Hearthstone  12 mount (later)
 --   Action Bar 5:  1 battle elixir  2 guardian elixir  3 mana potion  4 scroll
 --                  5 buff food  6 Anti-Venom  7-12 free
 --   Action Bar 3:  Click 1 weapon coating, Click 2-3 rogue poisons (else free)
@@ -115,9 +115,25 @@ ns.UTILITY = {
   ["Bar 4 5"] = "Cooking",
   ["Bar 4 6"] = "First Aid",
   ["Bar 4 7"] = "Fishing",
+  ["Bar 4 8"] = ns.Macro("WK Reload", "/reload"),
+  ["Bar 4 9"] = ns.Macro("WK Preview", "/kb preview"),
+  ["Bar 4 10"] = ns.Macro("WK Apply", "/kb apply"),
   ["Bar 4 11"] = ns.Item(6948, "Hearthstone"),
   ["Bar 5 2"] = ns.Best("guardian"),
   ["Bar 5 3"] = ns.Best("mana"),
   ["Bar 5 5"] = ns.Best("wellfed"),
   ["Bar 5 6"] = ns.Best("antivenom"),
+}
+
+-- Macros every character with a section gets (a character's own macro with the
+-- same name wins), and their icons.
+ns.UTILITY_MACROS = {
+  ["WK Reload"] = "/reload",
+  ["WK Preview"] = "/kb preview",
+  ["WK Apply"] = "/kb apply",
+}
+ns.MACRO_ICONS = {
+  ["WK Reload"] = "INV_Misc_PocketWatch_01",
+  ["WK Preview"] = "INV_Misc_Spyglass_02",
+  ["WK Apply"] = "INV_Misc_Gear_01",
 }
