@@ -58,6 +58,7 @@
 |cff66ccffWyldKeys:|r   Main bar, E: Kick
 |cff66ccffWyldKeys:|r   Main bar, R: best bomb in your bags (Large Copper Bomb)
 |cff66ccffWyldKeys:|r   Main bar, T: macro WK Pull
+|cff66ccffWyldKeys:|r   Main bar, G: Vanish
 |cff66ccffWyldKeys:|r   Stance/stealth bar 1, §: Stealth
 |cff66ccffWyldKeys:|r   Stance/stealth bar 1, 1: Ambush
 |cff66ccffWyldKeys:|r   Stance/stealth bar 1, 2: Garrote
@@ -67,6 +68,7 @@
 |cff66ccffWyldKeys:|r   Stance/stealth bar 1, R: best bomb in your bags (Large Copper Bomb)
 |cff66ccffWyldKeys:|r   Stance/stealth bar 1, F: Sap
 |cff66ccffWyldKeys:|r   Stance/stealth bar 1, T: macro WK Pull
+|cff66ccffWyldKeys:|r   Stance/stealth bar 1, G: Distract
 |cff66ccffWyldKeys:|r   Action Bar 2, Shift+1: Escape Artist
 |cff66ccffWyldKeys:|r   Action Bar 2, Shift+3: Rupture
 |cff66ccffWyldKeys:|r   Action Bar 2, Shift+4: Expose Armor
@@ -82,7 +84,9 @@
 |cff66ccffWyldKeys:|r   Action Bar 3, Click 2: macro WK Instant
 |cff66ccffWyldKeys:|r   Action Bar 3, Click 3: macro WK Crippling
 |cff66ccffWyldKeys:|r   Action Bar 4, button 1: Engineering
-|cff66ccffWyldKeys:|r   Action Bar 4, button 2: Alchemy
+|cff66ccffWyldKeys:|r   Action Bar 4, button 2: Smelting or Mining
+|cff66ccffWyldKeys:|r   Action Bar 4, button 3: Poisons
+|cff66ccffWyldKeys:|r   Action Bar 4, button 4: Find Minerals
 |cff66ccffWyldKeys:|r   Action Bar 4, button 5: Cooking
 |cff66ccffWyldKeys:|r   Action Bar 4, button 6: First Aid
 |cff66ccffWyldKeys:|r   Action Bar 4, button 7: Fishing
@@ -121,9 +125,11 @@
 [mock]   /use Coarse Sharpening Stone
 [mock]   /use [mod:shift] 17; 16
 |cff66ccffWyldKeys:|r Macro WK Stone created.
-|cff66ccffWyldKeys:|r Abilities placed: 29 of 47.
+|cff66ccffWyldKeys:|r Abilities placed: 29 of 51.
+|cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r Vanish (Main bar, G)
 |cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r Ambush (Stance/stealth bar 1, 1)
 |cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r Garrote (Stance/stealth bar 1, 2)
+|cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r Distract (Stance/stealth bar 1, G)
 |cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r Escape Artist (Action Bar 2, Shift+1)
 |cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r Rupture (Action Bar 2, Shift+3)
 |cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r Expose Armor (Action Bar 2, Shift+4)
@@ -131,7 +137,9 @@
 |cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r best bandage in your bags (none found) (Action Bar 3, Ctrl+Q)
 |cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r Feint (Action Bar 3, Shift+Space)
 |cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r Engineering (Action Bar 4, button 1)
-|cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r Alchemy (Action Bar 4, button 2)
+|cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r Smelting or Mining (Action Bar 4, button 2)
+|cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r Poisons (Action Bar 4, button 3)
+|cff66ccffWyldKeys:|r |cffffcc00Not learned or not found:|r Find Minerals (Action Bar 4, button 4)
 |cff66ccffWyldKeys:|r Not learned or none in the bags, so those buttons are left as they were: Cooking, First Aid, Fishing, Agility elixir, guardian elixir, Scroll of Agility, buff food, Anti-Venom.
 ---- preview again
 |cff66ccffWyldKeys:|r Preview. Nothing is changed.
@@ -190,6 +198,7 @@
 |cff66ccffWyldKeys:|r   Main bar, E: Kick
 |cff66ccffWyldKeys:|r   Main bar, R: best bomb in your bags (Large Copper Bomb)
 |cff66ccffWyldKeys:|r   Main bar, T: macro WK Pull
+|cff66ccffWyldKeys:|r   Main bar, G: Vanish
 |cff66ccffWyldKeys:|r   Stance/stealth bar 1, §: Stealth
 |cff66ccffWyldKeys:|r   Stance/stealth bar 1, 1: Ambush
 |cff66ccffWyldKeys:|r   Stance/stealth bar 1, 2: Garrote
@@ -199,6 +208,7 @@
 |cff66ccffWyldKeys:|r   Stance/stealth bar 1, R: best bomb in your bags (Large Copper Bomb)
 |cff66ccffWyldKeys:|r   Stance/stealth bar 1, F: Sap
 |cff66ccffWyldKeys:|r   Stance/stealth bar 1, T: macro WK Pull
+|cff66ccffWyldKeys:|r   Stance/stealth bar 1, G: Distract
 |cff66ccffWyldKeys:|r   Action Bar 2, Shift+1: Escape Artist
 |cff66ccffWyldKeys:|r   Action Bar 2, Shift+3: Rupture
 |cff66ccffWyldKeys:|r   Action Bar 2, Shift+4: Expose Armor
@@ -214,7 +224,9 @@
 |cff66ccffWyldKeys:|r   Action Bar 3, Click 2: macro WK Instant
 |cff66ccffWyldKeys:|r   Action Bar 3, Click 3: macro WK Crippling
 |cff66ccffWyldKeys:|r   Action Bar 4, button 1: Engineering
-|cff66ccffWyldKeys:|r   Action Bar 4, button 2: Alchemy
+|cff66ccffWyldKeys:|r   Action Bar 4, button 2: Smelting or Mining
+|cff66ccffWyldKeys:|r   Action Bar 4, button 3: Poisons
+|cff66ccffWyldKeys:|r   Action Bar 4, button 4: Find Minerals
 |cff66ccffWyldKeys:|r   Action Bar 4, button 5: Cooking
 |cff66ccffWyldKeys:|r   Action Bar 4, button 6: First Aid
 |cff66ccffWyldKeys:|r   Action Bar 4, button 7: Fishing

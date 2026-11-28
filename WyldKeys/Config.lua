@@ -184,6 +184,7 @@ ns.Config = {
       ["E"] = "Kick",
       ["R"] = BEST_BOMB,
       ["T"] = PULL,
+      ["G"] = "Vanish",               -- level 22
       ["Shift+1"] = "Escape Artist",  -- gnome racial: breaks roots and snares, beside Sprint
       ["Shift+3"] = "Rupture",        -- bleed finisher, beside Eviscerate
       ["Shift+4"] = "Expose Armor",   -- level 14; finisher, beside Slice and Dice
@@ -200,7 +201,9 @@ ns.Config = {
       ["Ctrl+Q"] = BEST_BANDAGE,
       -- Bars without keys (shared slots in Layout.lua)
       ["Bar 4 1"] = "Engineering",
-      ["Bar 4 2"] = "Alchemy",
+      ["Bar 4 2"] = First("Smelting", "Mining"),
+      ["Bar 4 3"] = "Poisons",          -- the rogue's poison crafting window
+      ["Bar 4 4"] = "Find Minerals",
       ["Bar 5 1"] = Best("agielixir"),
       ["Bar 5 3"] = false,              -- no mana
       ["Bar 5 4"] = Best("agiscroll"),
@@ -216,6 +219,7 @@ ns.Config = {
       ["R"] = BEST_BOMB,
       ["F"] = "Sap",
       ["T"] = PULL,
+      ["G"] = "Distract",             -- level 22
     },
     macros = {
       ["WK Pull"] = PULL_MACRO,

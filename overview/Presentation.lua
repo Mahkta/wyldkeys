@@ -88,7 +88,6 @@ return {
     },
     meagor = {
       ["F"] = { "Ghostly Strike (talent, level 25)", "Ghostly Strike" },
-      ["G"] = "Vanish (level 22)",
       ["Shift+2"] = { "Death Mark (talent, about level 40)", "Death Mark" },
       ["Shift+F"] = { "Kidney Shot (level 30)", "Kidney Shot" },
       ["Shift+5"] = "Blind (level 34)",
@@ -98,7 +97,6 @@ return {
     ["meagor-stealth"] = {
       ["3"] = "Cheap Shot (level 26)",
       ["5"] = { "Premeditation (talent, when taken)", "Premeditation" },
-      ["G"] = "Distract (level 22)",
     },
     leorn = {
       ["§"] = "Blink (level 20)",
@@ -219,7 +217,7 @@ return {
       bar4 = {
         { "Crafting profession", "prof" },
         { "Second profession (craft, or the gathering window)", "prof" },
-        { "Profession action (Disenchant)", "prof" },
+        { "Profession action (Disenchant, Poisons)", "prof" },
         { "Tracking (Find Minerals, Find Herbs, Find Treasure)", "prof" },
         { "Cooking", "prof" },
         { "First Aid", "prof" },
